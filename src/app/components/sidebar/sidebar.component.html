@@ -49,10 +49,27 @@
   </div>
     <ul class="nav">
         <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
-            <a class="nav-link" [routerLink]="[menuItem.path]">
+            <a class="nav-link" *ngIf="!menuItem.childrens" [routerLink]="[menuItem.path]">
                 <i class="material-icons">{{menuItem.icon}}</i>
                 <p>{{menuItem.title}}</p>
             </a>
+            
+            <a href="#{{menuItem.icon}}" *ngIf="menuItem.childrens" data-toggle="collapse" aria-expanded="false" class=" nav-link dropdown-toggle">
+                <i class="material-icons">{{menuItem.icon}}</i>
+                {{menuItem.title}}</a>
+            <ul class="collapse list-unstyled" *ngIf="menuItem.childrens" id="{{menuItem.icon}}">
+                <li *ngFor="let children of menuItem.childrens" class="{{children.class}} nav-item">
+                    <a class="nav-link"  [routerLink]="[children.path]">
+                        <i class="material-icons">{{children.icon}}</i>
+                        <p>{{children.title}}</p>
+                    </a>
+                </li>
+               
+            </ul>
         </li>
+   
     </ul>
+</div>
+<div>
+    
 </div>
