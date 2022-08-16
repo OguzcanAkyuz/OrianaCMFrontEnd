@@ -11,10 +11,5 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit() {
   }
-  ifClickCustomerAdd(){
-    this.ifCustomerAddOpen=true;
-  } 
-  ifClickCustomerList(){
-    this.ifCustomerAddOpen=false;
-  }
+
 }

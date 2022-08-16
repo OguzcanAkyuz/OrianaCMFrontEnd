@@ -9,7 +9,7 @@ export class RoutineserviceListComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
