@@ -10,6 +10,7 @@ import { AbroadInvestmentService } from 'app/services/abroad-investment.service'
 
 export class AbroadinvestmentAddComponent implements OnInit {
   abroadInvesment:AbroadInvestmentRelation[]=[];
+  
   currentAbroadInvesmtent:AbroadInvestmentRelation;
   constructor(private abroadInvesmtentService:AbroadInvestmentService) { }
 
@@ -21,6 +22,7 @@ export class AbroadinvestmentAddComponent implements OnInit {
     this.abroadInvesmtentService.getAbroadInvestments().subscribe(response=>{
       this.abroadInvesment=response.data
     })
+    
   }
 
 }

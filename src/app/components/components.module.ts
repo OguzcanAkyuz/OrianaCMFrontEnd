@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CustomerAddComponent } from './customer-add/customer-add.component';
@@ -11,8 +10,8 @@ import { CuriouscustomerAddComponent } from './curiouscustomer-add/curiouscustom
 import { CuriouscustomerListComponent } from './curiouscustomer-list/curiouscustomer-list.component';
 import { InvestorrelationAddComponent } from './investorrelation-add/investorrelation-add.component';
 import { InvestorrelationListComponent } from './investorrelation-list/investorrelation-list.component';
-import { SeriouscustomerAddComponent } from './potentialcustomer-add/potentialcustomer-add.component';
-import { SeriouscustomerListComponent } from './seriouscustomer-list/seriouscustomer-list.component';
+import { PotentialCustomerAddComponent } from './potentialcustomer-add/potentialcustomer-add.component';
+import { PotentialCustomerListComponent} from './potentialcustomer-list/potentialcustomer-list.component';
 import { FuturemeetingAddComponent } from './futuremeeting-add/futuremeeting-add.component';
 import { FuturemeetingListComponent } from './futuremeeting-list/futuremeeting-list.component';
 import { RoutineserviceAddComponent } from './routineservice-add/routineservice-add.component';
@@ -20,12 +19,13 @@ import { RoutineserviceListComponent } from './routineservice-list/routineservic
 import { FinishedmeetingListComponent } from './finishedmeeting-list/finishedmeeting-list.component';
 import { AbroadinvestmentAddComponent } from './abroadinvestment-add/abroadinvestment-add.component';
 import { AbroadinvestmentListComponent } from './abroadinvestment-list/abroadinvestment-list.component';
-
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
+    MatInputModule
   ],
   declarations: [
     
@@ -37,8 +37,7 @@ import { AbroadinvestmentListComponent } from './abroadinvestment-list/abroadinv
     CuriouscustomerListComponent,
     InvestorrelationAddComponent,
     InvestorrelationListComponent,
-    SeriouscustomerAddComponent,
-    SeriouscustomerListComponent,
+    PotentialCustomerListComponent,
     FuturemeetingAddComponent,
     FuturemeetingListComponent,
     RoutineserviceAddComponent,
@@ -53,8 +52,7 @@ import { AbroadinvestmentListComponent } from './abroadinvestment-list/abroadinv
     InvestorrelationListComponent,
     RoutineserviceAddComponent,
     RoutineserviceListComponent,
-    SeriouscustomerAddComponent,
-    SeriouscustomerListComponent,
+   PotentialCustomerAddComponent,
     FinishedmeetingListComponent,
     AbroadinvestmentAddComponent,
     AbroadinvestmentListComponent,
