@@ -1,4 +1,4 @@
-export interface curiousCustomer{
+export interface CuriousCustomer{
 Id:string;
 CuriousCustomerName:string;
 CuriousCustomerSurname:string;

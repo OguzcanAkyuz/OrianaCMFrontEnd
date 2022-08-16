@@ -1,4 +1,4 @@
-export interface investorRelation{
+export interface InvestorRelation{
     Id:string;
     InvestmentRelationId:string;
     InvestorName:string;

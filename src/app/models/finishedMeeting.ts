@@ -1,4 +1,4 @@
-export interface finishedMeeting{
+export interface FinishedMeeting{
     Id:string;
     CustomerInformation:string;
     Participants:string;
