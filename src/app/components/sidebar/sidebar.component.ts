@@ -12,15 +12,15 @@ export const ROUTES: RouteInfo[] = [
     { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
     
     { path: '/customer-list', title: 'Customers',  icon:'person', class: '',childrens:[
-      { path: '/customer-add', title: 'New Customer Add',  icon: 'personadd', class: '' },
+      { path: '/customer-add', title: 'New Customer Add',  icon: 'personadd', class: '',},
       { path: '/customer-list', title: 'Customers List',  icon: 'content_paste', class: '' }
     ] },
-    { path: '/maps', title: 'Investor Relations ',  icon:'handshake', class: '',childrens:[
+    { path: '/investorcustomer-list', title: 'Investor Relations ',  icon:'currency_lira', class: '',childrens:[
       { path: '/ınvestorcustomer-add', title: 'New Investor Add',  icon: 'personadd', class: '' },
       { path: '/ınvestorcustomer-list', title: 'Investors List',  icon: 'content_paste', class: '' }
     ] },
 
-    { path: '/upgrade', title: 'Abroad Investor Relations ',  icon:'airlines', class: '',childrens:[
+    { path: '/upgrade', title: 'Abroad Investor Relations ',  icon:'request_quote', class: '',childrens:[
       { path: '/abroadinvestor-add', title: 'New Investor Add',  icon: 'personadd', class: '' },
       { path: '/abroadinvestor-list', title: 'Investors List',  icon: 'content_paste', class: '' } 
     ] },
@@ -34,8 +34,9 @@ export const ROUTES: RouteInfo[] = [
       { path: '/seriouscustomer-list', title: 'Serious Customers List',  icon: 'content_paste', class: '' }
     ] },
     { path: '/typography', title: 'Meetings',  icon:'groups', class: '',childrens:[
-      { path: '/futuremeetinglist', title: 'Future Meetings',  icon: 'content_paste', class: '' },
-      { path: '/finishedmeetinglist', title: 'Finished Meetings',  icon: 'content_paste', class: '' }
+      { path: '/futuremeetingadd', title: 'Future Meetings Add',  icon: 'groupadd', class: '' },
+      { path: '/futuremeetinglist', title: 'Future Meetings List',  icon: 'content_paste', class: '' },
+      { path: '/finishedmeetinglist', title: 'Finished Meetings',  icon: 'content_paste_off', class: '' }
     ] },
     { path: '/icons', title: 'Routine Services',  icon:'build', class: '',childrens:[
       { path: '/routineservice-add', title: 'New Routine Services Add',  icon: 'add', class: '' },

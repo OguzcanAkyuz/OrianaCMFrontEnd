@@ -27,7 +27,7 @@ export class ScheduledmeetingService {
     );
   
   }
-  productAdd(
+  scheduledMeetingAdd(
     scheduledMeeting: ScheduledMeeting
   ): Observable<ScheduledMeeting> {
     return this.httpClient.post<ScheduledMeeting>(

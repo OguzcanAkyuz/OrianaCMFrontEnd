@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class RoutineserviceService {
   apiUrl='https://localhost:44300/api/';
   constructor(private httpClient:HttpClient) { }
-  getRoutineSerivces(): Observable<ListResponseModel<RoutineService>
+  getRoutineServices(): Observable<ListResponseModel<RoutineService>
   > {
     let newPath = this.apiUrl + 'routineservice/getall';
     return this.httpClient.get<ListResponseModel<RoutineService>>(
@@ -26,7 +26,7 @@ export class RoutineserviceService {
     );
   
   }
-  productAdd(
+  routineServiceAdd(
     routineService: RoutineService
   ): Observable<RoutineService> {
     return this.httpClient.post<RoutineService>(

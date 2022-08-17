@@ -1,64 +1,87 @@
 import { Routes } from '@angular/router';
 
-import { DashboardComponent } from '../../dashboard/dashboard.component';
-import { UserProfileComponent } from '../../user-profile/user-profile.component';
-import { TableListComponent } from '../../table-list/table-list.component';
-import { TypographyComponent } from '../../typography/typography.component';
-import { IconsComponent } from '../../icons/icons.component';
-import { MapsComponent } from '../../maps/maps.component';
-import { NotificationsComponent } from '../../notifications/notifications.component';
-import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import { CustomerListComponent } from 'app/components/customer-list/customer-list.component';
+import { CustomerAddComponent } from 'app/components/customer-add/customer-add.component';
+import { AbroadinvestmentAddComponent } from 'app/components/abroadinvestment-add/abroadinvestment-add.component';
+import { AbroadinvestmentListComponent } from 'app/components/abroadinvestment-list/abroadinvestment-list.component';
+import { InvestorrelationAddComponent } from 'app/components/investorrelation-add/investorrelation-add.component';
+import { InvestorrelationListComponent } from 'app/components/investorrelation-list/investorrelation-list.component';
+import { CuriouscustomerAddComponent } from 'app/components/curiouscustomer-add/curiouscustomer-add.component';
+import { CuriouscustomerListComponent } from 'app/components/curiouscustomer-list/curiouscustomer-list.component';
+import { PotentialCustomerAddComponent } from 'app/components/potentialcustomer-add/potentialcustomer-add.component';
+import { FuturemeetingListComponent } from 'app/components/futuremeeting-list/futuremeeting-list.component';
+import { FinishedmeetingListComponent } from 'app/components/finishedmeeting-list/finishedmeeting-list.component';
+import { RoutineserviceAddComponent } from 'app/components/routineservice-add/routineservice-add.component';
+import { RoutineserviceListComponent } from 'app/components/routineservice-list/routineservice-list.component';
+import { DashboardComponent } from 'app/dashboard/dashboard.component';
+import { FuturemeetingAddComponent } from 'app/components/futuremeeting-add/futuremeeting-add.component';
 
 export const AdminLayoutRoutes: Routes = [
-    {
-      path: '',
-      children: [ {
-        path: 'dashboard',
-        component: DashboardComponent
-    }]}, {
-    path: '',
-    children: [ {
-      path: 'userprofile',
-      component: UserProfileComponent
-    }]
-    }, {
-      path: '',
-      children: [ {
-        path: 'icons',
-        component: IconsComponent
-        }]
-    }, {
-        path: '',
-        children: [ {
-            path: 'notifications',
-            component: NotificationsComponent
-        }]
-    }, {
-        path: '',
-        children: [ {
-            path: 'maps',
-            component: MapsComponent
-        }]
-    }, {
-        path: '',
-        children: [ {
-            path: 'typography',
-            component: TypographyComponent
-        }]
-    }, {
-        path: '',
-        children: [ {
-            path: 'upgrade',
-            component: UpgradeComponent
-        }]
-    },
     { path: 'dashboard',      component: DashboardComponent },
-    { path: 'user-profile',   component: UserProfileComponent },
-    { path: 'table-list',     component: TableListComponent },
-    { path: 'typography',     component: TypographyComponent },
-    { path: 'add',     component: TypographyComponent },
-    { path: 'icons',          component: IconsComponent },
-    { path: 'maps',           component: MapsComponent },
-    { path: 'notifications',  component: NotificationsComponent },
-    { path: 'upgrade',        component: UpgradeComponent },
+    { path: 'customer-add',      component: CustomerAddComponent },
+    { path: 'customer-list',   component: CustomerListComponent },
+
+    { path: 'abroadinvestor-add',     component: AbroadinvestmentAddComponent },
+    { path: 'abroadinvestor-list',     component: AbroadinvestmentListComponent },
+
+    { path: 'ınvestorcustomer-add',     component: InvestorrelationAddComponent },
+    { path: 'ınvestorcustomer-list',          component: InvestorrelationListComponent },
+
+    { path: 'curiouscustomer-add',           component: CuriouscustomerAddComponent },
+    { path: 'curiouscustomer-list',  component: CuriouscustomerListComponent },
+    
+    { path: 'futuremeetingadd',        component: FuturemeetingAddComponent },
+    { path: 'futuremeetinglist',        component: FuturemeetingListComponent },
+    { path: 'finishedmeetinglist',        component: FinishedmeetingListComponent },
+
+    { path: 'seriouscustomer-add',        component: PotentialCustomerAddComponent },
+    { path: 'seriouscustomer-list',        component: PotentialCustomerAddComponent },
+
+    { path: 'routineservice-add',        component: RoutineserviceAddComponent },
+    { path: 'routineservice-list',        component: RoutineserviceListComponent },
 ];
+
+
+
+// {
+//     path: '',
+//     children: [ {
+//       path: 'dashboard',
+//       component: DashboardComponent
+//   }]}, {
+//   path: '',
+//   children: [ {
+//     path: 'userprofile',
+//     component: UserProfileComponent
+//   }]
+//   }, {
+//     path: '',
+//     children: [ {
+//       path: 'icons',
+//       component: IconsComponent
+//       }]
+//   }, {
+//       path: '',
+//       children: [ {
+//           path: 'notifications',
+//           component: NotificationsComponent
+//       }]
+//   }, {
+//       path: '',
+//       children: [ {
+//           path: 'maps',
+//           component: MapsComponent
+//       }]
+//   }, {
+//       path: '',
+//       children: [ {
+//           path: 'typography',
+//           component: TypographyComponent
+//       }]
+//   }, {
+//       path: '',
+//       children: [ {
+//           path: 'upgrade',
+//           component: UpgradeComponent
+//       }]
+//   },

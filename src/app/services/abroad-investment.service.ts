@@ -34,7 +34,7 @@ export class AbroadInvestmentService {
     abroadInvestmentRelation: AbroadInvestmentRelation
   ): Observable<ResponseModel> {
     return this.httpClient.post<ResponseModel>(
-      this.apiUrl + 'AbroadInvestmentRelation/add',
+      this.apiUrl + 'abroadInvestmentRelation/add',
       abroadInvestmentRelation
     );
   }

@@ -31,7 +31,7 @@ participantAdd(
   participant: Participant
 ): Observable<Participant> {
   return this.httpClient.post<Participant>(
-    this.apiUrl + 'customer/add',
+    this.apiUrl + 'participant/add',
     participant
   );
 }
