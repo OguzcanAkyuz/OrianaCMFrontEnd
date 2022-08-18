@@ -1,3 +1,4 @@
+
 <div class="main-content">
     <div class="container-fluid">
       <div class="row">
@@ -5,13 +6,20 @@
           <div class="card">
             <div class="card-header card-header-danger">
               <h4 class="card-title">Abroad Investment Relations</h4>
+
             </div>
+            
             <div class="card-body">
-              <form>
+              <form >
                 <div class="row">
                   <div class="col-md-4">
+                    <label for="dateOfUpload" ></label>
                     <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Date Of Upload" type="date" />
+                      <input id="dateOfUpload"
+                      formControlName="dateOfUpload"
+                      matInput
+                      class="form-control"
+                       placeholder="Date Of Upload" type="date" />
                     </mat-form-field>
                   </div>
                   <div class="col-md-3">
@@ -87,7 +95,7 @@
                 <button
                   mat-raised-button
                   type="button"
-                  class="btn btn-danger pull-right"
+                  class="btn btn-danger pull-right" (click)="abroadInvestmentAdd()"
                 >
                   Save
                 </button>
