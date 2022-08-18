@@ -16,15 +16,15 @@ export class AbroadInvestmentService {
   getAbroadInvestments(): Observable<
     ListResponseModel<AbroadInvestmentRelation>
   > {
-    let newPath = this.apiUrl + 'abroadinvestmentrelation/getall';
+    let newPath = this.apiUrl + 'AbroadInvestmentRelation/getall';
     return this.httpClient.get<ListResponseModel<AbroadInvestmentRelation>>(
-      this.apiUrl
+      newPath
     );
   }
   getByAbroadInvestmentRelation(
     Id: string
   ): Observable<ListResponseModel<AbroadInvestmentRelation>> {
-    let newPath = this.apiUrl + 'abroadinvestmentrelation/getbyid=' + Id;
+    let newPath = this.apiUrl + 'AbroadInvestmentRelation/getbyid=' + Id;
     return this.httpClient.get<ListResponseModel<AbroadInvestmentRelation>>(
       newPath
     );
@@ -34,7 +34,7 @@ export class AbroadInvestmentService {
     abroadInvestmentRelation: AbroadInvestmentRelation
   ): Observable<ResponseModel> {
     return this.httpClient.post<ResponseModel>(
-      this.apiUrl + 'abroadInvestmentRelation/add',
+      this.apiUrl + 'AbroadInvestmentRelation/add',
       abroadInvestmentRelation
     );
   }

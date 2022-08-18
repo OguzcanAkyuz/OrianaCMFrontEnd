@@ -14,7 +14,7 @@ export class ScheduledmeetingService {
   > {
     let newPath = this.apiUrl + 'scheduledmeeting/getall';
     return this.httpClient.get<ListResponseModel<ScheduledMeeting>>(
-      this.apiUrl
+      newPath
     );
 
   }

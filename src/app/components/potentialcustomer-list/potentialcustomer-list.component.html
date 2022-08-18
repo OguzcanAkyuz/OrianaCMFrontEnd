@@ -2,12 +2,13 @@
   <div class="container-fluid">
     <div class="card">
       <div class="card-header card-header-danger">
-        <h4 class="card-title">Curious Customers</h4>
+        <h4 class="card-title">Serious Customers</h4>
       </div>
       <div class="card-body">
         <div class="table-responsive">
           <table class="table">
             <thead class="text-primary">
+              <tr>
               <th>Date</th>
               <th>ID</th>
               <th>Name</th>
@@ -18,11 +19,22 @@
               <th>Company</th>
               <th>Adress</th>
               <th>Note</th>
-              <th>Product</th>
-            </thead>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+            
+            </tr>
+          </thead>
+          <tbody>
+   
+<tr *ngFor= "let potentialCustomer of potentialCustomers" >
+  <td>{{ potentialCustomer.id}}</td>
+  <td>{{ potentialCustomer.potentialCustomerName }}</td>
+  <td>{{ potentialCustomer.potentialCustomerSurname }}</td>
+  <td>{{ potentialCustomer.phoneNumber }}</td>
+  <td>{{ potentialCustomer.email  }}</td>
+  <td>{{ potentialCustomer.adress }}</td>
+  <td>{{ potentialCustomer.company }}</td>
+  <td>{{ potentialCustomer.position }}</td>
+  <td>{{ potentialCustomer.note }}</td>
+  <td>{{ potentialCustomer.dateOfUpload }}</td>
+
+</tr>
+</tbody>

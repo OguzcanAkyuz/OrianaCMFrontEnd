@@ -1,16 +1,17 @@
 export interface Customer{
-   Id:string;
-   ProductName:string;
-   PurchaseDate:string;
-   LicenseTerm:string;
-   PurchasePrice:string;
-   CustomerNote:string;
-   ProductVersion:string;
-   CustomerCompanyName:string;
-   CustomerCompanyAdress:string;
-   CompanyBusinessArea:string;
-   CompanyWebAdress:string;
-   ExecutiveName:string;
-   ExecutivePhoneNumber:string;
-   ExecutiveEmail:string;
+   id:string;
+   productId:string;
+   purchaseDate:string;
+   licenseTerm:string;
+   lisenceEndDate:string;
+   purchasePrice:string;
+   customerNote:string;
+   productVersion:string;
+   customerCompanyName:string;
+   customerCompanyAdress:string;
+   companyBusinessArea:string;
+   companyWebAdress:string;
+   executiveName:string;
+   executivePhoneNumber:string;
+   executiveEmail:string;
 }

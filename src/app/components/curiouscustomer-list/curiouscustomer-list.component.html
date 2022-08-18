@@ -8,6 +8,7 @@
           <div class="table-responsive">
             <table class="table">
               <thead class="text-primary">
+                <tr>
                 <th>Date</th>
                 <th>ID</th>
                 <th>Name</th>
@@ -18,12 +19,25 @@
                 <th>Company</th>
                 <th>Adress</th>
                 <th>Note</th>
-                <th>Product</th>
+                
+              </tr>
               </thead>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
+           
+   
+  <tbody>
+    <tr *ngFor= "let curiouscustomer of curiousCustomers" >
+      <td>{{ curiouscustomer.dateOfUpload}}</td>
+      <td>{{ curiouscustomer.id }}</td>
+      <td>{{ curiouscustomer.curiousCustomerName }}</td>
+      <td>{{ curiouscustomer.curiousCustomerSurname }}</td>
+      <td>{{ curiouscustomer.phoneNumber  }}</td>
+      <td>{{ curiouscustomer.email }}</td>
+      <td>{{ curiouscustomer.adress }}</td>
+      <td>{{ curiouscustomer.company }}</td>
+      <td>{{ curiouscustomer.position }}</td>
+      <td>{{ curiouscustomer.note }}</td>
+     
+     
+    </tr>
+  </tbody>
+

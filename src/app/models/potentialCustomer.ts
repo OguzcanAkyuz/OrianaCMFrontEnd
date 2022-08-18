@@ -1,12 +1,12 @@
 export interface PotentialCustomer{
-    Id:string;
-    PotentialCustomerName:string;
-    PotentialCustomerSurname:string;
-    PhoneNumber:string;
-    Email:string;
-    Adress:string;
-    Company:string;
-    Position:string;
-    Note:string;
-    DateOfUpload:string;
+    id:string;
+    potentialCustomerName:string;
+    potentialCustomerSurname:string;
+    phoneNumber:string;
+    email:string;
+    adress:string;
+    company:string;
+    position:string;
+    note:string;
+    dateOfUpload:string;
 }

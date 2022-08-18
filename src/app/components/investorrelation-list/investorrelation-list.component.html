@@ -8,6 +8,7 @@
         <div class="table-responsive">
           <table class="table">
             <thead class="text-primary">
+              <tr>
               <th>Date</th>
               <th>ID</th>
               <th>Name</th>
@@ -18,10 +19,20 @@
               <th>Adress</th>
               <th>Note</th>
               
-            </thead>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+            </tr>
+          </thead>
+          <tbody>
+<tr *ngFor= "let investorrelation of invesmentRelations" >
+  <td>{{ investorrelation.id}}</td>
+  <td>{{ investorrelation.investorName }}</td>
+  <td>{{ investorrelation.investorSurname }}</td>
+  <td>{{ investorrelation.phoneNumber }}</td>
+  <td>{{ investorrelation.email  }}</td>
+  <td>{{ investorrelation.adress }}</td>
+  <td>{{ investorrelation.company }}</td>
+  <td>{{ investorrelation.position }}</td>
+  <td>{{ investorrelation.note }}</td>
+  <td>{{ investorrelation.dateOfUpload }}</td>
+
+</tr>
+</tbody>

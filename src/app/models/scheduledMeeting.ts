@@ -1,15 +1,15 @@
 export interface ScheduledMeeting{
-    Id:string;
-    CustomerInformation:string;
-    Participants:string;
-    MeetingSubject:string;
-    MeetingResult:string;
-    MeetingDate:string;
-    CompanyName:string;
-    CompanyAdress:string;
-    CompanyBusinessArea:string;
-    CompanyWebAdress:string;
-    ExecutiveName:string;
-    ExecutivePhoneNumber:string;
-    ExecutiveEmail:string;
+    id:string;
+    customerInformation:string;
+    participants:string;
+    meetingSubject:string;
+    meetingResult:string;
+    meetingDate:string;
+    companyName:string;
+    companyAdress:string;
+    companyBusinessArea:string;
+    companyWebAdress:string;
+    executiveName:string;
+    executivePhoneNumber:string;
+    executiveEmail:string;
 }

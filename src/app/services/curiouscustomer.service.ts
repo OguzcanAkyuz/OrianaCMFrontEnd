@@ -17,7 +17,7 @@ export class CuriousCustomerService {
 > {
   let newPath = this.apiUrl + 'curiousCustomer/getall';
   return this.httpClient.get<ListResponseModel<CuriousCustomer>>(
-    this.apiUrl
+    newPath
   );
 }
 getByCuriousCustomer(

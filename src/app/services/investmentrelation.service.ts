@@ -14,15 +14,15 @@ export class InvestmentrelationService {
 
   getInvestmentRelations(): Observable<ListResponseModel<InvestorRelation>
   > {
-    let newPath = this.apiUrl + 'ınvestmentrelation/getall';
+    let newPath = this.apiUrl + 'InvestmentRelation/getall';
     return this.httpClient.get<ListResponseModel<InvestorRelation>>(
-      this.apiUrl
+      newPath
     );
 }
 getByInvestmentRelation(
   Id: string
 ): Observable<ListResponseModel<InvestorRelation>> {
-  let newPath = this.apiUrl + 'ınvestmentrelation/getbyid=' + Id;
+  let newPath = this.apiUrl + 'InvestmentRelation/getbyid=' + Id;
   return this.httpClient.get<ListResponseModel<InvestorRelation>>(
     newPath
   );
@@ -32,7 +32,7 @@ getByInvestmentRelation(
   ınvestmentrelation: InvestmentrelationService
 ): Observable<ResponseModel> {
   return this.httpClient.post<ResponseModel>(
-    this.apiUrl + 'ınvestmentrelation/add',
+    this.apiUrl + 'InvestmentRelation/add',
     ınvestmentrelation
   );
 }

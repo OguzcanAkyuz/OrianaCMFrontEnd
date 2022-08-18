@@ -1,14 +1,13 @@
 export interface AbroadInvestmentRelation{
-    getAbroadInvestmentRelations();
-    Id:string;
-    AbroadInvestorName:string;
-    AbroadInvestorSurname:string;
-    PhoneNumber:string;
-    Email:string;
-    Adress:string;
-    Company :string;
-    Position:string;
-    Note:string;
-    DateOfUpload:Date;
-    Country:string
+    id:string;
+    abroadInvestorName:string;
+    abroadInvestorSurname:string;
+    phoneNumber:string;
+    email:string;
+    adress:string;
+    company :string;
+    position:string;
+    note:string;
+    dateOfUpload:string;
+    country:string
 }

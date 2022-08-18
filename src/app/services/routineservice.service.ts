@@ -12,15 +12,15 @@ export class RoutineserviceService {
   constructor(private httpClient:HttpClient) { }
   getRoutineServices(): Observable<ListResponseModel<RoutineService>
   > {
-    let newPath = this.apiUrl + 'routineservice/getall';
+    let newPath = this.apiUrl + 'RoutineService/getall';
     return this.httpClient.get<ListResponseModel<RoutineService>>(
-      this.apiUrl
+      newPath
     );
   }
   getByRoutineService(
     Id: string
   ): Observable<ListResponseModel<RoutineService>> {
-    let newPath = this.apiUrl + 'routineservice/getbyid=' + Id;
+    let newPath = this.apiUrl + 'RoutineService/getbyid=' + Id;
     return this.httpClient.get<ListResponseModel<RoutineService>>(
       newPath
     );
@@ -30,7 +30,7 @@ export class RoutineserviceService {
     routineService: RoutineService
   ): Observable<RoutineService> {
     return this.httpClient.post<RoutineService>(
-      this.apiUrl + 'routineservice/add',
+      this.apiUrl + 'RoutineService/add',
       routineService
     );
   }

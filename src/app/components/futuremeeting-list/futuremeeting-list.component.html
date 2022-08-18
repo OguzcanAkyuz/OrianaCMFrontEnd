@@ -1,49 +1,44 @@
 
+      <!-- Katılımcı bilgilerini genişlet  -->
 <div class="main-content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header card-header-danger">
-                        <h4  class="card-title ">Future Meetings</h4>
-                        
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead class=" text-primary">
-                                    <th>
-                                        ID
-                                    </th>
-                                    <th>
-                                        Date
-                                    </th>
-                                    <th>
-                                        Meeting Title
-                                    </th>
-                                    <th>
-                                        Meeting Subject
-                                    </th>
-                                    <th>
-                                     Participants
-                                    </th>
-                                 
-                                  <th>
-                                     Product
-                                  </th>
-                                 
-                                </thead>
-                        
-                
-          
-           
-                                
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">Future Meetings</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                  <tr>
+                  <th>ID</th>
+                  <th>Date</th>
+                  <th>Meeting Title</th>
+                  <th>Meeting Subject</th>
+                  <th>Participants</th>
+                  <th>Product</th>
+                </tr>
+                </thead>
+                <tbody>
    
-  
-  <!-- Katılımcı bilgilerini genişlet  --> 
+<tr *ngFor= "let scheduledmeeting of scheduledMeetings" >
+    <td>{{ scheduledmeeting.id}}</td>
+    <td>{{ scheduledmeeting.customerInformation }}</td>
+    <td>{{ scheduledmeeting.participants }}</td>
+    <td>{{ scheduledmeeting.meetingSubject }}</td>
+    <td>{{ scheduledmeeting.meetingResult  }}</td>
+    <td>{{ scheduledmeeting.meetingDate }}</td>
+    <td>{{ scheduledmeeting.companyName }}</td>
+    <td>{{ scheduledmeeting.companyAdress }}</td>
+    <td>{{ scheduledmeeting.companyBusinessArea }}</td>
+    <td>{{ scheduledmeeting.companyWebAdress }}</td>
+    <td>{{ scheduledmeeting.executiveName }}</td>
+    <td>{{ scheduledmeeting.executivePhoneNumber }}</td>
+    <td>{{ scheduledmeeting.executiveEmail }}</td>
+  </tr>
+</tbody>
+
+
+

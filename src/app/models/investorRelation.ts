@@ -1,13 +1,12 @@
 export interface InvestorRelation{
-    Id:string;
-    InvestmentRelationId:string;
-    InvestorName:string;
-    InvestorSurname:string;
-    PhoneNumber:string;
-    Email:string;
-    Adress:string;
-    Company:string;
-    Position:string;
-    Note:string;
-    DateOfUpload:string;
+    id:string;
+    investorName:string;
+    investorSurname:string;
+    phoneNumber:string;
+    email:string;
+    adress:string;
+    company:string;
+    position:string;
+    note:string;
+    dateOfUpload:string;
 }

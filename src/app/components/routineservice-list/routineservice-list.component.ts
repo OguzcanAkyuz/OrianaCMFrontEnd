@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { RoutineService } from 'app/models/routineService';
+import { RoutineserviceService } from 'app/services/routineservice.service';
 
 @Component({
   selector: 'app-routineservice-list',
@@ -6,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./routineservice-list.component.scss']
 })
 export class RoutineserviceListComponent implements OnInit {
-
-  constructor() { }
+routineServices:RoutineService[]=[];
+dataLoaded=false;
+  constructor(private routineServiceServices:RoutineserviceService,private activeRoute:ActivatedRoute) { }
 
   ngOnInit() {
+    this.getRoutineServices();
   }
-
+  getRoutineServices() {
+    this.routineServiceServices
+    .getRoutineServices()
+    .subscribe(response=>{
+      this.routineServices = response.data;
+      this.dataLoaded = true;
+    })   
+  }
 }

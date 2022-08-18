@@ -13,9 +13,9 @@ export class FinishedmeetingService {
   
   getFinishedMeetings(): Observable<ListResponseModel<FinishedMeeting>
   > {
-    let newPath = this.apiUrl + 'finishedmeeting/getall';
+    let newPath = this.apiUrl + 'FinishedMeeting/getall';
     return this.httpClient.get<ListResponseModel<FinishedMeeting>>(
-      this.apiUrl
+      newPath
     );
 }
 getByFinishedMeeting(

@@ -1,10 +1,10 @@
 export interface Participant{
-    Id:string; 
-    ParticipantName:string;
-    ParticipantSurname:string;
-    Company:string;
-    PhoneNumber:string;
-    Email:string;
-    Position:string;
-    Product:string;
+    id:string; 
+    participantName:string;
+    participantSurname:string;
+    company:string;
+    phoneNumber:string;
+    email:string;
+    position:string;
+    product:string;
 }

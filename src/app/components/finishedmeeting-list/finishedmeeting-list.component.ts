@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { FinishedMeeting } from 'app/models/finishedMeeting';
+import { FinishedmeetingService } from 'app/services/finishedmeeting.service';
 
 @Component({
   selector: 'app-finishedmeeting-list',
@@ -6,10 +9,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./finishedmeeting-list.component.scss']
 })
 export class FinishedmeetingListComponent implements OnInit {
+finishedMeeting:FinishedMeeting[]=[];
+dataLoaded = false;
 
-  constructor() { }
+  constructor(private finishedMeetingService:FinishedmeetingService,
+    private activatedRoute:ActivatedRoute,
+    ) { }
 
   ngOnInit(): void {
+    this.getFinishedMeetings();
   }
-
+  getFinishedMeetings() {
+    this.finishedMeetingService.getFinishedMeetings().subscribe(response=>{
+      this.finishedMeeting = response.data
+      this.dataLoaded = true;
+    })   
+  }
 }

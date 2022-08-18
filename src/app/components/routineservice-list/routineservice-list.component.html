@@ -8,17 +8,27 @@
           <div class="table-responsive">
             <table class="table">
               <thead class="text-primary">
+                <tr>
                 <th>ID</th>
                 <th>Date</th>
                 <th>Time</th>
                 <th>Product</th>
                 <th> Routine Service Description</th>
                 <th>Person</th>
-              </thead>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
+                <th>Person</th>
+                <th>Person</th>
+              </tr>
+            </thead>
+            <tbody>
+  <tr *ngFor= "let routineService of routineServices" >
+    <td>{{ routineService.id}}</td>
+    <td>{{ routineService.customerName }}</td>
+    <td>{{ routineService.routineServiceDescription }}</td>
+    <td>{{ routineService.routineServiceDate }}</td>
+    <td>{{ routineService.routineServiceTime  }}</td>
+    <td>{{ routineService.officer }}</td>
+    <td>{{ routineService.time }}</td>
+    <td>{{ routineService.productId }}</td>
+ 
+  </tr>
+</tbody>

@@ -1,3 +1,4 @@
+
 <div class="main-content">
     <div class="container-fluid">
       <div class="card">
@@ -6,8 +7,9 @@
         </div>
         <div class="card-body">
           <div class="table-responsive">
-            <table class="table">
-              <thead class="text-primary">
+            <table  class="table">
+              <thead  class="text-primary">
+                <tr>
                 <th>Date</th>
                 <th>ID</th>
                 <th>Name</th>
@@ -18,11 +20,26 @@
                 <th>Adress</th>
                 <th>Note</th>
                 <th>Country</th>
+              </tr>
               </thead>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+              <tbody>
+                <tr *ngFor= "let abroadInvestments of abroadInvestments" >
+                  <td>{{ abroadInvestments.id }}</td>
+                  <td>{{ abroadInvestments.abroadInvestorName }}</td>
+                  <td>{{ abroadInvestments.abroadInvestorSurname }}</td>
+                  <td>{{ abroadInvestments.phoneNumber  }}</td>
+                  <td>{{ abroadInvestments.email }}</td>
+                  <td>{{ abroadInvestments.company }}</td>
+                  <td>{{ abroadInvestments.position }}</td>
+                  <td>{{ abroadInvestments.note }}</td>
+                  <td>{{ abroadInvestments.dateOfUpload }}</td>
+                  <td>{{ abroadInvestments.country }}</td>
+                 
+                </tr>
+              </tbody>
+        
+        
+     
+    
+  
   

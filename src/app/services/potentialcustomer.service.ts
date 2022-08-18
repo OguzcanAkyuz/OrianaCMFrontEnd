@@ -12,15 +12,15 @@ export class PotentialcustomerService {
   constructor(private httpClient:HttpClient) { }
   getPotentialCustomers(): Observable<ListResponseModel<PotentialCustomer>
   > {
-    let newPath = this.apiUrl + 'potentialcustomer/getall';
+    let newPath = this.apiUrl + 'PotentialCustomer/getall';
     return this.httpClient.get<ListResponseModel<PotentialCustomer>>(
-      this.apiUrl
+      newPath
     );
 }
 getByPotentialCustomer(
   Id: string
 ): Observable<ListResponseModel<PotentialCustomer>> {
-  let newPath = this.apiUrl + 'potentialcustomer/getbyid=' + Id;
+  let newPath = this.apiUrl + 'PotentialCustomer/getbyid=' + Id;
   return this.httpClient.get<ListResponseModel<PotentialCustomer>>(
     newPath
   );
@@ -30,7 +30,7 @@ potentialCustomerAdd(
   potentialCustomer: PotentialCustomer
 ): Observable<PotentialCustomer> {
   return this.httpClient.post<PotentialCustomer>(
-    this.apiUrl + 'potentialcustomer/add',
+    this.apiUrl + 'PotentialCustomer/add',
     potentialCustomer
   );
 }

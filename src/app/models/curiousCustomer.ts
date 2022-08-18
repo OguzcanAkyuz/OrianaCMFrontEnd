@@ -1,12 +1,12 @@
 export interface CuriousCustomer{
-Id:string;
-CuriousCustomerName:string;
-CuriousCustomerSurname:string;
-PhoneNumber:string;
-Email:string;
-Adress:string;
-Company:string;
-Position:string;
-Note:string;
-DateOfUploda:string;
+id:string;
+curiousCustomerName:string;
+curiousCustomerSurname:string;
+phoneNumber:string;
+email:string;
+adress:string;
+company:string;
+position:string;
+note:string;
+dateOfUpload:string;
 }

@@ -14,7 +14,7 @@ export class ProductService {
   > {
     let newPath = this.apiUrl + 'product/getall';
     return this.httpClient.get<ListResponseModel<Product>>(
-      this.apiUrl
+      newPath
     );
 }
 getByProduct(

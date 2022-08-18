@@ -15,6 +15,7 @@ import { RoutineserviceAddComponent } from 'app/components/routineservice-add/ro
 import { RoutineserviceListComponent } from 'app/components/routineservice-list/routineservice-list.component';
 import { DashboardComponent } from 'app/dashboard/dashboard.component';
 import { FuturemeetingAddComponent } from 'app/components/futuremeeting-add/futuremeeting-add.component';
+import { PotentialCustomerListComponent } from 'app/components/potentialcustomer-list/potentialcustomer-list.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -35,7 +36,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'finishedmeetinglist',        component: FinishedmeetingListComponent },
 
     { path: 'seriouscustomer-add',        component: PotentialCustomerAddComponent },
-    { path: 'seriouscustomer-list',        component: PotentialCustomerAddComponent },
+    { path: 'seriouscustomer-list',        component: PotentialCustomerListComponent },
 
     { path: 'routineservice-add',        component: RoutineserviceAddComponent },
     { path: 'routineservice-list',        component: RoutineserviceListComponent },

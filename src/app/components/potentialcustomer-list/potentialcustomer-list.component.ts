@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PotentialCustomer } from 'app/models/potentialCustomer';
+import { PotentialcustomerService } from 'app/services/potentialcustomer.service';
 
 @Component({
   selector: 'app-potentialcustomer-list',
@@ -6,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./potentialcustomer-list.component.scss']
 })
 export class PotentialCustomerListComponent implements OnInit {
-
-  constructor() { }
+potentialCustomers:PotentialCustomer[]=[];
+dataLoaded=false;
+  constructor(private activatedRoute:ActivatedRoute, private potentialCustomersService:PotentialcustomerService,) { }
 
   ngOnInit(): void {
+    this. getPotentialCustomers();
   }
-
+  getPotentialCustomers() {
+    this.potentialCustomersService.getPotentialCustomers().subscribe(response=>{
+      this.potentialCustomers = response.data
+      this.dataLoaded = true;
+    })   
+  }
 }

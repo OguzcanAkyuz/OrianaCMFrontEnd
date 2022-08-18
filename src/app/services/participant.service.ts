@@ -15,7 +15,7 @@ export class ParticipantService {
   > {
     let newPath = this.apiUrl + 'participant/getall';
     return this.httpClient.get<ListResponseModel<Participant>>(
-      this.apiUrl
+      newPath
     );
 }
 getByParticipant(

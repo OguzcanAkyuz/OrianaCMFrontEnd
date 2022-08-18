@@ -10,17 +10,19 @@ import { Observable } from 'rxjs';
 export class CustomerService {
   apiUrl='https://localhost:44300/api/';
   constructor(private httpClient: HttpClient) { }
-  getCustomers(): Observable<ListResponseModel<Customer>
-  > {
-    let newPath = this.apiUrl + 'customer/getall';
+
+  getCustomers(): Observable<ListResponseModel<Customer>> {
+    let newPath = this.apiUrl + 'Customer/getall';
     return this.httpClient.get<ListResponseModel<Customer>>(
-      this.apiUrl
+      newPath
     );
 }
+
+
 getByCustomer(
   Id: string
 ): Observable<ListResponseModel<Customer>> {
-  let newPath = this.apiUrl + 'customer/getbyid=' + Id;
+  let newPath = this.apiUrl + 'Customer/getbyid=' + Id;
   return this.httpClient.get<ListResponseModel<Customer>>(
     newPath
   );
@@ -30,7 +32,7 @@ customerAdd(
   customer: Customer
 ): Observable<Customer> {
   return this.httpClient.post<Customer>(
-    this.apiUrl + 'customer/add',
+    this.apiUrl + 'Customer/add',
     customer
   );
 }

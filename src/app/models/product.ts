@@ -1,5 +1,5 @@
 export interface Product{
-    Id:string;
-    ProductName:string;
-    ProductVersion:string;
+    id:string;
+    productName:string;
+    productVersion:string;
 }
