@@ -13,7 +13,7 @@ export class ParticipantService {
 
   getParticipants(): Observable<ListResponseModel<Participant>
   > {
-    let newPath = this.apiUrl + 'participant/getall';
+    let newPath = this.apiUrl + 'Participant/getall';
     return this.httpClient.get<ListResponseModel<Participant>>(
       newPath
     );
@@ -21,7 +21,7 @@ export class ParticipantService {
 getByParticipant(
   Id: string
 ): Observable<ListResponseModel<Participant>> {
-  let newPath = this.apiUrl + 'participant/getbyid=' + Id;
+  let newPath = this.apiUrl + 'Participant/getbyid=' + Id;
   return this.httpClient.get<ListResponseModel<Participant>>(
     newPath
   );
@@ -31,7 +31,7 @@ participantAdd(
   participant: Participant
 ): Observable<Participant> {
   return this.httpClient.post<Participant>(
-    this.apiUrl + 'participant/add',
+    this.apiUrl + 'Participant/Add',
     participant
   );
 }

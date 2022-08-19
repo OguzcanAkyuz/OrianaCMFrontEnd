@@ -32,7 +32,7 @@ getByInvestmentRelation(
   ınvestmentrelation: InvestmentrelationService
 ): Observable<ResponseModel> {
   return this.httpClient.post<ResponseModel>(
-    this.apiUrl + 'InvestmentRelation/add',
+    this.apiUrl + 'InvestmentRelation/Add',
     ınvestmentrelation
   );
 }

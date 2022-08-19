@@ -10,38 +10,55 @@
             </div>
             
             <div class="card-body">
-              <form >
+              <form [formGroup]="abroadInvesmentAddForm">
                 <div class="row">
                   <div class="col-md-4">
-                    <label for="dateOfUpload" ></label>
+                    <label for="dateOfUpload"></label>
                     <mat-form-field class="example-full-width">
-                      <input id="dateOfUpload"
+                      <input id="dateOfUpload" 
                       formControlName="dateOfUpload"
-                      matInput
                       class="form-control"
+                      matInput
                        placeholder="Date Of Upload" type="date" />
                     </mat-form-field>
                   </div>
+                  <label for="phoneNumber"></label>
                   <div class="col-md-3">
                     <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Manager Phone Number" />
+                      <input id="phoneNumber"
+                      class="form-control"
+                      formControlName="phoneNumber"
+                       matInput placeholder="Manager Phone Number" />
                     </mat-form-field>
                   </div>
+                  <label for="email"></label>
                   <div class="col-md-4">
                     <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Email address" type="email" />
+                      <input id="email"
+                      class="form-control"
+                      formControlName="email"
+                       matInput placeholder="Email address" type="email" />
                     </mat-form-field>
                   </div>
+
                 </div>
                 <div class="row">
+                  <label for="abroadInvestorName"></label>
                   <div class="col-md-6">
                     <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Name" type="text" />
+                      <input id="abroadInvestorName"
+                      class="form-control"
+                      formControlName="abroadInvestorName"
+                       matInput placeholder="Name" type="text" />
                     </mat-form-field>
                   </div>
+
                   <div class="col-md-6">
+                    <label for="abroadInvestorSurname"></label>
                     <mat-form-field class="example-full-width">
-                      <input
+                      <input id="abroadInvestorSurname"
+                      class="form-control"
+                      formControlName="abroadInvestorSurname"
                         matInput
                         placeholder="Last Name"
                         type="text"
@@ -51,15 +68,22 @@
                 </div>
                 <div class="row">
                   <div class="col-md-12">
+                    <label for="adress"></label>
                     <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Company Adress" type="text" />
+                      <input id="adress"
+                      class="form-control"
+                      formControlName="adress"
+                       matInput placeholder="Company Adress" type="text" />
                     </mat-form-field>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-12">
+                    <label for="note"></label>
                     <mat-form-field class="example-full-width">
-                      <input
+                      <input id="note"
+                      class="form-control"
+                      formControlName="note"
                         matInput
                         placeholder="Note"
                         type="text"
@@ -67,38 +91,43 @@
                     </mat-form-field>
                   </div>
                   <div class="col-md-4">
+                    <label for="country"></label>
                     <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Country" type="text" />
+                      <input id="country"
+                      class="form-control"
+                      formControlName="country"
+                      matInput placeholder="Country" type="text" />
                     </mat-form-field>
                   </div>
                   <div class="col-md-4">
+                    <label for="position"></label>
                     <mat-form-field class="example-full-width">
-                      <input
+                      <input id="position"
+                      class="form-control"
+                      formControlName="position"
                         matInput
                         placeholder="Position"
                         type="text"
                       />
                     </mat-form-field>
                   </div>
-                  <div class="col-md-3">
-                    <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Product" type="text" />
-                    </mat-form-field>
-                  </div>
-
+             
                   <div class="col-md-4">
+                    <label for="company"></label>
                     <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Company" type="text" />
+                      <input id="company"
+                      class="form-control"
+                      formControlName="company"
+                       matInput placeholder="Company" type="text" />
                     </mat-form-field>
                   </div>
                   </div>
-                <button
+                <button 
                   mat-raised-button
                   type="button"
                   class="btn btn-danger pull-right" (click)="abroadInvestmentAdd()"
                 >
-                  Save
-                </button>
+                  Save </button>
                 <div class="clearfix"></div>
               </form>
             </div>

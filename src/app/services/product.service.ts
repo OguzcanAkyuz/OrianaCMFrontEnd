@@ -12,7 +12,7 @@ export class ProductService {
   constructor(private httpClient:HttpClient) { }
   getProducts(): Observable<ListResponseModel<Product>
   > {
-    let newPath = this.apiUrl + 'product/getall';
+    let newPath = this.apiUrl + 'Product/getall';
     return this.httpClient.get<ListResponseModel<Product>>(
       newPath
     );
@@ -20,7 +20,7 @@ export class ProductService {
 getByProduct(
   Id: string
 ): Observable<ListResponseModel<Product>> {
-  let newPath = this.apiUrl + 'product/getbyid=' + Id;
+  let newPath = this.apiUrl + 'Product/getbyid=' + Id;
   return this.httpClient.get<ListResponseModel<Product>>(
     newPath
   );
@@ -30,7 +30,7 @@ productAdd(
   product: Product
 ): Observable<Product> {
   return this.httpClient.post<Product>(
-    this.apiUrl + 'product/add',
+    this.apiUrl + 'Product/Add',
     product
   );
 }

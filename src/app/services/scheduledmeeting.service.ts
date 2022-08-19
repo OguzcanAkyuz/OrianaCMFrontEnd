@@ -12,7 +12,7 @@ export class ScheduledmeetingService {
   constructor(private httpClient:HttpClient) { }
   getScheduledMeetings(): Observable<ListResponseModel<ScheduledMeeting>
   > {
-    let newPath = this.apiUrl + 'scheduledmeeting/getall';
+    let newPath = this.apiUrl + 'ScheduledMeeting/getall';
     return this.httpClient.get<ListResponseModel<ScheduledMeeting>>(
       newPath
     );
@@ -21,7 +21,7 @@ export class ScheduledmeetingService {
   getByScheduledMeeting(
     Id: string
   ): Observable<ListResponseModel<ScheduledMeeting>> {
-    let newPath = this.apiUrl + 'scheduledmeeting/getbyid=' + Id;
+    let newPath = this.apiUrl + 'ScheduledMeeting/getbyid=' + Id;
     return this.httpClient.get<ListResponseModel<ScheduledMeeting>>(
       newPath
     );
@@ -31,7 +31,7 @@ export class ScheduledmeetingService {
     scheduledMeeting: ScheduledMeeting
   ): Observable<ScheduledMeeting> {
     return this.httpClient.post<ScheduledMeeting>(
-      this.apiUrl + 'scheduledmeeting/add',
+      this.apiUrl + 'ScheduledMeeting/Add',
       scheduledMeeting
     );
   }

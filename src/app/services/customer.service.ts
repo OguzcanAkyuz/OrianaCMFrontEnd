@@ -32,7 +32,7 @@ customerAdd(
   customer: Customer
 ): Observable<Customer> {
   return this.httpClient.post<Customer>(
-    this.apiUrl + 'Customer/add',
+    this.apiUrl + 'Customer/Add',
     customer
   );
 }

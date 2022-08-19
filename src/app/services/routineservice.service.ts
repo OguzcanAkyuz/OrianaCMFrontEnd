@@ -30,7 +30,7 @@ export class RoutineserviceService {
     routineService: RoutineService
   ): Observable<RoutineService> {
     return this.httpClient.post<RoutineService>(
-      this.apiUrl + 'RoutineService/add',
+      this.apiUrl + 'RoutineService/Add',
       routineService
     );
   }

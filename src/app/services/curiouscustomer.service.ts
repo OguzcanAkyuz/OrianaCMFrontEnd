@@ -15,7 +15,7 @@ export class CuriousCustomerService {
 
   getCuriousCustomers(): Observable<ListResponseModel<CuriousCustomer>
 > {
-  let newPath = this.apiUrl + 'curiousCustomer/getall';
+  let newPath = this.apiUrl + 'CuriousCustomer/getall';
   return this.httpClient.get<ListResponseModel<CuriousCustomer>>(
     newPath
   );
@@ -23,7 +23,7 @@ export class CuriousCustomerService {
 getByCuriousCustomer(
   Id: string
 ): Observable<ListResponseModel<CuriousCustomer>> {
-  let newPath = this.apiUrl + 'curiouscustomer/getbyid=' + Id;
+  let newPath = this.apiUrl + 'CuriousCustomer/getbyid=' + Id;
   return this.httpClient.get<ListResponseModel<CuriousCustomer>>(
     newPath
   );
@@ -33,7 +33,7 @@ curiousCustomerAdd(
   curiousCustomer: CuriousCustomer
 ): Observable<ResponseModel> {
   return this.httpClient.post<ResponseModel>(
-    this.apiUrl + 'curiouscustomer/add',
+    this.apiUrl + 'CuriousCustomer/Add',
     curiousCustomer
   );
 }

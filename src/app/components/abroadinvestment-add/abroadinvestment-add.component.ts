@@ -23,7 +23,7 @@ export class AbroadinvestmentAddComponent implements OnInit {
   }
   createAbroadInvestmentAddForm(){
     this.abroadInvesmentAddForm=this.formBuilder.group({
-      id:["",Validators.required],
+      id:[""],
       abroadInvestorName:["",Validators.required],
       abroadInvestorSurname:["",Validators.required],
       phoneNumber:["",Validators.required],
@@ -42,6 +42,7 @@ export class AbroadinvestmentAddComponent implements OnInit {
 
   }
   abroadInvestmentAdd(){
+    
     if(this.abroadInvesmentAddForm.valid){
       let abroadInvestmentModel=Object.assign({},this.abroadInvesmentAddForm.value)
       this.abroadInvesmtentService.abroadInvestmentAdd(abroadInvestmentModel).subscribe(response=>{
@@ -50,10 +51,12 @@ export class AbroadinvestmentAddComponent implements OnInit {
         if(responseError.error.Error.lenght>0){
           for (let i = 0; i <responseError.error.Errors.length; i++)
           this.toastrService.error(responseError.error.Error[i].ErrorMessage,"ErrorResult")
+          console.log("succes")
         }
       })
   }else{
       this.toastrService.error("ErrorResult2")
+      console.log("hata")
     }
   }
 

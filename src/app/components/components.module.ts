@@ -20,12 +20,21 @@ import { FinishedmeetingListComponent } from './finishedmeeting-list/finishedmee
 import { AbroadinvestmentAddComponent } from './abroadinvestment-add/abroadinvestment-add.component';
 import { AbroadinvestmentListComponent } from './abroadinvestment-list/abroadinvestment-list.component';
 import {MatInputModule} from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    MatInputModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    ToastrModule.forRoot({
+      positionClass:"toast-bottom-right"}),
+      
   ],
   declarations: [
     

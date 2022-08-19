@@ -21,7 +21,7 @@ export class FinishedmeetingService {
 getByFinishedMeeting(
   Id: string
 ): Observable<ListResponseModel<FinishedMeeting>> {
-  let newPath = this.apiUrl + 'finishedmeeting/getbyid=' + Id;
+  let newPath = this.apiUrl + 'FinishedMeeting/getbyid=' + Id;
   return this.httpClient.get<ListResponseModel<FinishedMeeting>>(
     newPath
   );
@@ -31,7 +31,7 @@ finishedMeetingAdd(
   finishedMeeting: FinishedMeeting
 ): Observable<FinishedMeeting> {
   return this.httpClient.post<FinishedMeeting>(
-    this.apiUrl + 'finishedmeeting/add',
+    this.apiUrl + 'FinishedMeeting/add',
     finishedMeeting
   );
 }

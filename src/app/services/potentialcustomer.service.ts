@@ -30,7 +30,7 @@ potentialCustomerAdd(
   potentialCustomer: PotentialCustomer
 ): Observable<PotentialCustomer> {
   return this.httpClient.post<PotentialCustomer>(
-    this.apiUrl + 'PotentialCustomer/add',
+    this.apiUrl + 'PotentialCustomer/Add',
     potentialCustomer
   );
 }
