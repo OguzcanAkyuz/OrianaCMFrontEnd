@@ -9,12 +9,12 @@ import { InvestorrelationListComponent } from 'app/components/investorrelation-l
 import { CuriouscustomerAddComponent } from 'app/components/curiouscustomer-add/curiouscustomer-add.component';
 import { CuriouscustomerListComponent } from 'app/components/curiouscustomer-list/curiouscustomer-list.component';
 import { PotentialCustomerAddComponent } from 'app/components/potentialcustomer-add/potentialcustomer-add.component';
-import { FuturemeetingListComponent } from 'app/components/futuremeeting-list/futuremeeting-list.component';
+import {  ScheduledmeetingListComponent } from 'app/components/scheduledmeeting-list/scheduledmeeting-list.component';
 import { FinishedmeetingListComponent } from 'app/components/finishedmeeting-list/finishedmeeting-list.component';
 import { RoutineserviceAddComponent } from 'app/components/routineservice-add/routineservice-add.component';
 import { RoutineserviceListComponent } from 'app/components/routineservice-list/routineservice-list.component';
 import { DashboardComponent } from 'app/dashboard/dashboard.component';
-import { FuturemeetingAddComponent } from 'app/components/futuremeeting-add/futuremeeting-add.component';
+import { ScheduledmeetingAddComponent } from 'app/components/scheduledMeeting-add/scheduledmeeting-add.component';
 import { PotentialCustomerListComponent } from 'app/components/potentialcustomer-list/potentialcustomer-list.component';
 
 export const AdminLayoutRoutes: Routes = [
@@ -31,8 +31,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'curiouscustomer-add',           component: CuriouscustomerAddComponent },
     { path: 'curiouscustomer-list',  component: CuriouscustomerListComponent },
     
-    { path: 'futuremeetingadd',        component: FuturemeetingAddComponent },
-    { path: 'futuremeetinglist',        component: FuturemeetingListComponent },
+    { path: 'futuremeetingadd',        component: ScheduledmeetingAddComponent },
+    { path: 'futuremeetinglist',        component: ScheduledmeetingListComponent },
     { path: 'finishedmeetinglist',        component: FinishedmeetingListComponent },
 
     { path: 'seriouscustomer-add',        component: PotentialCustomerAddComponent },

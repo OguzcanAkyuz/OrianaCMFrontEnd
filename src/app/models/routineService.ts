@@ -7,4 +7,6 @@ export interface RoutineService{
     officer:string;
     time:string;
     productId:string;
+    
+    personSurname:string;
 }

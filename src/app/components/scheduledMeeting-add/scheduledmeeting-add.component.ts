@@ -5,11 +5,11 @@ import { ScheduledmeetingService } from 'app/services/scheduledmeeting.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-futuremeeting-add',
-  templateUrl: './futuremeeting-add.component.html',
-  styleUrls: ['./futuremeeting-add.component.scss']
+  selector: 'scheduledMeeting-add',
+  templateUrl: './ScheduledMeeting-add.component.html',
+  styleUrls: ['./scheduledMeeting-add.component.scss']
 })
-export class FuturemeetingAddComponent implements OnInit {
+export class ScheduledmeetingAddComponent implements OnInit {
   scheduledMeeting:ScheduledMeeting[]=[];
   scheduledMeetingAddForm:FormGroup;
   reactiveForm:ReactiveFormsModule;

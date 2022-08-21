@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ListResponseModel } from 'app/models/listResponseModel';
+import { ResponseModel } from 'app/models/responseModel';
 import { RoutineService } from 'app/models/routineService';
 import { Observable } from 'rxjs';
 
@@ -28,8 +29,8 @@ export class RoutineserviceService {
   }
   routineServiceAdd(
     routineService: RoutineService
-  ): Observable<RoutineService> {
-    return this.httpClient.post<RoutineService>(
+  ): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(
       this.apiUrl + 'RoutineService/Add',
       routineService
     );

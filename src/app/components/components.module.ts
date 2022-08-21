@@ -12,8 +12,8 @@ import { InvestorrelationAddComponent } from './investorrelation-add/investorrel
 import { InvestorrelationListComponent } from './investorrelation-list/investorrelation-list.component';
 import { PotentialCustomerAddComponent } from './potentialcustomer-add/potentialcustomer-add.component';
 import { PotentialCustomerListComponent} from './potentialcustomer-list/potentialcustomer-list.component';
-import { FuturemeetingAddComponent } from './futuremeeting-add/futuremeeting-add.component';
-import { FuturemeetingListComponent } from './futuremeeting-list/futuremeeting-list.component';
+import {  ScheduledmeetingAddComponent } from './scheduledMeeting-add/scheduledmeeting-add.component';
+import { ScheduledmeetingListComponent } from './scheduledmeeting-list/scheduledmeeting-list.component';
 import { RoutineserviceAddComponent } from './routineservice-add/routineservice-add.component';
 import { RoutineserviceListComponent } from './routineservice-list/routineservice-list.component';
 import { FinishedmeetingListComponent } from './finishedmeeting-list/finishedmeeting-list.component';
@@ -47,16 +47,14 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
     InvestorrelationAddComponent,
     InvestorrelationListComponent,
     PotentialCustomerListComponent,
-    FuturemeetingAddComponent,
-    FuturemeetingListComponent,
+    ScheduledmeetingAddComponent,
     RoutineserviceAddComponent,
     RoutineserviceListComponent,
     CuriouscustomerAddComponent,
     CuriouscustomerListComponent,
     CustomerAddComponent,
     CustomerListComponent,
-    FuturemeetingAddComponent,
-    FuturemeetingListComponent,
+    ScheduledmeetingListComponent,
     InvestorrelationAddComponent,
     InvestorrelationListComponent,
     RoutineserviceAddComponent,

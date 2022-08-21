@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ScheduledMeeting } from 'app/models/scheduledMeeting';
 import { ScheduledmeetingService } from 'app/services/scheduledmeeting.service';
-import { response } from 'express';
+
 
 @Component({
   selector: 'app-futuremeeting-list',
-  templateUrl: './futuremeeting-list.component.html',
-  styleUrls: ['./futuremeeting-list.component.scss']
+  templateUrl: './scheduledmeeting-list.component.html',
+  styleUrls: ['./scheduledmeeting-list.component.scss']
 })
-export class FuturemeetingListComponent implements OnInit {
+export class ScheduledmeetingListComponent implements OnInit {
 scheduledMeetings:ScheduledMeeting[]=[];
 dataLoaded = false;
   constructor(private scheduledMeetingService:ScheduledmeetingService,
