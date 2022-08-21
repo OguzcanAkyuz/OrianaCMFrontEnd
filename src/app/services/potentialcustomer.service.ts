@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ListResponseModel } from 'app/models/listResponseModel';
 import { PotentialCustomer } from 'app/models/potentialCustomer';
+import { ResponseModel } from 'app/models/responseModel';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -28,8 +29,8 @@ getByPotentialCustomer(
 }
 potentialCustomerAdd(
   potentialCustomer: PotentialCustomer
-): Observable<PotentialCustomer> {
-  return this.httpClient.post<PotentialCustomer>(
+): Observable<ResponseModel> {
+  return this.httpClient.post<ResponseModel>(
     this.apiUrl + 'PotentialCustomer/Add',
     potentialCustomer
   );

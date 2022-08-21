@@ -7,7 +7,7 @@
               <h4 class="card-title">Customer Add</h4>
             </div>
             <div class="card-body">
-              <form>
+              <form [formGroup]="customerAddForm">
                 <div class="row">
                   <div class="col-md-5">
                     <mat-form-field class="example-full-width">
@@ -19,15 +19,17 @@
                   </div>
                   <div class="col-md-4">
                     <mat-form-field class="example-full-width">
-                      <input id="phoneNumber"
-                      formControlName="phoneNumber"
+                      <input id="executivePhoneNumber"
+                      formControlName="executivePhoneNumber"
                       class="form-control"
                       matInput placeholder="Manager Phone Number" />
                     </mat-form-field>
                   </div>
                   <div class="col-md-3">
                     <mat-form-field class="example-full-width">
-                      <input
+                      <input id="executivePhoneNumber"
+                      formControlName="executivePhoneNumber"
+                      class="form-control"
                        matInput placeholder="Email address" type="email" />
                     </mat-form-field>
                   </div>
@@ -35,12 +37,17 @@
                 <div class="row">
                   <div class="col-md-6">
                     <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Manager Name" type="text" />
+                      <input id="executiveName"
+                      formControlName="executiveName"
+                      class="form-control"
+                       matInput placeholder="Manager Name" type="text" />
                     </mat-form-field>
                   </div>
                   <div class="col-md-6">
                     <mat-form-field class="example-full-width">
-                      <input
+                      <input id="executiveSurname"
+                      formControl="executiveSurname"
+                      class="form-control"
                         matInput
                         placeholder="Manager Last Name"
                         type="text"
@@ -52,14 +59,19 @@
                 <div class="row">
                   <div class="col-md-12">
                     <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Company Adress" type="text" />
+                      <input  id="customerCompanyAdress"
+                      formControl="customerCompanyAdress"
+                      class="form-control"
+                       matInput placeholder="Company Adress" type="text" />
                     </mat-form-field>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-12">
                     <mat-form-field class="example-full-width">
-                      <input
+                      <input id="companyWebAdress"
+                      formControl="companyWebAdress"
+                      class="form-control"
                         matInput
                         placeholder="Company Web Adress"
                         type="text"
@@ -70,12 +82,17 @@
                   </div>
                   <div class="col-md-4">
                     <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Company" type="text" />
+                      <input id="customerCompanyName"
+                      formControl="customerCompanyName"
+                      class="form-control"
+                       matInput placeholder="Company" type="text" />
                     </mat-form-field>
                   </div>
                   <div class="col-md-4">
                     <mat-form-field class="example-full-width">
-                      <input
+                      <input id="companyBusinessArea"
+                      formControl="companyBusinessArea"
+                      class="form-control"
                         matInput
                         placeholder="Company Business Area"
                         type="text"
@@ -84,7 +101,10 @@
                   </div>
                   <div class="col-md-3">
                     <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Product" type="text" />
+                      <input id="productId"
+                      formControl="productId"
+                      class="form-control"
+                       matInput placeholder="Product" type="text" />
                     </mat-form-field>
                   </div>
                 </div>
@@ -92,7 +112,7 @@
                 <button
                   mat-raised-button
                   type="button"
-                  class="btn btn-danger pull-right"
+                  class="btn btn-danger pull-right" (click)="customerAdd"
                 >
                   Save
                 </button>

@@ -28,8 +28,8 @@ getByInvestmentRelation(
   );
 
 }
-ınvestmentRelationAdd(
-  ınvestmentrelation: InvestmentrelationService
+investmentRelationAdd(
+  ınvestmentrelation: InvestorRelation
 ): Observable<ResponseModel> {
   return this.httpClient.post<ResponseModel>(
     this.apiUrl + 'InvestmentRelation/Add',

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ListResponseModel } from 'app/models/listResponseModel';
+import { ResponseModel } from 'app/models/responseModel';
 import { ScheduledMeeting } from 'app/models/scheduledMeeting';
 import { Observable } from 'rxjs';
 
@@ -29,8 +30,8 @@ export class ScheduledmeetingService {
   }
   scheduledMeetingAdd(
     scheduledMeeting: ScheduledMeeting
-  ): Observable<ScheduledMeeting> {
-    return this.httpClient.post<ScheduledMeeting>(
+  ): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(
       this.apiUrl + 'ScheduledMeeting/Add',
       scheduledMeeting
     );

@@ -1,4 +1,5 @@
 export interface Customer{
+   
    id:string;
    productId:string;
    purchaseDate:string;

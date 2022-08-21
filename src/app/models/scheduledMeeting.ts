@@ -4,6 +4,7 @@ export interface ScheduledMeeting{
     participants:string;
     meetingSubject:string;
     meetingResult:string;
+    meetingTitle:string;
     meetingDate:string;
     companyName:string;
     companyAdress:string;
@@ -12,4 +13,5 @@ export interface ScheduledMeeting{
     executiveName:string;
     executivePhoneNumber:string;
     executiveEmail:string;
+    
 }
