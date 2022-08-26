@@ -16,6 +16,7 @@ import { RoutineserviceListComponent } from 'app/components/routineservice-list/
 import { DashboardComponent } from 'app/dashboard/dashboard.component';
 import { ScheduledmeetingAddComponent } from 'app/components/scheduledMeeting-add/scheduledmeeting-add.component';
 import { PotentialCustomerListComponent } from 'app/components/potentialcustomer-list/potentialcustomer-list.component';
+import { LoginComponent } from 'app/components/login/login.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -40,49 +41,9 @@ export const AdminLayoutRoutes: Routes = [
 
     { path: 'routineservice-add',        component: RoutineserviceAddComponent },
     { path: 'routineservice-list',        component: RoutineserviceListComponent },
+    { path: 'login',        component: LoginComponent },
+
 ];
 
 
 
-// {
-//     path: '',
-//     children: [ {
-//       path: 'dashboard',
-//       component: DashboardComponent
-//   }]}, {
-//   path: '',
-//   children: [ {
-//     path: 'userprofile',
-//     component: UserProfileComponent
-//   }]
-//   }, {
-//     path: '',
-//     children: [ {
-//       path: 'icons',
-//       component: IconsComponent
-//       }]
-//   }, {
-//       path: '',
-//       children: [ {
-//           path: 'notifications',
-//           component: NotificationsComponent
-//       }]
-//   }, {
-//       path: '',
-//       children: [ {
-//           path: 'maps',
-//           component: MapsComponent
-//       }]
-//   }, {
-//       path: '',
-//       children: [ {
-//           path: 'typography',
-//           component: TypographyComponent
-//       }]
-//   }, {
-//       path: '',
-//       children: [ {
-//           path: 'upgrade',
-//           component: UpgradeComponent
-//       }]
-//   },

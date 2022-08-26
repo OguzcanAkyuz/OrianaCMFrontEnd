@@ -5,8 +5,7 @@ export interface RoutineService{
     routineServiceDate:string;
     routineServiceTime:string;
     officer:string;
-    time:string;
-    productId:string;
     
-    personSurname:string;
+    productId:string;
+     personSurname:string;
 }

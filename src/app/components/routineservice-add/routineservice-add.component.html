@@ -19,8 +19,8 @@
                   </div>
                   <div class="col-md-4">
                     <mat-form-field class="example-full-width">
-                      <input id="time"
-                      formControlName="time"
+                      <input id="routineServiceTime"
+                      formControlName="routineServiceTime"
                       class="form-control"
                       matInput placeholder="Time" type="time"/>
                     </mat-form-field>
@@ -85,8 +85,8 @@
   
                 <button
                   mat-raised-button
-                  type="button"
-                  class="btn btn-danger pull-right" click="routineServiceAdd()"
+                  type="button"  (click)="routineServiceAdd()"
+                  class="btn btn-danger pull-right" 
                 >
                   Save
                 </button>

@@ -27,9 +27,7 @@ export class RoutineserviceAddComponent implements OnInit {
       routineServiceDate:["",Validators.required], 
       routineServiceTime:["",Validators.required], 
       officer:["",Validators.required], 
-      time:["",Validators.required], 
       productId:["",Validators.required], 
-     
       personSurname:["",Validators.required],
 
     })

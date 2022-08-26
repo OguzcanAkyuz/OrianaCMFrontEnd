@@ -40,10 +40,14 @@ export const ROUTES: RouteInfo[] = [
     ] },
     { path: '/icons', title: 'Routine Services',  icon:'build', class: '',childrens:[
       { path: '/routineservice-add', title: 'New Routine Services Add',  icon: 'add', class: '' },
-      { path: '/routineservice-list', title: 'Routine Services List',  icon: 'content_paste', class: '' }
-    ] },
+      { path: '/routineservice-list', title: 'Routine Services List',  icon: 'content_paste', class: '' },
+    ]},
+      { path: '/login', title: 'login',  icon:'alarm', class: '',childrens:[
+        { path: '/login', title: 'loginn',  icon: 'alarm', class: '' },
+      
+    ] }
     
-];
+]
 
 @Component({
   selector: 'app-sidebar',
