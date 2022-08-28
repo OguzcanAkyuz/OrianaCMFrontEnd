@@ -17,6 +17,8 @@ import { DashboardComponent } from 'app/dashboard/dashboard.component';
 import { ScheduledmeetingAddComponent } from 'app/components/scheduledMeeting-add/scheduledmeeting-add.component';
 import { PotentialCustomerListComponent } from 'app/components/potentialcustomer-list/potentialcustomer-list.component';
 import { LoginComponent } from 'app/components/login/login.component';
+import { LoginGuard } from 'app/guards/login.guard';
+import { RegisterComponent } from 'app/components/register/register.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -40,8 +42,9 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'seriouscustomer-list',        component: PotentialCustomerListComponent },
 
     { path: 'routineservice-add',        component: RoutineserviceAddComponent },
-    { path: 'routineservice-list',        component: RoutineserviceListComponent },
+    { path: 'routineservice-list',        component: RoutineserviceListComponent ,canActivate:[LoginGuard]},
     { path: 'login',        component: LoginComponent },
+    {path:'register', component:RegisterComponent}
 
 ];
 

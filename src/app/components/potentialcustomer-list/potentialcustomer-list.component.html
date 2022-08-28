@@ -5,12 +5,12 @@
         <h4 class="card-title">Serious Customers</h4>
       </div>
       <div class="card-body">
-        <div class="table-responsive">
+        <div class="table-responsive" >
           <table class="table">
             <thead class="text-primary">
               <tr>
               <th>Date</th>
-              <th>ID</th>
+           
               <th>Name</th>
               <th>Surname</th>
               <th>Phone Number</th>
@@ -25,7 +25,7 @@
           <tbody>
    
 <tr *ngFor= "let potentialCustomer of potentialCustomers" >
-  <td>{{ potentialCustomer.id}}</td>
+  <td>{{ potentialCustomer.dateOfUpload }}</td>
   <td>{{ potentialCustomer.potentialCustomerName }}</td>
   <td>{{ potentialCustomer.potentialCustomerSurname }}</td>
   <td>{{ potentialCustomer.phoneNumber }}</td>
@@ -34,7 +34,7 @@
   <td>{{ potentialCustomer.company }}</td>
   <td>{{ potentialCustomer.position }}</td>
   <td>{{ potentialCustomer.note }}</td>
-  <td>{{ potentialCustomer.dateOfUpload }}</td>
+ 
 
 </tr>
 </tbody>

@@ -44,6 +44,7 @@ export const ROUTES: RouteInfo[] = [
     ]},
       { path: '/login', title: 'login',  icon:'alarm', class: '',childrens:[
         { path: '/login', title: 'loginn',  icon: 'alarm', class: '' },
+        { path: '/register', title: 'register',  icon: 'bento', class: '' }
       
     ] }
     

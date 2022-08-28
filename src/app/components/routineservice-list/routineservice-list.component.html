@@ -7,9 +7,10 @@
         <div class="card-body">
           <div class="table-responsive">
             <table class="table">
-              <thead class="text-primary">
+              
+              <thead class="text-primary" >
                 <tr>
-                <th>ID</th>
+         
                 <th>Date</th>
                 <th>Time</th>
                 <th>Product</th>
@@ -21,16 +22,19 @@
             </thead>
             <tbody>
   <tr *ngFor= "let routineService of routineServices" >
-    <td>{{ routineService.id}}</td>
-    <td>{{ routineService.customerName }}</td>
-    <td>{{ routineService.routineServiceDescription }}</td>
     <td>{{ routineService.routineServiceDate }}</td>
     <td>{{ routineService.routineServiceTime  }}</td>
-    <td>{{ routineService.officer }}</td>
-    <td>{{ routineService.time }}</td>
     <td>{{ routineService.productId }}</td>
+    <td>{{ routineService.routineServiceDescription }}</td>
+    <td>{{ routineService.customerName }}</td>
     <td>{{ routineService.personName }}</td>
     <td>{{ routineService.personSurname }}</td>
+  
+    <td>{{ routineService.officer }}</td>
+
+
+
+ 
 
  
   </tr>

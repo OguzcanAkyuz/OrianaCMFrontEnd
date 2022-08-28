@@ -11,39 +11,42 @@
               <table class="table">
                 <thead class="text-primary">
                 <tr>
-                  <th>ID</th>
-                  <th>Company Name</th>
-                  <th>Company Adress</th>
-                  <th>Company Web Adress</th>
+                  <th>Date</th>
+                  <th>Company</th>
                   <th>Manager Name</th>
-                  <th>Manager Surname</th>
-                  <th>Manager Phone Number</th>
+                  <th>Manager SurName</th>
+                  
+                  <th>Company Web Adress</th>
+                  <th>Company Adress</th>
+                  <th>Company Business Area</th>
                   <th>Manager Email</th>
+                  <th>Phone Number</th>
+               
+                  <th>Lisence Term</th>
+                  <th>Lisence End Date</th>
+                  <th>Purschase Price</th>
+                  <th>Customer Note</th>
                   <th>Product</th>
-                  <th>Salt</th>
-                  <th>Salt</th>
-                  <th>Salt</th>
-                  <th>Salt</th>
-                  <th>Salt</th>
+                  <th>Product Version</th>
                 </tr>
                 </thead>
                 
             <tbody>
 <tr *ngFor= "let customer of customers" >
-    <td>{{ customer.id}}</td>
-    <td>{{ customer.productId }}</td>
     <td>{{ customer.purchaseDate }}</td>
+    <td>{{ customer.customerCompanyName }}</td>
+    <td>{{ customer.executiveName }}</td>
+    <td>{{ customer.executiveSurname }}</td>
+    <td>{{ customer.companyWebAdress }}</td>
+    <td>{{ customer.customerCompanyAdress }}</td>
+    <td>{{ customer.companyBusinessArea }}</td>
+    <td>{{ customer.executivePhoneNumber }}</td>
+    <td>{{ customer.executiveEmail }}</td>
     <td>{{ customer.licenseTerm }}</td>
     <td>{{ customer.lisenceEndDate  }}</td>
     <td>{{ customer.purchasePrice  }}</td>
     <td>{{ customer.customerNote  }}</td>
+    <td>{{ customer.productId }}</td>
     <td>{{ customer.productVersion }}</td>
-    <td>{{ customer.customerCompanyName }}</td>
-    <td>{{ customer.customerCompanyAdress }}</td>
-    <td>{{ customer.companyBusinessArea }}</td>
-    <td>{{ customer.companyWebAdress }}</td>
-    <td>{{ customer.executiveName }}</td>
-    <td>{{ customer.executivePhoneNumber }}</td>
-    <td>{{ customer.executiveEmail }}</td>
   </tr>
 </tbody>

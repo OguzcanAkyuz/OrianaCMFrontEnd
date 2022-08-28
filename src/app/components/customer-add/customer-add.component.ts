@@ -34,6 +34,7 @@ this.createCustomerAddForm();
    companyBusinessArea:["",Validators.required],
    companyWebAdress:["",Validators.required],
    executiveName:["",Validators.required],
+   executiveSurname:["",Validators.required],
    executivePhoneNumber:["",Validators.required],
    executiveEmail:["",Validators.required],
   })

@@ -1,21 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LoginModel } from 'app/models/loginModel';
+import { Register } from 'app/models/register';
 import { SingleResponseModel } from 'app/models/singleResponseModel';
 import { TokenModel } from 'app/models/tokenModel';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
-
+export class RegisterService {
   apiUrl = 'https://localhost:44300/api/';
   constructor(private httpClient:HttpClient) { }
-
-  login(loginModel:LoginModel){
-    return this.httpClient.post<SingleResponseModel<TokenModel>>(this.apiUrl+"Auth/login",loginModel)
+  register(registerModel:Register){
+    return this.httpClient.post<SingleResponseModel<TokenModel>>(this.apiUrl+"Auth/register",registerModel)
   }
-
   isAuthenticated(){
     if(localStorage.getItem("token")){
       return true;

@@ -13,23 +13,25 @@
               <table class="table">
                 <thead class="text-primary">
                   <tr>
-                  <th>ID</th>
+                
                   <th>Date</th>
                   <th>Meeting Title</th>
                   <th>Meeting Subject</th>
                   <th>Participants</th>
-                  <th>Product</th>
+                  <th>Customer Information</th>
+                  <th>Meeting Result</th>
                 </tr>
                 </thead>
                 <tbody>
    
 <tr *ngFor= "let scheduledmeeting of scheduledMeetings" >
-    <td>{{ scheduledmeeting.id}}</td>
-    <td>{{ scheduledmeeting.customerInformation }}</td>
+     <td>{{ scheduledmeeting.meetingDate }}</td>
+     <td>{{ scheduledmeeting.meetingTitle }}</td>
+     <td>{{ scheduledmeeting.meetingSubject }}</td>
     <td>{{ scheduledmeeting.participants }}</td>
-    <td>{{ scheduledmeeting.meetingSubject }}</td>
+    <td>{{ scheduledmeeting.customerInformation }}</td> 
     <td>{{ scheduledmeeting.meetingResult  }}</td>
-    <td>{{ scheduledmeeting.meetingDate }}</td>
+   
     <td>{{ scheduledmeeting.companyName }}</td>
     <td>{{ scheduledmeeting.companyAdress }}</td>
     <td>{{ scheduledmeeting.companyBusinessArea }}</td>

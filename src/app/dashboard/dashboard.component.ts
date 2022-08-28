@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Customer } from 'app/models/customer';
+import { CustomerService } from 'app/services/customer.service';
 import * as Chartist from 'chartist';
 
 @Component({
@@ -8,8 +10,9 @@ import * as Chartist from 'chartist';
 })
 
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
+  customers:Customer[]=[];
+  dataLoaded = false;
+  constructor(private customerService:CustomerService,) { }
   startAnimationForLineChart(chart){
       let seq: any, delays: any, durations: any;
       seq = 0;
@@ -68,7 +71,7 @@ export class DashboardComponent implements OnInit {
   };
   ngOnInit() {
       /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
-
+      this.getCustomers();
       const dataDailySalesChart: any = {
           labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
           series: [
@@ -147,5 +150,15 @@ export class DashboardComponent implements OnInit {
       //start animation for the Emails Subscription Chart
       this.startAnimationForBarChart(websiteViewsChart);
   }
+  getCustomers() {
+    this.customerService
+    .getCustomers()
+    .subscribe(response=>{
+   
+      this.customers = response.data
+      this.dataLoaded = true;
+
+    })   
+  } 
 
 }
