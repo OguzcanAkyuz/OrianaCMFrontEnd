@@ -18,15 +18,27 @@ export class AbroadinvestmentListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getAbroadInvestmentRelations();
+    this.activatedRoute.params.subscribe(params=>{
+      if(params["Id"]){
+        this.getByAbroadInvestmentRelation(params["Id"])
+      } else{
+        this.getAbroadInvestments()
+      }
+    })
   }
 
-  getAbroadInvestmentRelations() {
+  getAbroadInvestments() {
     this.abroadInvestmentService
       .getAbroadInvestments()
       .subscribe((response) => {
         this.abroadInvestments = response.data;
         this.dataLoaded = true;
       });
+  }
+  getByAbroadInvestmentRelation(Id:string) {
+    this.abroadInvestmentService.getByAbroadInvestmentRelation(Id).subscribe(response=>{
+      this.abroadInvestments = response.data
+      this.dataLoaded = true;
+    })   
   }
 }

@@ -15,7 +15,13 @@ dataLoaded = false;
     private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getCustomers();
+    this.activatedRoute.params.subscribe(params=>{
+      if(params["Id"]){
+        this.getByCustomer(params["Id"])
+      }else{
+        this.getCustomers()
+      }
+    })
   }
   getCustomers() {
     this.customerService
@@ -26,7 +32,14 @@ dataLoaded = false;
       this.dataLoaded = true;
 
     })   
+
   } 
+  getByCustomer(Id:string) {
+    this.customerService.getByCustomer(Id).subscribe(response=>{
+      this.customers = response.data
+      this.dataLoaded = true;
+    })   
+  }
   
   
 }

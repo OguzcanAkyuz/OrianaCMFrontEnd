@@ -14,10 +14,22 @@ dataLoaded=false;
   constructor(private activatedRoute:ActivatedRoute, private potentialCustomersService:PotentialcustomerService,) { }
 
   ngOnInit(): void {
-    this. getPotentialCustomers();
+    this.activatedRoute.params.subscribe(params=>{
+      if(params["Id"]){
+        this.getByPotentialCustomer(params["Id"])
+      }else{
+        this.getPotentialCustomers()
+      }
+    })
   }
   getPotentialCustomers() {
     this.potentialCustomersService.getPotentialCustomers().subscribe(response=>{
+      this.potentialCustomers = response.data
+      this.dataLoaded = true;
+    })   
+  }
+  getByPotentialCustomer(Id:string) {
+    this.potentialCustomersService.getByPotentialCustomer(Id).subscribe(response=>{
       this.potentialCustomers = response.data
       this.dataLoaded = true;
     })   

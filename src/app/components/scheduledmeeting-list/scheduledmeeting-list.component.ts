@@ -17,12 +17,24 @@ dataLoaded = false;
     ) { }
 
   ngOnInit(): void {
-    this.getScheduledMeeting();
+    this.activatedRoute.params.subscribe(params=>{
+      if(params["Id"]){
+        this.getByScheduledMeeting(params["Id"])
+      }else{
+        this.getScheduledMeeting()
+      }
+    })
   }
   getScheduledMeeting(){
     this.scheduledMeetingService.getScheduledMeetings().subscribe(response=>{
       this.scheduledMeetings=response.data
       this.dataLoaded=true;
     })
+  }
+  getByScheduledMeeting(Id:string) {
+    this.scheduledMeetingService.getByScheduledMeeting(Id).subscribe(response=>{
+      this.scheduledMeetings = response.data
+      this.dataLoaded = true;
+    })   
   }
 }

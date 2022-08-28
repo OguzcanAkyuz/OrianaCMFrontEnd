@@ -17,7 +17,13 @@ dataLoaded = false;
     ) { }
 
   ngOnInit(): void {
-    this.getFinishedMeetings();
+    this.activatedRoute.params.subscribe(params=>{
+      if(params["Id"]){
+        this.getByFinishedMeeting(params["Id"])
+      }else{
+        this.getFinishedMeetings()
+      }
+    })
   }
   getFinishedMeetings() {
     this.finishedMeetingService.getFinishedMeetings().subscribe(response=>{
@@ -25,4 +31,11 @@ dataLoaded = false;
       this.dataLoaded = true;
     })   
   }
+  getByFinishedMeeting(Id:string) {
+    this.finishedMeetingService.getByFinishedMeeting(Id).subscribe(response=>{
+      this.finishedMeeting = response.data
+      this.dataLoaded = true;
+    })   
+  }
+
 }

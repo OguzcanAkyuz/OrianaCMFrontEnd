@@ -16,12 +16,24 @@ dataLoaded = false;
     private invesmentRelationService:InvestmentrelationService,) { }
 
   ngOnInit(): void {
-this.getInvestmentRelations();
+    this.activatedRoute.params.subscribe(params=>{
+      if(params["Id"]){
+        this.getByInvestmentRelation(params["Id"])
+      }else{
+        this.getInvestmentRelations()
+      }
+    })
   }
 
 getInvestmentRelations(){
   this.invesmentRelationService.getInvestmentRelations().subscribe(response=>{
     this.invesmentRelations = response.data;
+    this.dataLoaded = true;
+  })   
+}
+getByInvestmentRelation(Id:string) {
+  this.invesmentRelationService.getByInvestmentRelation(Id).subscribe(response=>{
+    this.invesmentRelations = response.data
     this.dataLoaded = true;
   })   
 }

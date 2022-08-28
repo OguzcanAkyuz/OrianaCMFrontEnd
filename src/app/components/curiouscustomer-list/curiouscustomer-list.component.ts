@@ -16,13 +16,27 @@ dataLoaded=false;
   private activatedRoute:ActivatedRoute,) { }
 
   ngOnInit(): void {
-    this.getCuriousCustomers();
+    this.activatedRoute.params.subscribe(params=>{
+      if(params["Id"]){
+        this.getByCuriousCustomer(params["Id"])
+      }else{
+        this.getCuriousCustomers()
+      }
 
+  })
   }
+
 getCuriousCustomers(){
   this.curiousCustomerService.getCuriousCustomers().subscribe(response=>{
     this.curiousCustomers = response.data
     this.dataLoaded = true;
 })
 }
+getByCuriousCustomer(Id:string) {
+  this.curiousCustomerService.getByCuriousCustomer(Id).subscribe(response=>{
+    this.curiousCustomers = response.data
+    this.dataLoaded = true;
+  })   
+
 }
+  }

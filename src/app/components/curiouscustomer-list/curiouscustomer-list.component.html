@@ -12,12 +12,12 @@
               
               <thead class="text-primary">
                 <tr>
+                  <th></th>
                 <th>Date</th>
                 <th>Name</th>
                 <th>Surname</th>
                 <th>Phone Number</th>
                 <th>E Mail</th>
-                
                 <th >Company</th>
                 <th>Title</th>
               
@@ -28,9 +28,9 @@
   <tbody>
     
     <tr *ngFor= "let curiouscustomer of curiousCustomers" >
-      <td  type="button"  data-toggle="modal" data-target=".bd-example-modal-lg">
-        {{ curiouscustomer.dateOfUpload}}
-      </td>
+      <button type="button"  class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-lg">
+       Details
+      </button>
       <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" modal-lg role="document">
           <div class="modal-content">
@@ -102,7 +102,7 @@
       </div>
 
 
-
+     <td> {{ curiouscustomer.dateOfUpload}}</td> 
       <td>{{ curiouscustomer.curiousCustomerName }}</td>
       <td>{{ curiouscustomer.curiousCustomerSurname }}</td>
       <td>{{ curiouscustomer.phoneNumber  }}</td>

@@ -11,16 +11,29 @@ import { RoutineserviceService } from 'app/services/routineservice.service';
 export class RoutineserviceListComponent implements OnInit {
 routineServices:RoutineService[]=[];
 dataLoaded=false;
-  constructor(private routineServiceServices:RoutineserviceService,private activeRoute:ActivatedRoute) { }
+  constructor(private routineServiceServices:RoutineserviceService,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit() {
-    this.getRoutineServices();
+    this.activatedRoute.params.subscribe(params=>{
+      if(params["Id"]){
+        this.getByRoutineService(params["Id"])
+      }else{
+        this.getRoutineServices()
+      }
+    })
   }
+
   getRoutineServices() {
     this.routineServiceServices
     .getRoutineServices()
     .subscribe(response=>{
       this.routineServices = response.data;
+      this.dataLoaded = true;
+    })   
+  }
+  getByRoutineService(Id:string) {
+    this.routineServiceServices.getByRoutineService(Id).subscribe(response=>{
+      this.routineServices = response.data
       this.dataLoaded = true;
     })   
   }
