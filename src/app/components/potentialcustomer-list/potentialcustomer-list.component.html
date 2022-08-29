@@ -9,31 +9,98 @@
           <table class="table">
             <thead class="text-primary">
               <tr>
+                <th></th>
               <th>Date</th>
-           
               <th>Name</th>
               <th>Surname</th>
-              <th>Phone Number</th>
-              <th>E Mail</th>
-              <th>Title</th>
               <th>Company</th>
-              <th>Adress</th>
-              <th>Note</th>
+              <th>Title</th>
+           
+          
             
             </tr>
           </thead>
           <tbody>
-   
-<tr *ngFor= "let potentialCustomer of potentialCustomers" >
+            <tr *ngFor= "let potentialCustomer of potentialCustomers" >
+              <button type="button"   class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-lg">
+               Details
+              </button>
+              <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" modal-lg role="document">
+                  <div class="modal-content">
+                    <div class="modal-header bg-primary">
+                      <h5 class="modal-title" id="exampleModalLabel">Curious Customer</h5>
+                      <button type="button"  class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <tr *ngFor= "let potentialCustomer of potentialCustomers" >
+                    <div class="modal-body">
+                      <tr>
+                        <th>Date</th> 
+                        <td>{{ potentialCustomer.dateOfUpload}}</td>
+                      </tr>
+                      <tr>
+                        <th>Name</th>
+                        <td>{{ potentialCustomer.potentialCustomerName }}</td>
+                      </tr>
+        
+                      <tr>
+                        <th>Surname</th>
+                        <td>{{ potentialCustomer.potentialCustomerSurname }}</td>
+                      </tr>
+                      <tr>
+                        <th>Phone Number</th>
+                        <td>{{ potentialCustomer.phoneNumber  }}</td>
+                      </tr>
+                      <tr>
+                        <th>E Mail</th>
+                        <td>{{ potentialCustomer.email }}</td>
+                        
+                      </tr>
+                      <tr>
+                        <th >Adress</th>
+                        <p >{{ potentialCustomer.adress }}</p>
+                      </tr>
+                      <tr>
+                        <th>Company</th>
+                        <td>{{ potentialCustomer.company }}</td>
+                      </tr>
+                      <tr>
+                        <th>Title</th>
+                        <td>{{ potentialCustomer.position }}</td>
+                      </tr>
+                      <tr>
+                        <th>Note</th>  
+                        <p>{{ potentialCustomer.note }}</p>
+                      </tr>
+               
+        
+                    </div>
+                    <tr *ngFor= "let potentialCustomer of potentialCustomers" >
+                      <td>{{ potentialCustomer.dateOfUpload}}</td>
+                       <td>{{ potentialCustomer.potentialCustomerName }}</td>
+                      <td>{{ potentialCustomer.potentialCustomerSurname }}</td>
+                      <td>{{ potentialCustomer.phoneNumber  }}</td>
+                      <td>{{ potentialCustomer.email }}</td>
+                      <td>{{ potentialCustomer.adress }}</td>
+                      <td>{{ potentialCustomer.company }}</td>
+                      <td>{{ potentialCustomer.position }}</td>
+                      <td>{{ potentialCustomer.note }}</td></tr>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" style="background-color:red" data-dismiss="modal">Close</button>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+
   <td>{{ potentialCustomer.dateOfUpload }}</td>
   <td>{{ potentialCustomer.potentialCustomerName }}</td>
   <td>{{ potentialCustomer.potentialCustomerSurname }}</td>
-  <td>{{ potentialCustomer.phoneNumber }}</td>
-  <td>{{ potentialCustomer.email  }}</td>
-  <td>{{ potentialCustomer.adress }}</td>
   <td>{{ potentialCustomer.company }}</td>
   <td>{{ potentialCustomer.position }}</td>
-  <td>{{ potentialCustomer.note }}</td>
+ 
  
 
 </tr>

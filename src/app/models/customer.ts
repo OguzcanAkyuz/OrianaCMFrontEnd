@@ -13,6 +13,7 @@ export interface Customer{
    companyBusinessArea:string;
    companyWebAdress:string;
    executiveName:string;
+   executiveSurname:string;
    executivePhoneNumber:string;
    executiveEmail:string;
 }

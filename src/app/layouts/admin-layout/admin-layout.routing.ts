@@ -21,6 +21,8 @@ import { LoginGuard } from 'app/guards/login.guard';
 import { RegisterComponent } from 'app/components/register/register.component';
 
 export const AdminLayoutRoutes: Routes = [
+    { path: 'login',        component: LoginComponent },
+    {path:'register', component:RegisterComponent},
     { path: 'dashboard',      component: DashboardComponent ,canActivate:[LoginGuard]},
     { path: 'customer-add',      component: CustomerAddComponent,canActivate:[LoginGuard] },
     { path: 'customer-list',   component: CustomerListComponent,canActivate:[LoginGuard] },
@@ -44,8 +46,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'routineservice-add',        component: RoutineserviceAddComponent,canActivate:[LoginGuard] },
     { path: 'routineservice-list',        component: RoutineserviceListComponent ,canActivate:[LoginGuard]},
     
-    { path: 'login',        component: LoginComponent },
-     {path:'register', component:RegisterComponent}
+  
 
 ];
 

@@ -1,7 +1,6 @@
 <div class="main-content">
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
+    
         <div class="card">
           <div class="card-header card-header-danger">
             <h4 class="card-title">Finished Meetings</h4>
@@ -11,34 +10,121 @@
               <table class="table">
                 <thead class="text-primary">
                   <tr>
-                  
+                    <th></th>
                   <th>Date</th>
                   <th>Meeting Title</th>
                   <th>Meeting Subject</th>
-                  <th>Participants</th>
-                  <th>Product</th>
-                  <th>Note</th>
                   <th>Meeting Result</th>
-                  <th>Meeting Result</th>
-                  <th>Meeting Result</th>
-                  <th>Meeting Result</th>
-                  <th>Meeting Result</th>
+                  <th>Company Name</th>
+                  <th>Executive Name</th>
+                  <th>Executive Phone Number</th>
+                  
                 </tr>
                 </thead>   
 <tbody>
-<tr *ngFor= "let finishedMeeting of finishedMeeting" >
+  <tr *ngFor= "let finishedMeeting of finishedMeeting" >
+    <button type="button"   class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-lg">
+     Details
+    </button>
+    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" modal-lg role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-primary">
+            <h5 class="modal-title" id="exampleModalLabel">Curious Customer</h5>
+            <button type="button"  class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <tr *ngFor= "let finishedMeeting of finishedMeeting" >
+          <div class="modal-body">
+            <tr>
+              <th>Date</th> 
+              <td>{{ finishedMeeting.date}}</td>
+            </tr>
+            <tr>
+              <th>Note</th>  
+              <p>{{ finishedMeeting.meetingTitle }}</p>
+            </tr>
+            <tr>
+              <th>Name</th>
+              <td>{{ finishedMeeting.customerInformation }}</td>
+            </tr>
+
+            <tr>
+              <th>Surname</th>
+              <td>{{ finishedMeeting.meetingSubject }}</td>
+            </tr>
+            <tr>
+              <th>Phone Number</th>
+              <td>{{ finishedMeeting.executiveName  }}</td>
+            </tr>
+            <tr>
+              <th>E Mail</th>
+              <td>{{ finishedMeeting.executiveEmail }}</td>
+              
+            </tr>
+            <tr>
+              <th >Adress</th>
+              <p >{{ finishedMeeting.executivePhoneNumber }}</p>
+            </tr>
+            <tr>
+              <th>Company</th>
+              <td>{{ finishedMeeting.companyName }}</td>
+            </tr>
+            <tr>
+              <th>Title</th>
+              <td>{{ finishedMeeting.companyBusinessArea }}</td>
+            </tr>
+            <tr>
+              <th>Note</th>  
+              <p>{{ finishedMeeting.companyWebAdress }}</p>
+            </tr>
+            <tr>
+              <th>Note</th>  
+              <p>{{ finishedMeeting.companyAdress }}</p>
+            </tr>
+            <tr>
+              <th>Note</th>  
+              <p>{{ finishedMeeting.meetingResult }}</p>
+            </tr>
+            <tr>
+              <th>Note</th>  
+              <p>{{ finishedMeeting.participants }}</p>
+            </tr>
+     
+
+          </div>
+          <tr *ngFor= "let finishedMeeting of finishedMeeting" >
+            <td>{{ finishedMeeting.date }}</td>
+            <td>{{ finishedMeeting.customerInformation }}</td>
+            <td>{{ finishedMeeting.participants }}</td>
+            <td>{{ finishedMeeting.meetingSubject }}</td>
+            <td>{{ finishedMeeting.meetingResult  }}</td>
+            <td>{{ finishedMeeting.meetingTitle }}</td>
+            <td>{{ finishedmeeting.companyName }}</td>
+            <td>{{ finishedMeeting.companyAdress }}</td>
+            <td>{{ finishedMeeting.companyBusinessArea }}</td>
+            <td>{{ finishedMeeting.companyWebAdress }}</td>
+            <td>{{ finishedMeeting.executiveName }}</td>
+            <td>{{ finishedMeeting.executivePhoneNumber }}</td>
+            <td>{{ finishedMeeting.executiveEmail }}</td>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" style="background-color:red" data-dismiss="modal">Close</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
     
-    <td>{{ finishedMeeting.customerInformation }}</td>
-    <td>{{ finishedMeeting.participants }}</td>
+    
+    <td>{{ finishedMeeting.date }}</td>
     <td>{{ finishedMeeting.meetingSubject }}</td>
     <td>{{ finishedMeeting.meetingResult  }}</td>
     <td>{{ finishedMeeting.meetingTitle }}</td>
     <td>{{ finishedmeeting.companyName }}</td>
-    <td>{{ finishedMeeting.companyAdress }}</td>
-    <td>{{ finishedMeeting.companyBusinessArea }}</td>
-    <td>{{ finishedMeeting.companyWebAdress }}</td>
     <td>{{ finishedMeeting.executiveName }}</td>
     <td>{{ finishedMeeting.executivePhoneNumber }}</td>
-    <td>{{ finishedMeeting.executiveEmail }}</td>
+
   </tr>
 </tbody>

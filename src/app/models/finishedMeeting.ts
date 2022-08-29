@@ -1,5 +1,6 @@
 export interface FinishedMeeting{
     id:string;
+    date:string;
     customerInformation:string;
     participants:string;
     meetingSubject:string;

@@ -1,0 +1,30 @@
+.modal-dialog {
+    width: 200%;
+    height: 200%;
+    margin: 20;
+    padding: 0;
+  }
+  
+  .modal-content {
+    height: auto;
+    min-height: 100%;
+    border-radius: 0;
+    
+  }
+
+p
+{
+    width:300px; 
+    border:1px solid #fffdfd;
+    word-wrap:break-word;
+}
+.table-adress {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  width: 50px;
+  min-width: 1px;
+}
+
+
