@@ -7,7 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
 
@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
 
   createLoginForm(){
     this.loginForm = this.formBuilder.group({
+     
       email: ["",Validators.required],
       password:["",Validators.required]
     })
@@ -28,14 +29,12 @@ export class LoginComponent implements OnInit {
 
   login(){
     if(this.loginForm.valid){
-      console.log(this.loginForm.value);
+     
       let loginModel = Object.assign({},this.loginForm.value) 
-
       this.authService.login(loginModel).subscribe(response=>{
         this.toastrService.info(response.message)
         localStorage.setItem("token",response.data.token)
       },responseError=>{
-        //console.log(responseError)
         this.toastrService.error(responseError.error)
       })
     }

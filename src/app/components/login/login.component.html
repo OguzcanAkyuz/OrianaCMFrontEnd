@@ -1,39 +1,75 @@
-<body class="text-center">
-    <main class="form-signin">
-        
-      <form [formGroup]="loginForm">
-        <h1 class="h3 mb-3 fw-normal">Login</h1>
-        
-        <div class="form-floating">
-          <input
-            formControlName="email"
+<link
+  href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link
+  href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<link
+  rel="stylesheet"
+  href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+/>
+
+<div class="main">
+  <div class="container">
+    
+    <div class="middle">
+      <div id="login">
+        <form [formGroup]="loginForm">
+          <fieldset class="clearfix">
+            <p>
+              <span class="fa fa-user" ></span
+              ><input
+              formControlName="email"
             type="email"
             class="form-control"
             id="floatingInput"
-            placeholder="name@example.com"
-          />
-          <label for="floatingInput">E-Mail</label>
-        </div>
-        <div class="form-floating">
-          <input
-          formControlName="password"
-            type="password"
-            class="form-control"
-            id="floatingPassword"
-            placeholder="Password"
-          />
-          <label for="floatingPassword">Password</label>
-        </div>
-  
-        <div class="checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me" /> Remember me
-          </label>
-        </div>
-        <button class="w-100 btn btn-lg btn-primary" (click)="login()">
-          Login
-        </button>
-        
-      </form>
-    </main>
-  </body>
+            placeholder="name@example.com" type="text" Placeholder="E mail" required />
+
+            </p>
+          
+            <p>
+              <span class="fa fa-lock"></span
+              ><input  formControlName="password"
+              type="password"
+              class="form-control"
+              id="floatingPassword"
+              placeholder="Password" 
+              type="password" Placeholder="Password" required />
+            </p>
+            
+
+            <div>
+              <span  style="width: 50%; text-align: right; display: inline-block"
+                ><input (click)="login()" type="submit" value="Sign In"
+              /></span>
+            </div>
+           
+          </fieldset>
+          <div class="clearfix"></div>
+        </form>
+
+        <div class="clearfix"></div>
+      </div>
+      <!-- end login -->
+      <div class="logo">
+        <a class="simple-text">
+            <div class="logo-img">
+                <img src="/assets/img/angular2-logo-red.png"/>
+            </div>
+           
+        </a>
+
+      </div>
+    </div>
+  </div>
+</div>

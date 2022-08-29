@@ -1,1 +1,91 @@
-<p>register works!</p>
+<link
+  href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link
+  href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<link
+  rel="stylesheet"
+  href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+/>
+
+<div class="main">
+  <div class="container">
+    
+    <div class="middle">
+      <div id="login">
+        <form [formGroup]="registerForm">
+          <fieldset class="clearfix">
+            <p>
+              <span class="fa fa-user" ></span
+              ><input
+              formControlName="email"
+             type="email"
+             class="form-control"
+             id="floatingInput"
+             placeholder="name@example.com" type="text" Placeholder="E mail" required />
+            </p>
+          
+            <p>
+              <span class="fa fa-lock"></span
+              ><input  formControlName="password"
+              type="password"
+              class="form-control"
+              id="floatingPassword"
+              placeholder="Password" 
+              type="password" Placeholder="Password" required />
+            </p>
+            <p>
+                <span class="fa user-circle"></span
+                ><input  formControlName="firstName"
+                type="firstName"
+                class="form-control"
+                id="firstName"
+                placeholder="firstName" 
+                type="text" Placeholder="Name" required />
+              </p>
+              <p>
+                <span class="fa user-circle"></span
+                ><input  formControlName="surName"
+                type="surName"
+                class="form-control"
+                id="surName"
+                placeholder="surName" 
+                type="text" Placeholder="Surname" required />
+              </p>
+
+            <div>
+              <span  style="width: 50%; text-align: right; display: inline-block"
+                ><input (click)="register()" type="submit" value="Sign In"
+              /></span>
+            </div>
+           
+          </fieldset>
+          <div class="clearfix"></div>
+        </form>
+
+        <div class="clearfix"></div>
+      </div>
+      <!-- end login -->
+      <div class="logo">
+        <a class="simple-text">
+            <div class="logo-img">
+                <img src="/assets/img/angular2-logo-red.png"/>
+            </div>
+           
+        </a>
+
+      </div>
+    </div>
+  </div>
+</div>

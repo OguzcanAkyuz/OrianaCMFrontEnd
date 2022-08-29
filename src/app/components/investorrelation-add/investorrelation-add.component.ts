@@ -48,7 +48,7 @@ export class InvestorrelationAddComponent implements OnInit {
         }
       })
   }else{
-      this.toastrService.error("ErrorResult2")
+      this.toastrService.error("ErrorResult")
       console.log("hata")
     }
   }

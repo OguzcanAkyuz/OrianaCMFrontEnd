@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { LoginModel } from 'app/models/loginModel';
 import { SingleResponseModel } from 'app/models/singleResponseModel';
 import { TokenModel } from 'app/models/tokenModel';
@@ -24,4 +25,5 @@ export class AuthService {
       return false;
     }
   }
+
 }

@@ -22,9 +22,12 @@ import { AbroadinvestmentListComponent } from './abroadinvestment-list/abroadinv
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { ToastrModule} from 'ngx-toastr';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from 'app/interceptor/auth.interceptor';
+import { AppComponent } from 'app/app.component';
 
 @NgModule({
   imports: [
@@ -67,13 +70,19 @@ import { RegisterComponent } from './register/register.component';
     AbroadinvestmentListComponent,
     LoginComponent,
     RegisterComponent,
+
    
  
   ],
+  providers: [
+    {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}
+  ],
+  
   exports: [
     
     NavbarComponent,
     SidebarComponent
-  ]
+  ],
+  bootstrap: [AppComponent]
 })
 export class ComponentsModule { }

@@ -28,7 +28,7 @@
   <tbody>
     
     <tr *ngFor= "let curiouscustomer of curiousCustomers" >
-      <button type="button"  class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-lg">
+      <button type="button"   class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-lg">
        Details
       </button>
       <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -107,7 +107,6 @@
       <td>{{ curiouscustomer.curiousCustomerSurname }}</td>
       <td>{{ curiouscustomer.phoneNumber  }}</td>
       <td>{{ curiouscustomer.email }}</td>
-    
       <td >{{ curiouscustomer.company }}</td>
       <td>{{ curiouscustomer.position }}</td>
       
