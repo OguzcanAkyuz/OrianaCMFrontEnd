@@ -10,6 +10,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { BrowserModule } from '@angular/platform-browser';
 import { ToastrModule } from 'ngx-toastr';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 
@@ -32,8 +34,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent
-    
+    AdminLayoutComponent,
+    LoginComponent,
+    RegisterComponent,
+
     
 
   ],

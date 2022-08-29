@@ -11,17 +11,16 @@
               <table class="table">
                 <thead class="text-primary">
                 <tr>
+                  <th></th>
                   <th>Date</th>
                   <th>Company</th>
                   <th>Manager Name</th>
                   <th>Manager SurName</th>
-                  
                   <th>Company Web Adress</th>
                   <th>Company Adress</th>
                   <th>Company Business Area</th>
                   <th>Manager Email</th>
                   <th>Phone Number</th>
-               
                   <th>Lisence Term</th>
                   <th>Lisence End Date</th>
                   <th>Purschase Price</th>
@@ -31,22 +30,41 @@
                 </tr>
                 </thead>
                 
-            <tbody>
-<tr *ngFor= "let customer of customers" >
-    <td>{{ customer.purchaseDate }}</td>
-    <td>{{ customer.customerCompanyName }}</td>
-    <td>{{ customer.executiveName }}</td>
-    <td>{{ customer.executiveSurname }}</td>
-    <td>{{ customer.companyWebAdress }}</td>
-    <td>{{ customer.customerCompanyAdress }}</td>
-    <td>{{ customer.companyBusinessArea }}</td>
-    <td>{{ customer.executivePhoneNumber }}</td>
-    <td>{{ customer.executiveEmail }}</td>
-    <td>{{ customer.licenseTerm }}</td>
-    <td>{{ customer.lisenceEndDate  }}</td>
-    <td>{{ customer.purchasePrice  }}</td>
-    <td>{{ customer.customerNote  }}</td>
-    <td>{{ customer.productId }}</td>
-    <td>{{ customer.productVersion }}</td>
-  </tr>
+        <tbody>
+          <tr *ngFor= "let customer of customers" >
+              <button type="button"   class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-lg">
+                Details
+               </button>
+               <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                 <div class="modal-dialog modal-lg" modal-lg role="document">
+                   <div class="modal-content">
+                     <div class="modal-header bg-primary">
+                       <h5 class="modal-title" id="exampleModalLabel">Customer</h5>
+                       <button type="button"  class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                       </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          
+                             
+                 
+                    <td>{{ customer.purchaseDate }}</td>
+                    <td>{{ customer.customerCompanyName }}</td>
+                    <td>{{ customer.executiveName }}</td>
+                    <td>{{ customer.executiveSurname }}</td>
+                    <td>{{ customer.companyWebAdress }}</td>
+                    <td>{{ customer.customerCompanyAdress }}</td>
+                    <td>{{ customer.companyBusinessArea }}</td>
+                    <td>{{ customer.executivePhoneNumber }}</td>
+                    <td>{{ customer.executiveEmail }}</td>
+                    <td>{{ customer.licenseTerm }}</td>
+                    <td>{{ customer.lisenceEndDate  }}</td>
+                    <td>{{ customer.purchasePrice  }}</td>
+                    <td>{{ customer.customerNote  }}</td>
+                    <td>{{ customer.productId }}</td>
+                    <td>{{ customer.productVersion }}</td>
+                  </tr>
+
 </tbody>

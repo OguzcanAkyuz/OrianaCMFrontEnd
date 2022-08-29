@@ -42,11 +42,9 @@ export const ROUTES: RouteInfo[] = [
       { path: '/routineservice-add', title: 'New Routine Services Add',  icon: 'add', class: '' },
       { path: '/routineservice-list', title: 'Routine Services List',  icon: 'content_paste', class: '' },
     ]},
-    //   { path: '/login', title: 'login',  icon:'alarm', class: '',childrens:[
-    //     { path: '/login', title: 'loginn',  icon: 'alarm', class: '' },
-    //     { path: '/register', title: 'register',  icon: 'bento', class: '' }
+ 
       
-    // ] }
+
     
 ]
 

@@ -23,8 +23,7 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule} from 'ngx-toastr';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from 'app/interceptor/auth.interceptor';
 import { AppComponent } from 'app/app.component';
@@ -68,9 +67,7 @@ import { AppComponent } from 'app/app.component';
     FinishedmeetingListComponent,
     AbroadinvestmentAddComponent,
     AbroadinvestmentListComponent,
-    LoginComponent,
-    RegisterComponent,
-
+  
    
  
   ],

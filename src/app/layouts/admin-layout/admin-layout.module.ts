@@ -8,6 +8,8 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
+import { LoginComponent } from 'app/login/login.component';
+import { RegisterComponent } from 'app/components/register/register.component';
 
 @NgModule({
   imports: [
@@ -18,6 +20,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+
+
   ],
   declarations: [DashboardComponent, UpgradeComponent],
 })

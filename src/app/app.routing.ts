@@ -4,14 +4,25 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes =[
+ {
+  path: '',
+  redirectTo: 'login',
+  pathMatch: 'full',
+  
+ },
+  {
+    path: '',
+    component:LoginComponent,
+    children:[{
+      path: '/src/app/login',
+      loadChildren:() => import('./login/login.component').then(l=>l.LoginComponent)
+    }],
 
   
-
-  
-  
+  },
   {
     path: '',
     redirectTo: 'dashboard',

@@ -16,35 +16,36 @@ import { RoutineserviceListComponent } from 'app/components/routineservice-list/
 import { DashboardComponent } from 'app/dashboard/dashboard.component';
 import { ScheduledmeetingAddComponent } from 'app/components/scheduledMeeting-add/scheduledmeeting-add.component';
 import { PotentialCustomerListComponent } from 'app/components/potentialcustomer-list/potentialcustomer-list.component';
-import { LoginComponent } from 'app/components/login/login.component';
+import { LoginComponent } from 'app/login/login.component';
 import { LoginGuard } from 'app/guards/login.guard';
 import { RegisterComponent } from 'app/components/register/register.component';
 
 export const AdminLayoutRoutes: Routes = [
-    { path: 'dashboard',      component: DashboardComponent },
-    { path: 'customer-add',      component: CustomerAddComponent },
-    { path: 'customer-list',   component: CustomerListComponent },
+    { path: 'dashboard',      component: DashboardComponent ,canActivate:[LoginGuard]},
+    { path: 'customer-add',      component: CustomerAddComponent,canActivate:[LoginGuard] },
+    { path: 'customer-list',   component: CustomerListComponent,canActivate:[LoginGuard] },
 
-    { path: 'abroadinvestor-add',     component: AbroadinvestmentAddComponent },
-    { path: 'abroadinvestor-list',     component: AbroadinvestmentListComponent },
+    { path: 'abroadinvestor-add',     component: AbroadinvestmentAddComponent,canActivate:[LoginGuard] },
+    { path: 'abroadinvestor-list',     component: AbroadinvestmentListComponent,canActivate:[LoginGuard] },
 
-    { path: 'ınvestorcustomer-add',     component: InvestorrelationAddComponent },
-    { path: 'ınvestorcustomer-list',          component: InvestorrelationListComponent },
+    { path: 'ınvestorcustomer-add',     component: InvestorrelationAddComponent,canActivate:[LoginGuard] },
+    { path: 'ınvestorcustomer-list',          component: InvestorrelationListComponent,canActivate:[LoginGuard] },
 
-    { path: 'curiouscustomer-add',           component: CuriouscustomerAddComponent },
-    { path: 'curiouscustomer-list',  component: CuriouscustomerListComponent },
+    { path: 'curiouscustomer-add',           component: CuriouscustomerAddComponent,canActivate:[LoginGuard] },
+    { path: 'curiouscustomer-list',  component: CuriouscustomerListComponent,canActivate:[LoginGuard] },
     
-    { path: 'futuremeetingadd',        component: ScheduledmeetingAddComponent },
-    { path: 'futuremeetinglist',        component: ScheduledmeetingListComponent },
-    { path: 'finishedmeetinglist',        component: FinishedmeetingListComponent },
+    { path: 'futuremeetingadd',        component: ScheduledmeetingAddComponent,canActivate:[LoginGuard] },
+    { path: 'futuremeetinglist',        component: ScheduledmeetingListComponent ,canActivate:[LoginGuard]},
+    { path: 'finishedmeetinglist',        component: FinishedmeetingListComponent,canActivate:[LoginGuard] },
 
-    { path: 'seriouscustomer-add',        component: PotentialCustomerAddComponent },
-    { path: 'seriouscustomer-list',        component: PotentialCustomerListComponent },
+    { path: 'seriouscustomer-add',        component: PotentialCustomerAddComponent,canActivate:[LoginGuard] },
+    { path: 'seriouscustomer-list',        component: PotentialCustomerListComponent,canActivate:[LoginGuard] },
 
-    { path: 'routineservice-add',        component: RoutineserviceAddComponent },
+    { path: 'routineservice-add',        component: RoutineserviceAddComponent,canActivate:[LoginGuard] },
     { path: 'routineservice-list',        component: RoutineserviceListComponent ,canActivate:[LoginGuard]},
+    
     { path: 'login',        component: LoginComponent },
-    {path:'register', component:RegisterComponent}
+     {path:'register', component:RegisterComponent}
 
 ];
 
