@@ -36,10 +36,10 @@
                 <p>{{menuItem.title}}</p>
             </a>
             
-            <a href="#{{menuItem.icon}}" *ngIf="menuItem.childrens" data-toggle="collapse" aria-expanded="false" class=" nav-link dropdown-toggle">
+            <a href="#{{menuItem.id}}" *ngIf="menuItem.childrens" data-toggle="collapse" aria-expanded="false" class=" nav-link dropdown-toggle">
                 <i class="material-icons">{{menuItem.icon}}</i>
                 {{menuItem.title}}</a>
-            <ul class="collapse list-unstyled" *ngIf="menuItem.childrens" id="{{menuItem.icon}}">
+            <ul class="collapse list-unstyled" *ngIf="menuItem.childrens" id="{{menuItem.id}}">
                 <li *ngFor="let children of menuItem.childrens" class="{{children.class}} nav-item">
                     <a class="nav-link"  [routerLink]="[children.path]">
                         <i class="material-icons">{{children.icon}}</i>

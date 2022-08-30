@@ -6,41 +6,42 @@ declare interface RouteInfo {
     title: string;
     icon: string;
     class: string;
+    id:string;
     childrens?:RouteInfo[]
 }
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
+    { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '',id:"dashboard" },
     
-    { path: '/customer-list', title: 'Customers',  icon:'person', class: '',childrens:[
-      { path: '/customer-add', title: 'New Customer Add',  icon: 'personadd', class: '',},
-      { path: '/customer-list', title: 'Customers List',  icon: 'content_paste', class: '' }
+    { path: '/customer-list', title: 'Customers',  icon:'person', class: '',id:"customerlista" ,childrens:[
+      { path: '/customer-add', title: 'New Customer Add',id:"customeradd",  icon: 'personadd', class: ''},
+      { path: '/customer-list', title: 'Customers List',id:"customerlist",  icon: 'content_paste', class: '' }
     ] },
-    { path: '/investorcustomer-list', title: 'Investor Relations ',  icon:'currency_lira', class: '',childrens:[
-      { path: '/ınvestorcustomer-add', title: 'New Investor Add',  icon: 'personadd', class: '' },
-      { path: '/ınvestorcustomer-list', title: 'Investors List',  icon: 'content_paste', class: '' }
+    { path: '/investorcustomer-list', title: 'Investor Relations ',id:"investorcustomerlist",  icon:'currency_lira', class: '',childrens:[
+      { path: '/ınvestorcustomer-add', title: 'New Investor Add',id:"ınvestorcustomeradd",  icon: 'personadd', class: '' },
+      { path: '/ınvestorcustomer-list', title: 'Investors List', id:"ınvestorcustomerlist", icon: 'content_paste', class: '' }
     ] },
 
-    { path: '/upgrade', title: 'Abroad Investor Relations ',  icon:'request_quote', class: '',childrens:[
-      { path: '/abroadinvestor-add', title: 'New Investor Add',  icon: 'personadd', class: '' },
-      { path: '/abroadinvestor-list', title: 'Investors List',  icon: 'content_paste', class: '' } 
+    { path: '/upgrade', title: 'Abroad Investor Relations ', id:"upgrade", icon:'request_quote', class: '',childrens:[
+      { path: '/abroadinvestor-add', title: 'New Investor Add', id:"abroadinvestoradd",  icon: 'personadd', class: '' },
+      { path: '/abroadinvestor-list', title: 'Investors List', id:"abroadinvestorlist", icon: 'content_paste', class: '' } 
     ] },
-    { path: '/notifications', title: 'Curious Customers ',  icon:'personsearch', class: '',childrens:[
-      { path: '/curiouscustomer-add', title: 'New Curious Customers Add',  icon: 'personadd', class: '' },
-      { path: '/curiouscustomer-list', title: 'Curious Customers List',  icon: 'content_paste', class: '' }
+    { path: '/notifications', title: 'Curious Customers ', id:"notifications",  icon:'personsearch', class: '',childrens:[
+      { path: '/curiouscustomer-add', title: 'New Curious Customers Add', id:"curiouscustomeradd",  icon: 'personadd', class: '' },
+      { path: '/curiouscustomer-list', title: 'Curious Customers List',id:"curiouscustomerlist",  icon: 'content_paste', class: '' }
     ] },
     
-    { path: '/table-list', title: 'Serious Customers',  icon:'group', class: '',childrens:[
-      { path: '/seriouscustomer-add', title: 'New Serious Customers Add',  icon: 'personadd', class: '' },
-      { path: '/seriouscustomer-list', title: 'Serious Customers List',  icon: 'content_paste', class: '' }
+    { path: '/table-list', title: 'Serious Customers', id:"tablelist" , icon:'group', class: '',childrens:[
+      { path: '/seriouscustomer-add', title: 'New Serious Customers Add', id:"seriouscustomeradd", icon: 'personadd', class: '' },
+      { path: '/seriouscustomer-list', title: 'Serious Customers List', id:"seriouscustomerlist",  icon: 'content_paste', class: '' }
     ] },
-    { path: '/typography', title: 'Meetings',  icon:'groups', class: '',childrens:[
-      { path: '/futuremeetingadd', title: 'Future Meetings Add',  icon: 'groupadd', class: '' },
-      { path: '/futuremeetinglist', title: 'Future Meetings List',  icon: 'content_paste', class: '' },
-      { path: '/finishedmeetinglist', title: 'Finished Meetings',  icon: 'content_paste_off', class: '' }
+    { path: '/typography', title: 'Meetings',  id:"typography" ,icon:'groups', class: '',childrens:[
+      { path: '/futuremeetingadd', title: 'Future Meetings Add', id:"futuremeetingadd" , icon: 'groupadd', class: '' },
+      { path: '/futuremeetinglist', title: 'Future Meetings List', id:"futuremeetinglist" , icon: 'content_paste', class: '' },
+      { path: '/finishedmeetinglist', title: 'Finished Meetings', id:"finishedmeetinglist",  icon: 'content_paste_off', class: '' }
     ] },
-    { path: '/icons', title: 'Routine Services',  icon:'build', class: '',childrens:[
-      { path: '/routineservice-add', title: 'New Routine Services Add',  icon: 'add', class: '' },
-      { path: '/routineservice-list', title: 'Routine Services List',  icon: 'content_paste', class: '' },
+    { path: '/icons', title: 'Routine Services',  icon:'build', id:"icons", class: '',childrens:[
+      { path: '/routineservice-add', title: 'New Routine Services Add', id:"routineserviceadd",  icon: 'add', class: '' },
+      { path: '/routineservice-list', title: 'Routine Services List', id:"routineservicelist", icon: 'content_paste', class: '' },
     ]},
  
       
