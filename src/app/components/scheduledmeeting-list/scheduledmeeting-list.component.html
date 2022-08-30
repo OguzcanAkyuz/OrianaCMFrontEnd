@@ -13,32 +13,118 @@
               <table class="table">
                 <thead class="text-primary">
                   <tr>
-                
+                    <th></th>
                   <th>Date</th>
                   <th>Meeting Title</th>
                   <th>Meeting Subject</th>
-                  <th>Participants</th>
-                  <th>Customer Information</th>
-                  <th>Meeting Result</th>
+                  <th>Customer Result</th>
+                  <th>Company</th>
+                  <th>Executive Name</th>
+
                 </tr>
                 </thead>
                 <tbody>
-   
-<tr *ngFor= "let scheduledmeeting of scheduledMeetings" >
+                  <tr *ngFor= "let scheduledmeeting of scheduledMeetings" >
+      <button type="button"   class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-lg">
+       Details
+      </button>
+      <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" modal-lg role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-primary">
+              <h5 class="modal-title" id="exampleModalLabel">Curious Customer</h5>
+              <button type="button"  class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <tr *ngFor= "let scheduledmeeting of scheduledMeetings" >
+            <div class="modal-body">
+              <tr>
+                <th>Date</th> 
+                <td>{{ scheduledmeeting.meetingDate}}</td>
+              </tr>
+              <tr>
+                <th>Name</th>
+                <td>{{ scheduledmeeting.meetingTitle }}</td>
+              </tr>
+
+              <tr>
+                <th>Surname</th>
+                <td>{{ scheduledmeeting.meetingSubject }}</td>
+              </tr>
+              <tr>
+                <th>Phone Number</th>
+                <td>{{ scheduledmeeting.participants  }}</td>
+              </tr>
+              <tr>
+                <th>E Mail</th>
+                <td>{{ scheduledmeeting.customerInformation }}</td>
+                
+              </tr>
+              <tr>
+                <th >Adress</th>
+                <p >{{ scheduledmeeting.meetingResult }}</p>
+              </tr>
+              <tr>
+                <th>Company</th>
+                <td>{{ scheduledmeeting.companyName }}</td>
+              </tr>
+              <tr>
+                <th>Title</th>
+                <td>{{ scheduledmeeting.companyAdress }}</td>
+              </tr>
+              <tr>
+                <th>Note</th>  
+                <p>{{ scheduledmeeting.companyBusinessArea }}</p>
+              </tr>
+              <tr>
+                <th>Note</th>  
+                <p>{{ scheduledmeeting.companyWebAdress }}</p>
+              </tr>
+              <tr>
+                <th>Note</th>  
+                <p>{{ scheduledmeeting.executiveName }}</p>
+              </tr>
+              <tr>
+                <th>Note</th>  
+                <p>{{ scheduledmeeting.executivePhoneNumber }}</p>
+              </tr>
+                <tr>
+                <th>Note</th>  
+                <p>{{ scheduledmeeting.executiveEmail }}</p>
+              </tr>
+       
+
+            </div>
+            <tr *ngFor= "let scheduledmeeting of scheduledMeetings" >
+              <td>{{ scheduledmeeting.meetingDate}}</td>
+               <td>{{ scheduledmeeting.meetingTitle }}</td>
+              <td>{{ scheduledmeeting.meetingSubject }}</td>
+              <td>{{ scheduledmeeting.participants  }}</td>
+              <td>{{ scheduledmeeting.customerInformation }}</td>
+              <td>{{ scheduledmeeting.meetingResult }}</td>
+
+              <td>{{ scheduledmeeting.companyName }}</td>
+              <td>{{ scheduledmeeting.companyAdress }}</td>
+              <td>{{ scheduledmeeting.companyBusinessArea }}</td>
+              <td>{{ scheduledmeeting.companyWebAdress }}</td>
+              <td>{{ scheduledmeeting.executiveName }}</td>
+              <td>{{ scheduledmeeting.executivePhoneNumber }}</td>
+              <td>{{ scheduledmeeting.executiveEmail }}</td>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" style="background-color:red" data-dismiss="modal">Close</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
      <td>{{ scheduledmeeting.meetingDate }}</td>
      <td>{{ scheduledmeeting.meetingTitle }}</td>
      <td>{{ scheduledmeeting.meetingSubject }}</td>
-    <td>{{ scheduledmeeting.participants }}</td>
-    <td>{{ scheduledmeeting.customerInformation }}</td> 
     <td>{{ scheduledmeeting.meetingResult  }}</td>
-
     <td>{{ scheduledmeeting.companyName }}</td>
-    <td>{{ scheduledmeeting.companyAdress }}</td>
-    <td>{{ scheduledmeeting.companyBusinessArea }}</td>
-    <td>{{ scheduledmeeting.companyWebAdress }}</td>
     <td>{{ scheduledmeeting.executiveName }}</td>
-    <td>{{ scheduledmeeting.executivePhoneNumber }}</td>
-    <td>{{ scheduledmeeting.executiveEmail }}</td>
   </tr>
 </tbody>
 

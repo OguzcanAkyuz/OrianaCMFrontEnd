@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminLayoutRoutes } from './admin-layout.routing';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
-import { UpgradeComponent } from '../../upgrade/upgrade.component';
+
 import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
@@ -23,6 +23,6 @@ import { RegisterComponent } from 'app/components/register/register.component';
 
 
   ],
-  declarations: [DashboardComponent, UpgradeComponent],
+  declarations: [DashboardComponent, ],
 })
 export class AdminLayoutModule {}

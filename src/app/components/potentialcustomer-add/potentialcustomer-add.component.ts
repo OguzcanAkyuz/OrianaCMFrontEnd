@@ -14,10 +14,12 @@ export class PotentialCustomerAddComponent implements OnInit {
   potentialCustomerAddForm:FormGroup;
   reactiveForm:ReactiveFormsModule;
   currentPotentialCustomer:PotentialCustomer;
+  
   constructor(private potentialCustomerService:PotentialcustomerService,private formBuilder:FormBuilder,private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.createPotentialCustomerAddForm();
+    
   }
   createPotentialCustomerAddForm(){
     this.potentialCustomerAddForm=this.formBuilder.group({

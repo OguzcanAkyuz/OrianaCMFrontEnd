@@ -10,8 +10,8 @@
             <table  class="table">
               <thead  class="text-primary">
                 <tr>
-                <th>Date</th>
-               
+                  <th></th>
+                  <th>Date</th>
                 <th>Name</th>
                 <th>Surname</th>
                 <th>Phone Number</th>
@@ -24,17 +24,90 @@
               </thead>
               <tbody>
                 <tr *ngFor= "let abroadInvestments of abroadInvestments" >
-             
+                  <button type="button"   class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-lg">
+                   Details
+                  </button>
+                  <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" modal-lg role="document">
+                      <div class="modal-content">
+                        <div class="modal-header bg-primary">
+                          <h5 class="modal-title" id="exampleModalLabel">Curious Customer</h5>
+                          <button type="button"  class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                  
+                        <div class="modal-body">
+                          <tr>
+                            <th>Date</th> 
+                            <td>{{ abroadInvestments.dateOfUpload}}</td>
+                          </tr>
+                          <tr>
+                            <th>Name</th>
+                            <td>{{ abroadInvestments.abroadInvestorName }}</td>
+                          </tr>
+            
+                          <tr>
+                            <th>Surname</th>
+                            <td>{{ abroadInvestments.abroadInvestorSurname }}</td>
+                          </tr>
+                          <tr>
+                            <th>Phone Number</th>
+                            <td>{{ abroadInvestments.phoneNumber  }}</td>
+                          </tr>
+                          <tr>
+                            <th>E Mail</th>
+                            <td>{{ abroadInvestments.email }}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th >Adress</th>
+                            <p >{{ abroadInvestments.adress }}</p>
+                          </tr>
+                          <tr>
+                            <th>Company</th>
+                            <td>{{ abroadInvestments.company }}</td>
+                          </tr>
+                          <tr>
+                            <th>Title</th>
+                            <td>{{ abroadInvestments.position }}</td>
+                          </tr>
+                          <tr>
+                            <th>Note</th>  
+                            <p>{{ abroadInvestments.note }}</p>
+                          </tr>
+                   
+            
+                        </div>
+                        <td>{{ abroadInvestments.dateOfUpload }}</td>
+                        <td>{{ abroadInvestments.abroadInvestorName }}</td>
+                        <td>{{ abroadInvestments.abroadInvestorSurname }}</td>
+                        <td>{{ abroadInvestments.phoneNumber  }}</td>
+                        <td>{{ abroadInvestments.email }}</td>
+                        <td>{{ abroadInvestments.company }}</td>
+                        <td>{{ abroadInvestments.position }}</td>
+                        <td>{{ abroadInvestments.note }}</td>
+                      
+                        <td>{{ abroadInvestments.country }}</td>
+                        <td>{{ abroadInvestments.adress }}</td>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" style="background-color:red" data-dismiss="modal">Close</button>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+     
+                  <td>{{ abroadInvestments.dateOfUpload }}</td>
                   <td>{{ abroadInvestments.abroadInvestorName }}</td>
                   <td>{{ abroadInvestments.abroadInvestorSurname }}</td>
                   <td>{{ abroadInvestments.phoneNumber  }}</td>
                   <td>{{ abroadInvestments.email }}</td>
                   <td>{{ abroadInvestments.company }}</td>
-                  <td>{{ abroadInvestments.position }}</td>
-                  <td>{{ abroadInvestments.note }}</td>
-                  <td>{{ abroadInvestments.dateOfUpload }}</td>
-                  <td>{{ abroadInvestments.country }}</td>
                   <td>{{ abroadInvestments.adress }}</td>
+                  <td>{{ abroadInvestments.note }}</td>
+                  <td>{{ abroadInvestments.country }}</td>
+                  
                  
                 </tr>
               </tbody>
