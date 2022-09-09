@@ -27,11 +27,12 @@ import { ToastrModule} from 'ngx-toastr';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from 'app/interceptor/auth.interceptor';
 import { AppComponent } from 'app/app.component';
+import { routes } from 'app/app-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule,
+    RouterModule.forChild(routes),
     FormsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
@@ -78,7 +79,7 @@ import { AppComponent } from 'app/app.component';
   exports: [
     
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   bootstrap: [AppComponent]
 })

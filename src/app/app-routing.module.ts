@@ -21,14 +21,18 @@ import { ScheduledmeetingAddComponent } from 'app/components/scheduledMeeting-ad
 import { PotentialCustomerListComponent } from 'app/components/potentialcustomer-list/potentialcustomer-list.component';
 
 import { LoginGuard } from 'app/guards/login.guard';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { AdminLayoutModule } from './layouts/admin-layout/admin-layout.module';
 
 
 
 
-const routes: Routes = [
-  { path: 'login',        component: LoginComponent,children:[,
-  { path: 'dashboard',      component: DashboardComponent ,canActivate:[LoginGuard]},
-  { path: 'customer-add',      component: CustomerAddComponent,canActivate:[LoginGuard] },
+export const routes: Routes = [
+  { path: 'login',        component: LoginComponent,},
+  
+  { path: 'admin-layout',      component: AdminLayoutModule ,canActivate:[LoginGuard],children:[
+    { path: 'dashboard',      component: DashboardComponent ,canActivate:[LoginGuard]},
+    { path: 'customer-add',      component: CustomerAddComponent,canActivate:[LoginGuard] },
   { path: 'customer-list',   component: CustomerListComponent,canActivate:[LoginGuard] },
 
   { path: 'abroadinvestor-add',     component: AbroadinvestmentAddComponent,canActivate:[LoginGuard] },
@@ -48,15 +52,11 @@ const routes: Routes = [
   { path: 'seriouscustomer-list',        component: PotentialCustomerListComponent,canActivate:[LoginGuard] },
 
   { path: 'routineservice-add',        component: RoutineserviceAddComponent,canActivate:[LoginGuard] },
-  { path: 'routineservice-list',        component: RoutineserviceListComponent ,canActivate:[LoginGuard]},
+  { path: 'routineservice-list',        component: RoutineserviceListComponent ,canActivate:[LoginGuard]} ]}]
 
-
-  
-]}
-];
 
 @NgModule({
-  imports: [RouterModule],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -12,6 +12,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { routes } from './app-routing.module';
 
 
 
@@ -22,7 +24,7 @@ import { RegisterComponent } from './components/register/register.component';
     FormsModule,
     HttpClientModule,
     ComponentsModule,
-    RouterModule,
+    RouterModule.forChild(routes),
     AppRoutingModule,
     BrowserModule,
     ToastrModule.forRoot({
@@ -37,7 +39,7 @@ import { RegisterComponent } from './components/register/register.component';
     AdminLayoutComponent,
     LoginComponent,
     RegisterComponent,
-
+    
     
 
   ],
