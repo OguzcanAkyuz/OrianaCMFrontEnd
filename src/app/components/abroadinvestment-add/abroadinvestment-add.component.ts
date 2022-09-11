@@ -46,16 +46,16 @@ export class AbroadinvestmentAddComponent implements OnInit {
     if(this.abroadInvesmentAddForm.valid){
       let abroadInvestmentModel=Object.assign({},this.abroadInvesmentAddForm.value)
       this.abroadInvesmtentService.abroadInvestmentAdd(abroadInvestmentModel).subscribe(response=>{
-        this.toastrService.success(response.message,"Succes")
+        this.toastrService.success(response.message,"Added Succes")
       },responseError=>{
         if(responseError.error.Error.lenght>0){
           for (let i = 0; i <responseError.error.Errors.length; i++)
-          this.toastrService.error(responseError.error.Error[i].ErrorMessage,"ErrorResult")
+          this.toastrService.error(responseError.error.Error[i].ErrorMessage,"Added Unsuccesful ")
           console.log("succes")
         }
       })
   }else{
-      this.toastrService.error("ErrorResult2")
+      this.toastrService.error("Added Unsuccesful ")
       console.log("hata")
     }
   }

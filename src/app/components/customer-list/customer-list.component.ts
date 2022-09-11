@@ -9,6 +9,9 @@ import { CustomerService } from 'app/services/customer.service';
   styleUrls: ['./customer-list.component.scss']
 })
 export class CustomerListComponent implements OnInit {
+title:Customer[]=[];
+searchText="";
+characters:Customer[]=[];
 customers:Customer[]=[];
 dataLoaded = false;
   constructor(private customerService:CustomerService,

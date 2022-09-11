@@ -39,16 +39,16 @@ export class PotentialCustomerAddComponent implements OnInit {
     if(this.potentialCustomerAddForm.valid){
       let potentialCustomerModel=Object.assign({},this.potentialCustomerAddForm.value)
       this.potentialCustomerService.potentialCustomerAdd(potentialCustomerModel).subscribe(response=>{
-        this.toastrService.success(response.message,"SuccesResult")
+        this.toastrService.success(response.message,"Added Succes")
       },responseError=>{
         if(responseError.error.Error.lenght>0){
           for (let i = 0; i <responseError.error.Errors.length; i++)
-          this.toastrService.error(responseError.error.Error[i].ErrorMessage,"ErrorResult")
+          this.toastrService.error(responseError.error.Error[i].ErrorMessage,"Added Unsuccesful ")
           console.log("succes")
         }
       })
   }else{
-      this.toastrService.error("ErrorResult2")
+      this.toastrService.error("Added Unsuccesful ")
       console.log("hata")
     }
 

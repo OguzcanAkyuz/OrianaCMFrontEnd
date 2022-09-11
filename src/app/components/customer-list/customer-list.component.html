@@ -6,136 +6,180 @@
           <div class="card-header card-header-danger">
             <h4 class="card-title">Customers</h4>
           </div>
+
+          <div class="content" role="main">
+            <div class="card">
+              <div class="form-group">
+                <label for="search-text">Search Text</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="search-text"
+                  aria-describedby="search-text"
+                  [(ngModel)]="searchText"
+                  placeholder="Enter text to search"
+                  autofocus
+                />
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item"
+                  *ngFor="let c of characters   searchText"
+                  appHighlight
+                  [searchedWord]="searchText"
+                  [content]="c"
+                  [classToApply]="'font-weight-bold'"
+                  [setTitle]="'true'"
+                >
+                  {{ c }}
+                </li>
+              </ul>
+            </div>
+          </div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table">
                 <thead class="text-primary">
-                <tr>
-                  <th></th>
-                  <th>Date</th>
-                  <th>Company</th>
-                  <th>Manager Name</th>
-                  <th>Manager Surname</th>
-                  <th>Company Business Area</th>
- 
-  
-                  <th>Lisence Term</th>
-                  <th>Lisence End Date</th>
-             
-              
-                  
-                </tr>
-                </thead>
-                
-        <tbody>
+                  <tr>
+                    <th></th>
+                    <th>Date</th>
+                    <th>Company</th>
+                    <th>Manager Name</th>
+                    <th>Manager Surname</th>
+                    <th>Company Business Area</th>
 
-          <tr *ngFor= "let customer of customers" >
-              <button type="button"   class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-lg">
-                Details
-               </button>
-               <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                 <div class="modal-dialog modal-lg" modal-lg role="document">
-                   <div class="modal-content">
-                     <div class="modal-header bg-primary">
-                       <h5 class="modal-title" id="exampleModalLabel">Customer</h5>
-                       <button type="button"  class="close" data-dismiss="modal" aria-label="Close">
-                         <span aria-hidden="true">&times;</span>
-                       </button>
+                    <th>Lisence Term</th>
+                    <th>Lisence End Date</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr *ngFor="let customer of customers">
+                    <button
+                      type="button"
+                      class="btn btn-dark"
+                      data-toggle="modal"
+                      data-target=".bd-example-modal-lg"
+                    >
+                      Details
+                    </button>
+                    <div
+                      class="modal fade bd-example-modal-lg"
+                      id="exampleModal"
+                      tabindex="-1"
+                      role="dialog"
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div
+                        class="modal-dialog modal-lg"
+                        modal-lg
+                        role="document"
+                      >
+                        <div class="modal-content">
+                          <div class="modal-header bg-primary">
+                            <h5 class="modal-title" id="exampleModalLabel">
+                              Customer
+                            </h5>
+                            <button
+                              type="button"
+                              class="close"
+                              data-dismiss="modal"
+                              aria-label="Close"
+                            >
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+
+                          <tr *ngFor="let customer of customers ">
+                            <div class="modal-body">
+                              <tr>
+                                <th>Date</th>
+                                <td>{{ customer.purchaseDate }}</td>
+                              </tr>
+                              <tr>
+                                <th>Company</th>
+                                <td>{{ customer.company }}</td>
+                              </tr>
+
+                              <tr>
+                                <th>Manager Name</th>
+                                <td>{{ customer.executiveName }}</td>
+                              </tr>
+                              <tr>
+                                <th>Manager Surname</th>
+                                <td>{{ customer.companyWebAdress }}</td>
+                              </tr>
+                              <tr>
+                                <th>Company Adress</th>
+                                <td>{{ customer.customerCompanyAdress }}</td>
+                              </tr>
+                              <tr>
+                                <th>Company Business Area</th>
+                                <p>{{ customer.companyBusinessArea }}</p>
+                              </tr>
+                              <tr>
+                                <th>Email</th>
+                                <td>{{ customer.executiveEmail }}</td>
+                              </tr>
+                              <tr>
+                                <th>Phone Number</th>
+                                <td>{{ customer.executivePhoneNumber }}</td>
+                              </tr>
+                              <tr>
+                                <th>Lisence End Date</th>
+                                <p>{{ customer.lisenceEndDate }}</p>
+                              </tr>
+                              <tr>
+                                <th>Purchase Price</th>
+                                <p>{{ customer.purchasePrice }}</p>
+                              </tr>
+                              <tr>
+                                <th>Note</th>
+                                <p>{{ customer.customerNote }}</p>
+                              </tr>
+                              <tr>
+                                <th>Product</th>
+                                <p>{{ customer.productId }}</p>
+                              </tr>
+                              <tr>
+                                <th>Product Version</th>
+                                <p>{{ customer.productVersion }}</p>
+                              </tr>
+                            </div>
+                          </tr>
+
+                          <tr *ngFor="let customer of customers ">
+                       
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-secondary"
+                                style="background-color: red"
+                                data-dismiss="modal"
+                              >
+                                Close
+                              </button>
+                            </div>
+                          </tr>
+                        </div>
                       </div>
-                   
-                <tr *ngFor= "let customer of customers" >
-                  <div class="modal-body">
-                    <tr>
-                      <th>Date</th> 
-                      <td>{{ customer.purchaseDate}}</td>
-                    </tr>
-                    <tr>
-                      <th>Company</th>
-                      <td>{{ customer.company }}</td>
-                    </tr>
-      
-                    <tr>
-                      <th>Manager Name</th>
-                      <td>{{ customer.executiveName }}</td>
-                    </tr>
-                    <tr>
-                      <th>Manager Surname</th>
-                      <td>{{ customer.companyWebAdress  }}</td>
-                    </tr>
-                    <tr>
-                      <th>Company Adress</th>
-                      <td>{{ customer.customerCompanyAdress }}</td>
-                      
-                    </tr>
-                    <tr>
-                      <th >Company Business Area</th>
-                      <p >{{ customer.companyBusinessArea }}</p>
-                    </tr>
-                    <tr>
-                      <th>Email</th>
-                      <td>{{ customer.executiveEmail }}</td>
-                    </tr>
-                    <tr>
-                      <th>Phone Number</th>
-                      <td>{{ customer.executivePhoneNumber }}</td>
-                    </tr>
-                    <tr>
-                      <th>Lisence End Date</th>  
-                      <p>{{ customer.lisenceEndDate }}</p>
-                    </tr>
-                    <tr>
-                      <th>Purchase Price</th>  
-                      <p>{{ customer.purchasePrice }}</p>
-                    </tr>
-                    <tr>
-                      <th>Note</th>  
-                      <p>{{ customer.customerNote }}</p>
-                    </tr>
-                    <tr>
-                      <th>Product</th>  
-                      <p>{{ customer.productId }}</p>
-                    </tr>
-                    <tr>
-                      <th>Product Version</th>  
-                      <p>{{ customer.productVersion }}</p>
-                    </tr>
-               
-                             
-                   </div>
-                   <tr *ngFor= "let customer of customers" >
+                    </div>
+
                     <td>{{ customer.purchaseDate }}</td>
-                    <td>{{ customer.customerCompanyName }}</td>
                     <td>{{ customer.executiveName }}</td>
                     <td>{{ customer.executiveSurname }}</td>
-                    <td>{{ customer.companyWebAdress }}</td>
-                    <td>{{ customer.customerCompanyAdress }}</td>
-                    <td>{{ customer.companyBusinessArea }}</td>
-                    <td>{{ customer.executivePhoneNumber }}</td>
-                    <td>{{ customer.executiveEmail }}</td>
                     <td>{{ customer.licenseTerm }}</td>
-                    <td>{{ customer.lisenceEndDate  }}</td>
-                    <td>{{ customer.purchasePrice  }}</td>
-                    <td>{{ customer.customerNote  }}</td>
+                    <td>{{ customer.lisenceEndDate }}</td>
+                    <td>{{ customer.purchasePrice }}</td>
                     <td>{{ customer.productId }}</td>
-                    <td>{{ customer.productVersion }}</td>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" style="background-color:red" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-              </div>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-
-             
-                <td>{{ customer.purchaseDate }}</td>
-    
-                <td>{{ customer.executiveName }}</td>
-                <td>{{ customer.executiveSurname }}</td>
-
-                <td>{{ customer.licenseTerm }}</td>
-                <td>{{ customer.lisenceEndDate  }}</td>
-                <td>{{ customer.purchasePrice  }}</td>
-                <td>{{ customer.productId }}</td>
-                
-        </tr>
-
-</tbody>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
