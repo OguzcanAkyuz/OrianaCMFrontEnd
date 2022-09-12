@@ -4,6 +4,22 @@
         <div class="card-header card-header-danger">
           <h4 class="card-title">Routine Service</h4>
         </div>
+        <div class="content" role="main">
+          <div class="card">
+            <div class="form-group">
+              <label for="search-text">Search Text</label>
+              <input type="text" class="form-control" id="search-text" aria-describedby="search-text" 
+                [(ngModel)]="searchText" placeholder="Enter text to search" 
+                autofocus>
+            </div>
+            <ul class="list-group list-group-flush">
+
+              <li class="list-group-item"  *ngFor="let c of characters | routineservice: searchText ">
+                {{c}}
+              </li>
+            </ul>
+          </div>
+        </div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table">
@@ -11,6 +27,7 @@
               <thead class="text-primary" >
                 <tr>
          
+                  <th></th>
                 <th>Date</th>
                 <th>Time</th>
                 <th>Product</th>
@@ -22,7 +39,7 @@
             </thead>
             <tbody>
                
-              <tr *ngFor= "let routineService of routineServices" >
+              <tr *ngFor= "let routineService of routineServices  | routineservice: searchText" >
       <button type="button"   class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-lg">
        Details
       </button>

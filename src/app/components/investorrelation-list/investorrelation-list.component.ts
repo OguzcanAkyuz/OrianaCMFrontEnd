@@ -9,6 +9,9 @@ import { InvestmentrelationService } from 'app/services/investmentrelation.servi
   styleUrls: ['./investorrelation-list.component.scss']
 })
 export class InvestorrelationListComponent implements OnInit {
+  title='angular-text-search-highlight';
+  searchText="";
+  characters:InvestorRelation[];
 invesmentRelations:InvestorRelation[]=[];
 dataLoaded = false;
 

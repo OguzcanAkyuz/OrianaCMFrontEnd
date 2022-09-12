@@ -9,7 +9,10 @@ import { PotentialcustomerService } from 'app/services/potentialcustomer.service
   styleUrls: ['./potentialcustomer-list.component.scss']
 })
 export class PotentialCustomerListComponent implements OnInit {
-potentialCustomers:PotentialCustomer[]=[];
+  title='angular-text-search-highlight';
+  searchText="";
+  characters:PotentialCustomer[];
+  potentialCustomers:PotentialCustomer[]=[];
 dataLoaded=false;
   constructor(private activatedRoute:ActivatedRoute, private potentialCustomersService:PotentialcustomerService,) { }
 

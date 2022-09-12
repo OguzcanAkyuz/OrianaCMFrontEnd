@@ -9,7 +9,10 @@ import { RoutineserviceService } from 'app/services/routineservice.service';
   styleUrls: ['./routineservice-list.component.scss']
 })
 export class RoutineserviceListComponent implements OnInit {
-routineServices:RoutineService[]=[];
+  title='angular-text-search-highlight';
+  searchText="";
+  characters:RoutineService[];
+  routineServices:RoutineService[]=[];
 dataLoaded=false;
   constructor(private routineServiceServices:RoutineserviceService,private activatedRoute:ActivatedRoute) { }
 

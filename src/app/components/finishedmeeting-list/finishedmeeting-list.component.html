@@ -5,6 +5,23 @@
           <div class="card-header card-header-danger">
             <h4 class="card-title">Finished Meetings</h4>
           </div>
+          <div class="content" role="main">
+            <div class="card">
+              <div class="form-group">
+                <label for="search-text">Search Text</label>
+                <input type="text" class="form-control" id="search-text" aria-describedby="search-text" 
+                  [(ngModel)]="searchText" placeholder="Enter text to search" 
+                  autofocus>
+              </div>
+              <ul class="list-group list-group-flush">
+
+                <li class="list-group-item"  *ngFor="let c of characters | finishedmeeting: searchText ">
+                  {{c}}
+                </li>
+              </ul>
+            </div>
+          </div>
+
           <div class="card-body">
             <div class="table-responsive">
               <table class="table">
@@ -22,7 +39,7 @@
                 </tr>
                 </thead>   
 <tbody>
-  <tr *ngFor= "let finishedMeeting of finishedMeeting" >
+  <tr *ngFor= "let finishedMeeting of finishedMeeting | finishedmeeting: searchText  " >
     <button type="button"   class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-lg">
       Details
      </button>
@@ -36,7 +53,7 @@
              </button>
             </div>
          
-            <tr *ngFor= "let finishedMeeting of finishedMeeting" >
+     
         <div class="modal-body">
           <tr>
             <th>Date</th> 
@@ -99,18 +116,15 @@
          
          
             <td>{{ finishedMeeting.date }}</td>
-            <td>{{ finishedMeeting.customerinformation }}</td>
-            <td>{{ finishedMeeting.participants }}</td>
+       
+         
             <td>{{ finishedMeeting.meetingSubject }}</td>
             <td>{{ finishedMeeting.meetingResult  }}</td>
             <td>{{ finishedMeeting.meetingTitle }}</td>
             <td>{{ finishedmeeting.companyName }}</td>
-            <td>{{ finishedMeeting.companyAdress }}</td>
-            <td>{{ finishedMeeting.companyBusinessArea }}</td>
-            <td>{{ finishedMeeting.companyWebAdress }}</td>
             <td>{{ finishedMeeting.executiveName }}</td>
             <td>{{ finishedMeeting.executivePhoneNumber }}</td>
-            <td>{{ finishedMeeting.executiveEmail }}</td>
+   
       
 
     

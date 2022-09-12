@@ -9,7 +9,10 @@ import { FinishedmeetingService } from 'app/services/finishedmeeting.service';
   styleUrls: ['./finishedmeeting-list.component.scss']
 })
 export class FinishedmeetingListComponent implements OnInit {
-finishedMeeting:FinishedMeeting[]=[];
+  title='angular-text-search-highlight';
+  searchText="";
+  characters:FinishedMeeting[];
+  finishedMeeting:FinishedMeeting[]=[];
 dataLoaded = false;
 
   constructor(private finishedMeetingService:FinishedmeetingService,

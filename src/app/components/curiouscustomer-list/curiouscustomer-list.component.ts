@@ -9,6 +9,9 @@ import { CuriousCustomerService } from 'app/services/curiouscustomer.service';
   styleUrls: ['./curiouscustomer-list.component.scss']
 })
 export class CuriouscustomerListComponent implements OnInit {
+title='angular-text-search-highlight';
+searchText="";
+characters:CuriousCustomer[];
 curiousCustomers:CuriousCustomer[]=[];
 dataLoaded=false;
 

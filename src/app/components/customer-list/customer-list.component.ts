@@ -9,9 +9,11 @@ import { CustomerService } from 'app/services/customer.service';
   styleUrls: ['./customer-list.component.scss']
 })
 export class CustomerListComponent implements OnInit {
-title:Customer[]=[];
+title='angular-text-search-highlight';
 searchText="";
-characters:Customer[]=[];
+customer:Customer
+isCustomerLoad = false
+characters:Customer[];
 customers:Customer[]=[];
 dataLoaded = false;
   constructor(private customerService:CustomerService,
@@ -39,8 +41,9 @@ dataLoaded = false;
   } 
   getByCustomer(Id:string) {
     this.customerService.getByCustomer(Id).subscribe(response=>{
-      this.customers = response.data
-      this.dataLoaded = true;
+      this.customer = response.data
+      console.log(response)
+      this.isCustomerLoad = true;
     })   
   }
   

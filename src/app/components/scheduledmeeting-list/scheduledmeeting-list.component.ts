@@ -10,7 +10,10 @@ import { ScheduledmeetingService } from 'app/services/scheduledmeeting.service';
   styleUrls: ['./scheduledmeeting-list.component.scss']
 })
 export class ScheduledmeetingListComponent implements OnInit {
-scheduledMeetings:ScheduledMeeting[]=[];
+  title='angular-text-search-highlight';
+  searchText="";
+  characters:ScheduledMeeting[];
+  scheduledMeetings:ScheduledMeeting[]=[];
 dataLoaded = false;
   constructor(private scheduledMeetingService:ScheduledmeetingService,
     private activatedRoute:ActivatedRoute,

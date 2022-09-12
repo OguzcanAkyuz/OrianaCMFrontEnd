@@ -28,6 +28,14 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from 'app/interceptor/auth.interceptor';
 import { AppComponent } from 'app/app.component';
 import { routes } from 'app/app-routing.module';
+import { FilterPipe } from './pipes/filter.pipe';
+import { AbdroadinvestmentPipe } from './pipes/abdroadinvestment.pipe';
+import { CuriouscustomerPipe } from './pipes/curiouscustomer.pipe';
+import { FinishedmeetingPipe } from './pipes/finishedmeeting.pipe';
+import { PotentialcustomerPipe } from './pipes/potentialcustomer.pipe';
+import { RoutineservicePipe } from './pipes/routineservice.pipe';
+import { ScheduledmeetingPipe } from './pipes/scheduledmeeting.pipe';
+import { InvestmentrelationPipe } from './pipes/investmentrelation.pipe';
 
 @NgModule({
   imports: [
@@ -68,6 +76,14 @@ import { routes } from 'app/app-routing.module';
     FinishedmeetingListComponent,
     AbroadinvestmentAddComponent,
     AbroadinvestmentListComponent,
+    FilterPipe,
+    AbdroadinvestmentPipe,
+    CuriouscustomerPipe,
+    FinishedmeetingPipe,
+    PotentialcustomerPipe,
+    RoutineservicePipe,
+    ScheduledmeetingPipe,
+    InvestmentrelationPipe,
   
    
  

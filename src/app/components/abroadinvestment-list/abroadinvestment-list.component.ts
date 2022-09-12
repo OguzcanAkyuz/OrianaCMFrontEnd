@@ -9,6 +9,9 @@ import { AbroadInvestmentService } from 'app/services/abroad-investment.service'
   styleUrls: ['./abroadinvestment-list.component.scss'],
 })
 export class AbroadinvestmentListComponent implements OnInit {
+  title='angular-text-search-highlight';
+  searchText="";
+  characters:AbroadInvestmentRelation[];
   abroadInvestments: AbroadInvestmentRelation[] = [];
   dataLoaded = false;
 
