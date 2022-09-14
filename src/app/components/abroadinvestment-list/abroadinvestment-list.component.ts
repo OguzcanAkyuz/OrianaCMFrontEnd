@@ -11,8 +11,10 @@ import { AbroadInvestmentService } from 'app/services/abroad-investment.service'
 export class AbroadinvestmentListComponent implements OnInit {
   title='angular-text-search-highlight';
   searchText="";
+  isAbroadInvestmentLoad=false
   characters:AbroadInvestmentRelation[];
   abroadInvestments: AbroadInvestmentRelation[] = [];
+  abroadInvestment: AbroadInvestmentRelation
   dataLoaded = false;
 
   constructor(
@@ -38,10 +40,13 @@ export class AbroadinvestmentListComponent implements OnInit {
         this.dataLoaded = true;
       });
   }
-  getByAbroadInvestmentRelation(Id:string) {
+  getByAbroadInvestmentRelation
+  (Id:string) {
     this.abroadInvestmentService.getByAbroadInvestmentRelation(Id).subscribe(response=>{
-      this.abroadInvestments = response.data
-      this.dataLoaded = true;
-    })   
+      this.abroadInvestment = response.data
+      console.log(response)
+      this.isAbroadInvestmentLoad = true;
+    })  
+     
   }
 }

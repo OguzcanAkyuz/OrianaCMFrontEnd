@@ -1,115 +1,154 @@
 <div class="main-content">
-    <div class="container-fluid">
-      <div class="card">
-        <div class="card-header card-header-danger">
-          <h4 class="card-title">Routine Service</h4>
-        </div>
-        <div class="content" role="main">
-          <div class="card">
-            <div class="form-group">
-              <label for="search-text">Search Text</label>
-              <input type="text" class="form-control" id="search-text" aria-describedby="search-text" 
-                [(ngModel)]="searchText" placeholder="Enter text to search" 
-                autofocus>
-            </div>
-            <ul class="list-group list-group-flush">
-
-              <li class="list-group-item"  *ngFor="let c of characters | routineservice: searchText ">
-                {{c}}
-              </li>
-            </ul>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">Routine Services</h4>
           </div>
-        </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table">
-              
-              <thead class="text-primary" >
-                <tr>
-         
-                  <th></th>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Product</th>
-                <th> Routine Service Description</th>
-                <th>Person Name</th>
-                <th>Person Surname</th>
-                <th>Person</th>
-              </tr>
-            </thead>
-            <tbody>
-               
-              <tr *ngFor= "let routineService of routineServices  | routineservice: searchText" >
-      <button type="button"   class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-lg">
-       Details
-      </button>
-      <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" modal-lg role="document">
-          <div class="modal-content">
-            <div class="modal-header bg-primary">
-              <h5 class="modal-title" id="exampleModalLabel">Routine Service</h5>
-              <button type="button"  class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <tr *ngFor= "let routineService of routineServices" >
-            <div class="modal-body">
-              <tr>
-                <th>Date</th> 
-                <td>{{ routineService.routineServiceDate}}</td>
-              </tr>
-              <tr>
-                <th>Name</th>
-                <td>{{ routineService.routineServiceTime }}</td>
-              </tr>
 
-              <tr>
-                <th>Surname</th>
-                <td>{{ routineService.productId }}</td>
-              </tr>
-              <tr>
-                <th>Phone Number</th>
-                <td>{{ routineService.routineServiceDescription  }}</td>
-              </tr>
-              <tr>
-                <th>E Mail</th>
-                <td>{{ routineService.customerName }}</td>
-                
-              </tr>
-              <tr>
-                <th >Adress</th>
-                <p >{{ routineService.personName }}</p>
-              </tr>
-              <tr>
-                <th>Company</th>
-                <td>{{ routineService.personSurname }}</td>
-              </tr>
+          <div class="content" role="main">
+            <div class="card">
+              <div class="form-group">
+                <label for="search-text">Search Text</label>
+                <input type="text" class="form-control" id="search-text" aria-describedby="search-text" 
+                  [(ngModel)]="searchText" placeholder="Enter text to search" 
+                  autofocus>
+              </div>
+              <ul class="list-group list-group-flush">
+
+                <li class="list-group-item"  *ngFor="let c of characters | routineservice: searchText ">
+                  {{c}}
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                  <tr>
+                    <th></th>
+                    <th>Date</th>
+                    <th>Manager Name</th>
+                    <th>Manager Surname</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                    <th>Company Name</th>
+                    <th>Position</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr *ngFor="let routineServices of routineServices  | routineservice: searchText  ">
+                    <button
+                      type="button"
+                      class="btn btn-dark"
+                      data-toggle="modal"
+                      data-target=".bd-example-modal-lg"
+                      (click)="getByRoutineService(routineServices.id)"
+                    >
+                      Details
+                    </button>
           
-       
 
-            </div>
- 
-             
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" style="background-color:red" data-dismiss="modal">Close</button>
-              
+                    <td>{{ routineServices.routineServiceDate }}</td>
+                    <td>{{ routineServices.routineServiceTime  }}</td>
+                    <td>{{ routineServices.productId }}</td>
+                    <td>{{ routineServices.routineServiceDescription }}</td>
+                    <td>{{ routineServices.customerName }}</td>
+                    <td>{{ routineServices.officer }}</td>
+                    <td>{{ routineServices.personSurname }}</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
+aria-labelledby="exampleModalLabel"
+aria-hidden="true"
+
+>
+<div
+  class="modal-dialog modal-lg"
+  modal-lg
+  role="document"
+>
+  <div class="modal-content">
+    <div class="modal-header bg-primary">
+      <h5 class="modal-title" id="exampleModalLabel">
+       Routine Service
+      </h5>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="modal"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <tr>
+      <div class="modal-body" *ngIf="isRoutineServiceLoad" >
+        <tr>
+          <th>Date</th>
+          <td>{{ routineService.routineServiceDate }}</td>
+        </tr>
+        <tr>
+          <th>Time</th>
+          <td>{{ routineService.routineServiceTime }}</td>
+        </tr>
+
+        <tr>
+          <th>Product</th>
+          <td>{{ routineService.productId }}</td>
+        </tr>
+     
+        <tr>
+          <th>Routine Service Description</th>
+          <td>{{ routineService.routineServiceDescription }}</td>
+        </tr>
+        <tr>
+          <th>Customer Name</th>
+          <p>{{ routineService.customerName }}</p>
+        </tr>
+    
+        <tr>
+          <th>Person Name</th>
+          <p>{{ routineService.officer }}</p>
+        </tr>
+      
+        <tr>
+          <th>Person Surname</th>
+          <p>{{ routineService.personSurname }}</p>
+        </tr>
+       
+       
+      </div>
+
+
+  
  
-    <td>{{ routineService.routineServiceDate }}</td>
-    <td>{{ routineService.routineServiceTime  }}</td>
-    <td>{{ routineService.productId }}</td>
-    <td>{{ routineService.routineServiceDescription }}</td>
-    <td>{{ routineService.customerName }}</td>
-    <td>{{ routineService.personName }}</td>
-    <td>{{ routineService.personSurname }}</td>
-
-
-
- 
-
- 
-  </tr>
-</tbody>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          style="background-color: red"
+          data-dismiss="modal"
+        >
+          Close
+        </button>
+      </div>
+    </tr>
+  </div>
+</div>
+</div>

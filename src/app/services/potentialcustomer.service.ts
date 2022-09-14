@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { ListResponseModel } from 'app/models/listResponseModel';
 import { PotentialCustomer } from 'app/models/potentialCustomer';
 import { ResponseModel } from 'app/models/responseModel';
+import { SingleResponseModel } from 'app/models/singleResponseModel';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -20,9 +21,9 @@ export class PotentialcustomerService {
 }
 getByPotentialCustomer(
   Id: string
-): Observable<ListResponseModel<PotentialCustomer>> {
-  let newPath = this.apiUrl + 'PotentialCustomer/getbyid=' + Id;
-  return this.httpClient.get<ListResponseModel<PotentialCustomer>>(
+): Observable<SingleResponseModel<PotentialCustomer>> {
+  let newPath = this.apiUrl + 'PotentialCustomer/getbyid?potentialCustomerId' + Id;
+  return this.httpClient.get<SingleResponseModel<PotentialCustomer>>(
     newPath
   );
 

@@ -13,7 +13,9 @@ export class PotentialCustomerListComponent implements OnInit {
   searchText="";
   characters:PotentialCustomer[];
   potentialCustomers:PotentialCustomer[]=[];
-dataLoaded=false;
+  potentialCustomer:PotentialCustomer;
+  dataLoaded=false;
+  isPotentialCustomerLoad=false;
   constructor(private activatedRoute:ActivatedRoute, private potentialCustomersService:PotentialcustomerService,) { }
 
   ngOnInit(): void {
@@ -33,8 +35,9 @@ dataLoaded=false;
   }
   getByPotentialCustomer(Id:string) {
     this.potentialCustomersService.getByPotentialCustomer(Id).subscribe(response=>{
-      this.potentialCustomers = response.data
-      this.dataLoaded = true;
+      this.potentialCustomer = response.data
+      console.log(response)
+      this.isPotentialCustomerLoad = true;
     })   
   }
 }

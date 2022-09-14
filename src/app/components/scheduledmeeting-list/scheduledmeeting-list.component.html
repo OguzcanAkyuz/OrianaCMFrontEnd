@@ -12,16 +12,16 @@
             
               <div class="form-group">
               
-                <input class="search-box" type="text" class="form-control" id="search-text" aria-describedby="search-text" 
-                  [(ngModel)]="searchText" placeholder="Enter text to search" 
-                  autofocus>
-              </div>
+               <input type="text" class="form-control" id="search-text" aria-describedby="search-text" 
+                [(ngModel)]="searchText" placeholder="Search..." 
+                autofocus>
+            </div>
+            <ul class="list-group list-group-flush">
                 <li class="list-group-item"  *ngFor="let c of characters | scheduledmeeting: searchText ">
                   {{c}}
                 </li>
              
-            
-          </div>
+        
           <div class="card-body">
             <div class="table-responsive">
               <table class="table">

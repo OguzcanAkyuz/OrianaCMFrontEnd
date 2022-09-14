@@ -14,6 +14,8 @@ export class InvestorrelationListComponent implements OnInit {
   characters:InvestorRelation[];
 invesmentRelations:InvestorRelation[]=[];
 dataLoaded = false;
+isInvestorRelationLoad=false
+investmentRelation:InvestorRelation
 
   constructor( private activatedRoute:ActivatedRoute,
     private invesmentRelationService:InvestmentrelationService,) { }
@@ -36,8 +38,8 @@ getInvestmentRelations(){
 }
 getByInvestmentRelation(Id:string) {
   this.invesmentRelationService.getByInvestmentRelation(Id).subscribe(response=>{
-    this.invesmentRelations = response.data
-    this.dataLoaded = true;
+    this.investmentRelation = response.data
+    this.isInvestorRelationLoad = true;
   })   
 }
 }

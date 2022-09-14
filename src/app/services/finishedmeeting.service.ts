@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FinishedMeeting } from 'app/models/finishedMeeting';
 import { ListResponseModel } from 'app/models/listResponseModel';
+import { SingleResponseModel } from 'app/models/singleResponseModel';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -20,9 +21,9 @@ export class FinishedmeetingService {
 }
 getByFinishedMeeting(
   Id: string
-): Observable<ListResponseModel<FinishedMeeting>> {
-  let newPath = this.apiUrl + 'FinishedMeeting/getbyid=' + Id;
-  return this.httpClient.get<ListResponseModel<FinishedMeeting>>(
+): Observable<SingleResponseModel<FinishedMeeting>> {
+  let newPath = this.apiUrl + 'FinishedMeeting/getbyid?finishedMeetingId=' + Id;
+  return this.httpClient.get<SingleResponseModel<FinishedMeeting>>(
     newPath
   );
 

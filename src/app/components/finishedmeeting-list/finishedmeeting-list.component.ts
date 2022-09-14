@@ -14,6 +14,9 @@ export class FinishedmeetingListComponent implements OnInit {
   characters:FinishedMeeting[];
   finishedMeeting:FinishedMeeting[]=[];
 dataLoaded = false;
+isFinishedMeetingLoad=false
+finishedMeetings:FinishedMeeting;
+
 
   constructor(private finishedMeetingService:FinishedmeetingService,
     private activatedRoute:ActivatedRoute,
@@ -36,8 +39,9 @@ dataLoaded = false;
   }
   getByFinishedMeeting(Id:string) {
     this.finishedMeetingService.getByFinishedMeeting(Id).subscribe(response=>{
-      this.finishedMeeting = response.data
-      this.dataLoaded = true;
+      this.finishedMeetings = response.data
+      console.log(this.finishedMeetings)
+      this.isFinishedMeetingLoad = true;
     })   
   }
 

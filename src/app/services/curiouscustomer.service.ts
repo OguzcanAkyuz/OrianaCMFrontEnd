@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { CuriousCustomer } from 'app/models/curiousCustomer';
 import { ListResponseModel } from 'app/models/listResponseModel';
 import { ResponseModel } from 'app/models/responseModel';
+import { SingleResponseModel } from 'app/models/singleResponseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -22,9 +23,9 @@ export class CuriousCustomerService {
 }
 getByCuriousCustomer(
   Id: string
-): Observable<ListResponseModel<CuriousCustomer>> {
-  let newPath = this.apiUrl + 'CuriousCustomer/getbyid=' + Id;
-  return this.httpClient.get<ListResponseModel<CuriousCustomer>>(
+): Observable<SingleResponseModel<CuriousCustomer>> {
+  let newPath = this.apiUrl + 'CuriousCustomer/getbyid?curiousCustomerId=' + Id;
+  return this.httpClient.get<SingleResponseModel<CuriousCustomer>>(
     newPath
   );
   

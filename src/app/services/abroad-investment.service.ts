@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ListResponseModel } from '../models/listResponseModel';
 import { AbroadInvestmentRelation } from '../models/abroadInvestmentRelation';
 import { ResponseModel } from 'app/models/responseModel';
+import { SingleResponseModel } from 'app/models/singleResponseModel';
 
 @Injectable({
   providedIn: 'root',
@@ -23,9 +24,9 @@ export class AbroadInvestmentService {
   }
   getByAbroadInvestmentRelation(
     Id: string
-  ): Observable<ListResponseModel<AbroadInvestmentRelation>> {
-    let newPath = this.apiUrl + 'AbroadInvestmentRelation/getbyid=' + Id;
-    return this.httpClient.get<ListResponseModel<AbroadInvestmentRelation>>(
+  ): Observable<SingleResponseModel<AbroadInvestmentRelation>> {
+    let newPath = this.apiUrl + 'AbroadInvestmentRelation/getbyid?abroadInvestmentId=' + Id;
+    return this.httpClient.get<SingleResponseModel<AbroadInvestmentRelation>>(
       newPath
     );
   }

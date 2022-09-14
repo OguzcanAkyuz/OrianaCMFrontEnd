@@ -13,6 +13,8 @@ title='angular-text-search-highlight';
 searchText="";
 characters:CuriousCustomer[];
 curiousCustomers:CuriousCustomer[]=[];
+curiousCustomer:CuriousCustomer
+isCuriousCustomerLoad=false
 dataLoaded=false;
 
   constructor(private curiousCustomerService:CuriousCustomerService,
@@ -37,8 +39,9 @@ getCuriousCustomers(){
 }
 getByCuriousCustomer(Id:string) {
   this.curiousCustomerService.getByCuriousCustomer(Id).subscribe(response=>{
-    this.curiousCustomers = response.data
-    this.dataLoaded = true;
+    this.curiousCustomer = response.data
+    console.log(response)
+    this.isCuriousCustomerLoad = true;
   })   
 
 }

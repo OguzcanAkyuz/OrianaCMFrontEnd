@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { ListResponseModel } from 'app/models/listResponseModel';
 import { ResponseModel } from 'app/models/responseModel';
 import { RoutineService } from 'app/models/routineService';
+import { SingleResponseModel } from 'app/models/singleResponseModel';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -20,9 +21,9 @@ export class RoutineserviceService {
   }
   getByRoutineService(
     Id: string
-  ): Observable<ListResponseModel<RoutineService>> {
-    let newPath = this.apiUrl + 'RoutineService/getbyid=' + Id;
-    return this.httpClient.get<ListResponseModel<RoutineService>>(
+  ): Observable<SingleResponseModel<RoutineService>> {
+    let newPath = this.apiUrl + 'RoutineService/getbyid?routineServiceId=' + Id;
+    return this.httpClient.get<SingleResponseModel<RoutineService>>(
       newPath
     );
   

@@ -14,6 +14,8 @@ export class RoutineserviceListComponent implements OnInit {
   characters:RoutineService[];
   routineServices:RoutineService[]=[];
 dataLoaded=false;
+isRoutineServiceLoad=false
+ routineService:RoutineService;
   constructor(private routineServiceServices:RoutineserviceService,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit() {
@@ -36,8 +38,8 @@ dataLoaded=false;
   }
   getByRoutineService(Id:string) {
     this.routineServiceServices.getByRoutineService(Id).subscribe(response=>{
-      this.routineServices = response.data
-      this.dataLoaded = true;
+      this.routineService = response.data
+      this.isRoutineServiceLoad = true;
     })   
   }
 }

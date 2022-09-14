@@ -18,15 +18,26 @@ export class CustomerService {
     return this.httpClient.get<ListResponseModel<Customer>>(newPath);
   }
 
-  getByCustomer(Id: string): Observable<SingleResponseModel<Customer>> {
+  getByCustomer(
+    Id: string
+    ): Observable<SingleResponseModel<Customer>> {
     let newPath = this.apiUrl + 'Customer/getbyid?id=' + Id;
     return this.httpClient.get<SingleResponseModel<Customer>>(newPath);
   }
+  
   customerAdd
   (customer: Customer): Observable<ResponseModel> {
     return this.httpClient.post<ResponseModel>(
       this.apiUrl + 'Customer/Add',
       customer
     );
+  }
+  deleteCustomer
+  
+  (Id:string):Observable<SingleResponseModel<Customer>>{
+    return this.httpClient.delete<SingleResponseModel<Customer>>(
+       this.apiUrl+'Customer/delete'
+     
+    )
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Customer } from 'app/models/customer';
 import { CustomerService } from 'app/services/customer.service';
+import { response } from 'express';
 
 @Component({
   selector: 'app-customer-list',
@@ -45,6 +46,9 @@ dataLoaded = false;
       console.log(response)
       this.isCustomerLoad = true;
     })   
+  }
+  deleteCustomer(Id:string){
+    this.customerService.deleteCustomer(Id).subscribe(response=>{})
   }
   
   
