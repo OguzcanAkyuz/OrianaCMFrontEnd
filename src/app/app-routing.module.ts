@@ -23,6 +23,7 @@ import { PotentialCustomerListComponent } from 'app/components/potentialcustomer
 import { LoginGuard } from 'app/guards/login.guard';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { AdminLayoutModule } from './layouts/admin-layout/admin-layout.module';
+import { CustomerUpdateComponent } from './components/update-components/customer-update/customer-update.component';
 
 
 
@@ -34,7 +35,7 @@ export const routes: Routes = [
     { path: 'dashboard',      component: DashboardComponent ,canActivate:[LoginGuard]},
     { path: 'customer-add',      component: CustomerAddComponent,canActivate:[LoginGuard] },
   { path: 'customer-list',   component: CustomerListComponent,canActivate:[LoginGuard] },
-
+ 
   { path: 'abroadinvestor-add',     component: AbroadinvestmentAddComponent,canActivate:[LoginGuard] },
   { path: 'abroadinvestor-list',     component: AbroadinvestmentListComponent,canActivate:[LoginGuard] },
 

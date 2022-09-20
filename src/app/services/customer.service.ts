@@ -32,12 +32,19 @@ export class CustomerService {
       customer
     );
   }
-  deleteCustomer
+  deleteCustomer (Id:string):Observable<ResponseModel>{
   
-  (Id:string):Observable<SingleResponseModel<Customer>>{
-    return this.httpClient.delete<SingleResponseModel<Customer>>(
-       this.apiUrl+'Customer/delete'
-     
+    return this.httpClient.get<ResponseModel>(
+       this.apiUrl+'Customer/delete?customerId='+Id
+
     )
   }
+
+  updateCustomer
+   (Id:string):Observable<ResponseModel>{
+    return this.httpClient.get<ResponseModel>(
+      this.apiUrl + 'Customer/update?customerId='+Id
+      )
+  }
+  
 }

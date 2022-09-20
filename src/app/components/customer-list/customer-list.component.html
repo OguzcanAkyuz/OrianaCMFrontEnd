@@ -60,8 +60,10 @@
                     <td>{{ customer.lisenceEndDate }}</td>
                     <td>{{ customer.purchasePrice }}</td>
                     <td>{{ customer.productId }}</td>
-                    <td><button type="button" id="delete" class="btn btn-danger"
-                      (click)="deleteCustomer(customer.id)">Delete</button></td>
+                    <td> <button type="button" id="update" class="btn btn-info" routerLink="/customer-update/{{customer.id}}"
+                    >EDIT</button></td>
+                    <td><button type="button" id="delete" (click)="deleteCustomer(customer.id)" class="btn btn-danger" 
+                   >delete</button> 
                   </tr>
               
                 </tbody>
@@ -154,8 +156,9 @@ aria-hidden="true">
           <p>{{ customer.productVersion }}</p>
         </tr>
       </div>
+       <div>
 
-
+      </div> 
   
  
       <div class="modal-footer">
@@ -172,3 +175,5 @@ aria-hidden="true">
   </div>
 </div>
 </div>
+
+

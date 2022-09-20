@@ -14,7 +14,8 @@ export const ROUTES: RouteInfo[] = [
     
     { path: '/customer-list', title: 'Customers',  icon:'person', class: '',id:"customerlista" ,childrens:[
       { path: '/customer-add', title: 'New Customer Add',id:"customeradd",  icon: 'personadd', class: ''},
-      { path: '/customer-list', title: 'Customers List',id:"customerlist",  icon: 'content_paste', class: '' }
+      { path: '/customer-list', title: 'Customers List',id:"customerlist",  icon: 'content_paste', class: '' },
+    
     ] },
     { path: '/investorcustomer-list', title: 'Investor Relations ',id:"investorcustomerlist",  icon:'currency_lira', class: '',childrens:[
       { path: '/ınvestorcustomer-add', title: 'New Investor Add',id:"ınvestorcustomeradd",  icon: 'personadd', class: '' },

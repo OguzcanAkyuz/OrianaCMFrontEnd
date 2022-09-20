@@ -1,0 +1,192 @@
+<div class="main-content" >
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <h4 class="card-title">Customer </h4>
+            </div>
+           
+            <div class="card-body"  >
+              <form [formGroup]="customerUpdateForm" novalidate>
+                <div class="row">
+                  <div class="col-md-5">
+                    <mat-form-field class="example-full-width">
+                      <input id="purchaseDate"
+                      formControlName="purchaseDate"
+                      class="form-control"
+                      matInput placeholder="Date Of Upload" type="date" />
+                    </mat-form-field>
+                  </div>
+                  
+                  <div class="col-md-4">
+              
+                    <mat-form-field class="example-full-width">
+                      <input id="executiveEmail"
+                      formControlName="executiveEmail"
+                      class="form-control"
+                       matInput placeholder="E-mail Adress" type="email" />
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-3">
+                 
+                    <mat-form-field class="example-full-width">
+                      <input 
+                      id="executivePhoneNumber"
+                      formControlName="executivePhoneNumber"
+                      class="form-control" matInput placeholder="Phone Number" type="text" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                  
+                  <mat-form-field class="example-full-width">
+                      <input  id="executiveName"
+                      formControlName="executiveName"
+                      class="form-control"
+                       matInput placeholder="Manager Name" type="text" />
+                      </mat-form-field>
+                  </div>
+                  <div class="col-md-6">
+                
+                    <mat-form-field class="example-full-width">
+                      <input  id="executiveSurname"
+                      formControlName="executiveSurname"
+                      class="form-control"
+                        matInput
+                        placeholder="Last Name"
+                        type="text"
+                      />
+                    </mat-form-field>
+                    
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                  
+                    <mat-form-field class="example-full-width">
+                      <input  id="customerCompanyName"
+                      formControlName="customerCompanyName"
+                      class="form-control"
+                      matInput placeholder="Company Name" type="text" />
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-12">
+                  
+                    <mat-form-field class="example-full-width">
+                      <input  id="companyBusinessArea"
+                      formControlName="companyBusinessArea"
+                      class="form-control"
+                      matInput placeholder="Company Business Area" type="text" />
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-12">
+                  
+                    <mat-form-field class="example-full-width">
+                      <input  id="customerCompanyAdress"
+                      formControlName="customerCompanyAdress"
+                      class="form-control"
+                      matInput placeholder="Company Adress" type="text" />
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-12">
+                  
+                    <mat-form-field class="example-full-width">
+                      <input  id="productVersion"
+                      formControlName="productVersion"
+                      class="form-control"
+                      matInput placeholder="Product Version" type="text" />
+                    </mat-form-field>
+                  </div>
+                  
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                 
+                    <mat-form-field class="example-full-width">
+                      <input id="companyWebAdress"
+                      formControlName="companyWebAdress"
+                      class="form-control"
+                        matInput
+                        placeholder="Company Web Adress"
+                        type="text"
+                      />
+                    </mat-form-field>
+                  </div>
+                </div> 
+  
+                <div class="row">
+                  <div class="col-md-3">
+                  
+                    <mat-form-field class="example-full-width">
+                      <input 
+                      id="productId"
+                      formControlName="productId"
+                      class="form-control" matInput placeholder="Product" type="text" />
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-6">
+                    
+                    <mat-form-field class="example-full-width">
+                      <input 
+                      id="customerNote"
+                      formControlName="customerNote"
+                      class="form-control" matInput placeholder="Customer Note" type="text" />
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-3">
+                 
+                    <mat-form-field class="example-full-width">
+                      <input 
+                      id="lisenceEndDate"
+                      formControlName="lisenceEndDate"
+                      class="form-control" matInput placeholder="Lisence End Date" type="date" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                  
+                  <mat-form-field class="example-full-width">
+                      <input  id="licenseTerm"
+                      formControlName="licenseTerm"
+                      class="form-control"
+                       matInput placeholder="Lisence Term" type="text" />
+                      </mat-form-field>
+                  </div>
+                  <div class="col-md-6">
+                
+                    <mat-form-field class="example-full-width">
+                      <input  id="purchasePrice"
+                      formControlName="purchasePrice"
+                      class="form-control"
+                        matInput
+                        placeholder="Purchase Price"
+                        type="text"
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+    
+                <button 
+                  mat-raised-button
+                  type="button"
+                  class="btn btn-danger pull-right"  (click)="updateCustomer(customer.id)"
+                >
+                  Save
+                </button>
+                
+                <div class="clearfix"></div>
+              </form>
+              
+            </div>
+          </div>
+        </div>
+      
+           
+          </div>
+        </div>
+      </div>
+   
+  
