@@ -39,4 +39,17 @@ export class AbroadInvestmentService {
       abroadInvestmentRelation
     );
   }
+  updateAbroadInvestment
+  (abroadInvesment:AbroadInvestmentRelation):Observable<ResponseModel>{
+   return this.httpClient.post<ResponseModel>(
+     this.apiUrl + 'AbroadInvestmentRelation/update',abroadInvesment
+     )
+ }
+ deleteAbroadInvestment (Id:string):Observable<ResponseModel>{
+  
+  return this.httpClient.get<ResponseModel>(
+     this.apiUrl+'AbroadInvestmentRelation/delete?abroadInvestmentRelationId='+Id
+
+  )
+}
 }

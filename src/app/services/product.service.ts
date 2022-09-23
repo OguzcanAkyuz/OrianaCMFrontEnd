@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ListResponseModel } from 'app/models/listResponseModel';
 import { Product } from 'app/models/product';
+import { ResponseModel } from 'app/models/responseModel';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -20,7 +21,7 @@ export class ProductService {
 getByProduct(
   Id: string
 ): Observable<ListResponseModel<Product>> {
-  let newPath = this.apiUrl + 'Product/getbyid=' + Id;
+  let newPath = this.apiUrl + 'Product/getbyid?productId=' + Id;
   return this.httpClient.get<ListResponseModel<Product>>(
     newPath
   );
@@ -33,5 +34,19 @@ productAdd(
     this.apiUrl + 'Product/Add',
     product
   );
+}
+deleteProduct (Id:string):Observable<ResponseModel>{
+  
+  return this.httpClient.get<ResponseModel>(
+     this.apiUrl+'Product/delete?productId='+Id
+
+  )
+}
+
+updateProduct
+ (product:Product):Observable<ResponseModel>{
+  return this.httpClient.post<ResponseModel>(
+    this.apiUrl + 'Product/update',product
+    )
 }
 }

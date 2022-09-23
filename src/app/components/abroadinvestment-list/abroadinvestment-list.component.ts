@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AbroadInvestmentRelation } from 'app/models/abroadInvestmentRelation';
 import { AbroadInvestmentService } from 'app/services/abroad-investment.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-abroadinvestment-list',
@@ -19,7 +20,8 @@ export class AbroadinvestmentListComponent implements OnInit {
 
   constructor(
     private abroadInvestmentService: AbroadInvestmentService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private toastrService:ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -44,9 +46,16 @@ export class AbroadinvestmentListComponent implements OnInit {
   (Id:string) {
     this.abroadInvestmentService.getByAbroadInvestmentRelation(Id).subscribe(response=>{
       this.abroadInvestment = response.data
-      console.log(response)
       this.isAbroadInvestmentLoad = true;
     })  
      
+  }
+  deleteAbroadInvestment(Id:string){
+    this.abroadInvestmentService.deleteAbroadInvestment(Id).subscribe(response=>{
+      if(response.success){
+        this.toastrService.success(response.message)
+        this.getAbroadInvestments()
+      }
+    }) 
   }
 }

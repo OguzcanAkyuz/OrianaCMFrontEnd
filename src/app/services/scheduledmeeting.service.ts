@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { ListResponseModel } from 'app/models/listResponseModel';
 import { ResponseModel } from 'app/models/responseModel';
 import { ScheduledMeeting } from 'app/models/scheduledMeeting';
+import { SingleResponseModel } from 'app/models/singleResponseModel';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -21,9 +22,9 @@ export class ScheduledmeetingService {
   }
   getByScheduledMeeting(
     Id: string
-  ): Observable<ListResponseModel<ScheduledMeeting>> {
-    let newPath = this.apiUrl + 'ScheduledMeeting/getbyid=' + Id;
-    return this.httpClient.get<ListResponseModel<ScheduledMeeting>>(
+  ): Observable<SingleResponseModel<ScheduledMeeting>> {
+    let newPath = this.apiUrl + 'ScheduledMeeting/getbyid?scheduledMeetingId=' + Id;
+    return this.httpClient.get<SingleResponseModel<ScheduledMeeting>>(
       newPath
     );
   
@@ -35,5 +36,19 @@ export class ScheduledmeetingService {
       this.apiUrl + 'ScheduledMeeting/Add',
       scheduledMeeting
     );
+  }
+  deleteScheduledMeeting (Id:string):Observable<ResponseModel>{
+  
+    return this.httpClient.get<ResponseModel>(
+       this.apiUrl+'ScheduledMeeting/delete?scheduledMeetingId='+Id
+
+    )
+  }
+
+  updateScheduledMeeting
+   (scheduledMeeting:ScheduledMeeting):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(
+      this.apiUrl + 'ScheduledMeeting/update',scheduledMeeting
+      )
   }
 }

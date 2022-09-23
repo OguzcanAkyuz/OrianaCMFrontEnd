@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
 export class PotentialcustomerService {
   apiUrl='https://localhost:44300/api/';
   constructor(private httpClient:HttpClient) { }
+
   getPotentialCustomers(): Observable<ListResponseModel<PotentialCustomer>
   > {
     let newPath = this.apiUrl + 'PotentialCustomer/getall';
@@ -22,7 +23,7 @@ export class PotentialcustomerService {
 getByPotentialCustomer(
   Id: string
 ): Observable<SingleResponseModel<PotentialCustomer>> {
-  let newPath = this.apiUrl + 'PotentialCustomer/getbyid?potentialCustomerId' + Id;
+  let newPath = this.apiUrl + 'PotentialCustomer/getbyid?potentialCustomerId=' + Id;
   return this.httpClient.get<SingleResponseModel<PotentialCustomer>>(
     newPath
   );
@@ -35,5 +36,19 @@ potentialCustomerAdd(
     this.apiUrl + 'PotentialCustomer/Add',
     potentialCustomer
   );
+}
+deletePotentialCustomer (Id:string):Observable<ResponseModel>{
+  
+  return this.httpClient.get<ResponseModel>(
+     this.apiUrl+'PotentialCustomer/delete?potentialCustomerId='+Id
+
+  )
+}
+
+updatePotentialCustomer
+ (potentialCustomer:PotentialCustomer):Observable<ResponseModel>{
+  return this.httpClient.post<ResponseModel>(
+    this.apiUrl + 'PotentialCustomer/update',potentialCustomer
+    )
 }
 }

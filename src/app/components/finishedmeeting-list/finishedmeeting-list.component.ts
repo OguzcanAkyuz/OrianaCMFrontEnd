@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FinishedMeeting } from 'app/models/finishedMeeting';
 import { FinishedmeetingService } from 'app/services/finishedmeeting.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-finishedmeeting-list',
@@ -19,7 +20,7 @@ finishedMeetings:FinishedMeeting;
 
 
   constructor(private finishedMeetingService:FinishedmeetingService,
-    private activatedRoute:ActivatedRoute,
+    private activatedRoute:ActivatedRoute, private toastrService:ToastrService
     ) { }
 
   ngOnInit(): void {
@@ -44,5 +45,13 @@ finishedMeetings:FinishedMeeting;
       this.isFinishedMeetingLoad = true;
     })   
   }
+  deleteFinishedMeeting(Id:string){
+    this.finishedMeetingService.deleteFinishedMeeting(Id).subscribe(response=>{
+      if(response.success){
+        this.toastrService.success(response.message)
+        this.getFinishedMeetings()
+      }
+    })
 
+  }
 }

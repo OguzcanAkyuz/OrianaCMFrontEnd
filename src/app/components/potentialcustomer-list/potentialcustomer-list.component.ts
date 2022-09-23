@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PotentialCustomer } from 'app/models/potentialCustomer';
 import { PotentialcustomerService } from 'app/services/potentialcustomer.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-potentialcustomer-list',
@@ -16,7 +17,7 @@ export class PotentialCustomerListComponent implements OnInit {
   potentialCustomer:PotentialCustomer;
   dataLoaded=false;
   isPotentialCustomerLoad=false;
-  constructor(private activatedRoute:ActivatedRoute, private potentialCustomersService:PotentialcustomerService,) { }
+  constructor(private activatedRoute:ActivatedRoute, private potentialCustomersService:PotentialcustomerService,private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
@@ -30,14 +31,22 @@ export class PotentialCustomerListComponent implements OnInit {
   getPotentialCustomers() {
     this.potentialCustomersService.getPotentialCustomers().subscribe(response=>{
       this.potentialCustomers = response.data
+      console.log(response)
       this.dataLoaded = true;
     })   
   }
   getByPotentialCustomer(Id:string) {
     this.potentialCustomersService.getByPotentialCustomer(Id).subscribe(response=>{
       this.potentialCustomer = response.data
-      console.log(response)
       this.isPotentialCustomerLoad = true;
     })   
+  }
+  deletePotentialCustomer(Id:string){
+    this.potentialCustomersService.deletePotentialCustomer(Id).subscribe(response=>{
+      if(response.success){
+        this.toastrService.success(response.message)
+        this.getPotentialCustomers()
+      }
+    }) 
   }
 }

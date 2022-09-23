@@ -36,4 +36,18 @@ export class RoutineserviceService {
       routineService
     );
   }
+  deleteRoutineService (Id:string):Observable<ResponseModel>{
+  
+    return this.httpClient.get<ResponseModel>(
+       this.apiUrl+'RoutineService/delete?routineServiceId='+Id
+
+    )
+  }
+
+  updateRoutineService
+   (routineService:RoutineService):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(
+      this.apiUrl + 'RoutineService/update',routineService
+      )
+  }
 }

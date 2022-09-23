@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CuriousCustomer } from 'app/models/curiousCustomer';
 import { CuriousCustomerService } from 'app/services/curiouscustomer.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-curiouscustomer-list',
@@ -18,7 +19,7 @@ isCuriousCustomerLoad=false
 dataLoaded=false;
 
   constructor(private curiousCustomerService:CuriousCustomerService,
-  private activatedRoute:ActivatedRoute,) { }
+  private activatedRoute:ActivatedRoute,private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
@@ -44,5 +45,13 @@ getByCuriousCustomer(Id:string) {
     this.isCuriousCustomerLoad = true;
   })   
 
+}
+deleteCuriousCustomer(Id:string){
+  this.curiousCustomerService.deleteCuriousCustomer(Id).subscribe(response=>{
+    if(response.success){
+      this.toastrService.success(response.message)
+      this.getCuriousCustomers()
+    }
+  }) 
 }
   }

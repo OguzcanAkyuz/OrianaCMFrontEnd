@@ -1,114 +1,162 @@
 <div class="main-content">
   <div class="container-fluid">
-    <div class="card">
-      <div class="card-header card-header-danger">
-        <h4 class="card-title">Serious Customers</h4>
-      </div>
-      <div class="content" role="main">
+    <div class="row">
+      <div class="col-md-12">
         <div class="card">
-          <div class="form-group">
-            <label for="search-text">Search Text</label>
-            <input type="text" class="form-control" id="search-text" aria-describedby="search-text" 
-              [(ngModel)]="searchText" placeholder="Enter text to search" 
-              autofocus>
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">Serious Customer</h4>
           </div>
-          <ul class="list-group list-group-flush">
 
-            <li class="list-group-item"  *ngFor="let c of characters | potentialcustomer: searchText ">
-              {{c}}
-            </li>
-          </ul>
+          <div class="content" role="main">
+            <div class="card">
+              <div class="form-group">
+                <label for="search-text">Search Text</label>
+                <input type="text" class="form-control" id="search-text" aria-describedby="search-text" 
+                  [(ngModel)]="searchText" placeholder="Enter text to search" 
+                  autofocus>
+              </div>
+              <ul class="list-group list-group-flush">
+
+                <li class="list-group-item"  *ngFor="let c of characters | potentialcustomer: searchText ">
+                  {{c}}
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                  <tr>
+                    <th></th>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Company</th>
+                    <th>Title</th>
+              
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr *ngFor="let potentialCustomer of potentialCustomers  | potentialcustomer: searchText  ">
+                    <button
+                      type="button"
+                      class="btn btn-dark"
+                      data-toggle="modal"
+                      data-target=".bd-example-modal-lg"
+                      (click)="getByPotentialCustomer(potentialCustomer.id)"
+                    >
+                      Details
+                    </button>
+          
+
+                    <td>{{ potentialCustomer.dateOfUpload }}</td>
+                    <td>{{ potentialCustomer.potentialCustomerName }}</td>
+                    <td>{{ potentialCustomer.potentialCustomerSurname }}</td>
+                    <td>{{ potentialCustomer.company }}</td>
+                    <td>{{ potentialCustomer.position }}</td>
+                    <td> <button type="button" id="update" class="btn btn-info" routerLink="/potentialcustomer-update/{{potentialCustomer.id}}"
+                      >EDIT</button></td>
+                      <td><button type="button" id="delete" (click)="deletePotentialCustomer(potentialCustomer.id)" class="btn btn-danger" 
+                     >delete</button> 
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="card-body">
-        <div class="table-responsive" >
-          <table class="table">
-            <thead class="text-primary">
-              <tr>
-                <th></th>
-              <th>Date</th>
-              <th>Name</th>
-              <th>Surname</th>
-              <th>Company</th>
-              <th>Title</th>
-           
-          
-            
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor= "let potentialCustomer of potentialCustomers | potentialcustomer: searchText"  >
-              <button type="button"   class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-lg">
-               Details
-              </button>
-              <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg" modal-lg role="document">
-                  <div class="modal-content">
-                    <div class="modal-header bg-primary">
-                      <h5 class="modal-title" id="exampleModalLabel">Potential Customer</h5>
-                      <button type="button"  class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                   
-                    <div class="modal-body">
-                      <tr>
-                        <th>Date</th> 
-                        <td>{{ potentialCustomer.dateOfUpload}}</td>
-                      </tr>
-                      <tr>
-                        <th>Name</th>
-                        <td>{{ potentialCustomer.potentialCustomerName }}</td>
-                      </tr>
-        
-                      <tr>
-                        <th>Surname</th>
-                        <td>{{ potentialCustomer.potentialCustomerSurname }}</td>
-                      </tr>
-                      <tr>
-                        <th>Phone Number</th>
-                        <td>{{ potentialCustomer.phoneNumber  }}</td>
-                      </tr>
-                      <tr>
-                        <th>E Mail</th>
-                        <td>{{ potentialCustomer.email }}</td>
-                        
-                      </tr>
-                      <tr>
-                        <th >Adress</th>
-                        <p >{{ potentialCustomer.adress }}</p>
-                      </tr>
-                      <tr>
-                        <th>Company</th>
-                        <td>{{ potentialCustomer.company }}</td>
-                      </tr>
-                      <tr>
-                        <th>Title</th>
-                        <td>{{ potentialCustomer.position }}</td>
-                      </tr>
-                      <tr>
-                        <th>Note</th>  
-                        <p>{{ potentialCustomer.note }}</p>
-                      </tr>
-               
-        
-                    </div>
-                
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" style="background-color:red" data-dismiss="modal">Close</button>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
+    </div>
+  </div>
+</div>
 
-  <td>{{ potentialCustomer.dateOfUpload }}</td>
-  <td>{{ potentialCustomer.potentialCustomerName }}</td>
-  <td>{{ potentialCustomer.potentialCustomerSurname }}</td>
-  <td>{{ potentialCustomer.company }}</td>
-  <td>{{ potentialCustomer.position }}</td>
- 
- 
 
-</tr>
-</tbody>
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
+aria-labelledby="exampleModalLabel"
+aria-hidden="true"
+
+>
+<div
+  class="modal-dialog modal-lg"
+  modal-lg
+  role="document"
+>
+  <div class="modal-content">
+    <div class="modal-header bg-primary">
+      <h5 class="modal-title" id="exampleModalLabel">
+       Serious Customer
+      </h5>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="modal"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <tr>
+      <div class="modal-body"  *ngIf="isPotentialCustomerLoad">
+        <tr>
+          <th>Date</th>
+          <td>{{ potentialCustomer.dateOfUpload }}</td>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <td>{{ potentialCustomer.potentialCustomerName }}</td>
+        </tr>
+
+        <tr>
+          <th>Surname</th>
+          <td>{{ potentialCustomer.potentialCustomerSurname }}</td>
+        </tr>
+     
+        <tr>
+          <th>Company Adress</th>
+          <td>{{ potentialCustomer.adress }}</td>
+        </tr>
+        <tr>
+          <th>Company</th>
+          <p>{{ potentialCustomer.company }}</p>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td><a href="mailto:{{ potentialCustomer.email }}">{{ potentialCustomer.email }}</a></td>
+        </tr>
+        <tr>
+          <th>Phone Number</th>
+          <td><a href="tel:{{ potentialCustomer.phoneNumber }}">{{ potentialCustomer.phoneNumber }}</a></td>
+        </tr>
+        <tr>
+          <th>Title</th>
+          <p>{{ potentialCustomer.position }}</p>
+        </tr>
+      
+        <tr>
+          <th>Note</th>
+          <p>{{ potentialCustomer.note }}</p>
+        </tr>
+       
+       
+      </div>
+
+
+  
+ 
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          style="background-color: red"
+          data-dismiss="modal"
+        >
+          Close
+        </button>
+      </div>
+    </tr>
+  </div>
+</div>
+</div>

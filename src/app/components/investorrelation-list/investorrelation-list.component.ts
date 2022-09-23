@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { InvestorRelation } from 'app/models/investorRelation';
 import { InvestmentrelationService } from 'app/services/investmentrelation.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-investorrelation-list',
@@ -18,7 +19,7 @@ isInvestorRelationLoad=false
 investmentRelation:InvestorRelation
 
   constructor( private activatedRoute:ActivatedRoute,
-    private invesmentRelationService:InvestmentrelationService,) { }
+    private invesmentRelationService:InvestmentrelationService,private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
@@ -41,5 +42,13 @@ getByInvestmentRelation(Id:string) {
     this.investmentRelation = response.data
     this.isInvestorRelationLoad = true;
   })   
+}
+deleteInvestmentRelation(Id:string){
+  this.invesmentRelationService.deleteInvestmentRelation(Id).subscribe(response=>{
+    if(response.success){
+      this.toastrService.success(response.message)
+      this.getInvestmentRelations()
+    }
+  }) 
 }
 }

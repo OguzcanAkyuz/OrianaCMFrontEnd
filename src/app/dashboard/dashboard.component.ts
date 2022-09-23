@@ -154,7 +154,7 @@ export class DashboardComponent implements OnInit {
     this.customerService
     .getCustomers()
     .subscribe(response=>{
-   
+      
       this.customers = response.data
       this.dataLoaded = true;
 

@@ -18,8 +18,8 @@ export const ROUTES: RouteInfo[] = [
     
     ] },
     { path: '/investorcustomer-list', title: 'Investor Relations ',id:"investorcustomerlist",  icon:'currency_lira', class: '',childrens:[
-      { path: '/ınvestorcustomer-add', title: 'New Investor Add',id:"ınvestorcustomeradd",  icon: 'personadd', class: '' },
-      { path: '/ınvestorcustomer-list', title: 'Investors List', id:"ınvestorcustomerlist", icon: 'content_paste', class: '' }
+      { path: '/investorcustomer-add', title: 'New Investor Add',id:"investorcustomeradd",  icon: 'personadd', class: '' },
+      { path: '/investorcustomer-list', title: 'Investors List', id:"investorcustomerlist", icon: 'content_paste', class: '' }
     ] },
 
     { path: '/upgrade', title: 'Abroad Investor Relations ', id:"upgrade", icon:'request_quote', class: '',childrens:[

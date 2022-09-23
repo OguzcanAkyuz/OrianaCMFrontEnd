@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RoutineService } from 'app/models/routineService';
 import { RoutineserviceService } from 'app/services/routineservice.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-routineservice-list',
@@ -16,7 +17,7 @@ export class RoutineserviceListComponent implements OnInit {
 dataLoaded=false;
 isRoutineServiceLoad=false
  routineService:RoutineService;
-  constructor(private routineServiceServices:RoutineserviceService,private activatedRoute:ActivatedRoute) { }
+  constructor(private routineServiceServices:RoutineserviceService,private activatedRoute:ActivatedRoute,private toastrService:ToastrService) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params=>{
@@ -41,5 +42,13 @@ isRoutineServiceLoad=false
       this.routineService = response.data
       this.isRoutineServiceLoad = true;
     })   
+  }
+  deleteRoutineService(Id:string){
+    this.routineServiceServices.deleteRoutineService(Id).subscribe(response=>{
+      if(response.success){
+        this.toastrService.success(response.message)
+        this.getRoutineServices()
+      }
+    }) 
   }
 }

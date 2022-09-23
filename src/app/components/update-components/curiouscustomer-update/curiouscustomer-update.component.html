@@ -1,1 +1,124 @@
-<p>curiouscustomer-update works!</p>
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <h4 class="card-title">Curious Customer</h4>
+            </div>
+           
+            <div class="card-body">
+              <form [formGroup]="curiousCustomerUpdateForm" >
+                <div class="row">
+                  <div class="col-md-5">
+                    <label for="dateOfUpload"></label>
+                    <mat-form-field class="example-full-width">
+                      <input id="dateOfUpload"
+                      formControlName="dateOfUpload"
+                      class="form-control"
+                      matInput placeholder="Date Of Upload" type="date" />
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="phoneNumber"></label>
+                    <mat-form-field class="example-full-width">
+                      <input id="phoneNumber"
+                      formControlName="phoneNumber"
+                      class="form-control"
+                       matInput placeholder="Manager Phone Number" />
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-3">
+                    <label for="email"></label>
+                    <mat-form-field class="example-full-width">
+                      <input 
+                      id="email"
+                      formControlName="email"
+                      class="form-control" matInput placeholder="Email address" type="email" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <label for="curiousCustomerName"></label>
+                    <mat-form-field class="example-full-width">
+                      <input  id="curiousCustomerName"
+                      formControlName="curiousCustomerName"
+                      class="form-control"
+                       matInput placeholder="Name" type="text" />
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="curiousCustomerSurname"></label>
+                    <mat-form-field class="example-full-width">
+                      <input  id="curiousCustomerSurname"
+                      formControlName="curiousCustomerSurname"
+                      class="form-control"
+                        matInput
+                        placeholder="Last Name"
+                        type="text"
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <label for="adress"></label>
+                    <mat-form-field class="example-full-width">
+                      <input  id="adress"
+                      formControlName="adress"
+                      class="form-control"
+                      matInput placeholder="Company Adress" type="text" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <label for="note"></label>
+                    <mat-form-field class="example-full-width">
+                      <input id="note"
+                      formControlName="note"
+                      class="form-control"
+                        matInput
+                        placeholder="Note"
+                        type="text"
+                      />
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-5">
+                    <label for="company"></label>
+                    <mat-form-field class="example-full-width">
+                      <input 
+                      id="company"
+                      formControlName="company"
+                      class="form-control" matInput placeholder="Company" type="text" />
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-5">
+                    <label for="position"></label>
+                    <mat-form-field class="example-full-width">
+                      <input 
+                      id="position"
+                      formControlName="position"
+                      class="form-control" matInput placeholder="Position" type="text" />
+                    </mat-form-field>
+                  </div>
+                </div>
+  
+                <button
+                  mat-raised-button
+                  type="button"
+                  class="btn btn-danger pull-right" (click)="updateCuriousCustomer(curiousCustomerUpdateForm)"
+                >
+                  Save
+                </button>
+                <div class="clearfix"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+   
+      </div>
+    </div>
+  </div>
+  

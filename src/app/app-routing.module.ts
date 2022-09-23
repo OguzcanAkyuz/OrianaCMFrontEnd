@@ -39,8 +39,8 @@ export const routes: Routes = [
   { path: 'abroadinvestor-add',     component: AbroadinvestmentAddComponent,canActivate:[LoginGuard] },
   { path: 'abroadinvestor-list',     component: AbroadinvestmentListComponent,canActivate:[LoginGuard] },
 
-  { path: 'ınvestorcustomer-add',     component: InvestorrelationAddComponent,canActivate:[LoginGuard] },
-  { path: 'ınvestorcustomer-list',          component: InvestorrelationListComponent,canActivate:[LoginGuard] },
+  { path: 'investorcustomer-add',     component: InvestorrelationAddComponent,canActivate:[LoginGuard] },
+  { path: 'investorcustomer-list',          component: InvestorrelationListComponent,canActivate:[LoginGuard] },
 
   { path: 'curiouscustomer-add',           component: CuriouscustomerAddComponent,canActivate:[LoginGuard] },
   { path: 'curiouscustomer-list',  component: CuriouscustomerListComponent,canActivate:[LoginGuard] },

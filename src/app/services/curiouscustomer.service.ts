@@ -38,4 +38,20 @@ curiousCustomerAdd(
     curiousCustomer
   );
 }
+deleteCuriousCustomer (Id:string):Observable<ResponseModel>{
+  
+  return this.httpClient.get<ResponseModel>(
+     this.apiUrl+'CuriousCustomer/delete?curiousCustomerId='+Id
+
+  )
 }
+
+updateCuriousCustomer
+ (curiousCustomer:CuriousCustomer):Observable<ResponseModel>{
+  return this.httpClient.post<ResponseModel>(
+    this.apiUrl + 'CuriousCustomer/update',curiousCustomer
+    )
+}
+
+}
+ 

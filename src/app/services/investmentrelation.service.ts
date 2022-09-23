@@ -23,18 +23,32 @@ export class InvestmentrelationService {
 getByInvestmentRelation(
   Id: string
 ): Observable<SingleResponseModel<InvestorRelation>> {
-  let newPath = this.apiUrl + 'InvestmentRelation/getbyid?%C4%B1nvestmentRelation%C4%B1d=' + Id;
+  let newPath = this.apiUrl + 'InvestmentRelation/getbyid?investmentRelationId=' + Id;
   return this.httpClient.get<SingleResponseModel<InvestorRelation>>(
     newPath
   );
 
 }
 investmentRelationAdd(
-  ınvestmentrelation: InvestorRelation
+  investmentrelation: InvestorRelation
 ): Observable<ResponseModel> {
   return this.httpClient.post<ResponseModel>(
     this.apiUrl + 'InvestmentRelation/Add',
-    ınvestmentrelation
+  investmentrelation
   );
+}
+deleteInvestmentRelation (Id:string):Observable<ResponseModel>{
+  
+  return this.httpClient.get<ResponseModel>(
+     this.apiUrl+'InvestmentRelation/delete?investmentRelationId='+Id
+
+  )
+}
+
+updateInvestmentRelation
+ (investmentrelation:InvestorRelation):Observable<ResponseModel>{
+  return this.httpClient.post<ResponseModel>(
+    this.apiUrl + 'InvestmentRelation/update',investmentrelation
+    )
 }
 }

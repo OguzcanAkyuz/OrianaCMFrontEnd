@@ -39,8 +39,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'abroadinvestor-list',     component: AbroadinvestmentListComponent,canActivate:[LoginGuard] },
     { path: 'abroadinvestment-update/:id',   component: AbroadinvestmentUpdateComponent,canActivate:[LoginGuard] },
 
-    { path: 'ınvestorcustomer-add',     component: InvestorrelationAddComponent,canActivate:[LoginGuard] },
-    { path: 'ınvestorcustomer-list',          component: InvestorrelationListComponent,canActivate:[LoginGuard] },
+    { path: 'investorcustomer-add',     component: InvestorrelationAddComponent,canActivate:[LoginGuard] },
+    { path: 'investorcustomer-list',          component: InvestorrelationListComponent,canActivate:[LoginGuard] },
     { path: 'investmentrelation-update/:id',   component: InvestmentrelationUpdateComponent,canActivate:[LoginGuard] },
 
     { path: 'curiouscustomer-add',           component: CuriouscustomerAddComponent,canActivate:[LoginGuard] },

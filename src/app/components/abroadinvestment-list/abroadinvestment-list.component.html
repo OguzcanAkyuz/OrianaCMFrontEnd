@@ -78,6 +78,10 @@
                     <td>{{ abroadInvestments.adress }}</td>
                     <td>{{ abroadInvestments.note }}</td>
                     <td>{{ abroadInvestments.country }}</td>
+                    <td> <button type="button" id="update" class="btn btn-info" routerLink="/abroadinvestment-update/{{abroadInvestments.id}}"
+                      >EDIT</button></td>
+                      <td><button type="button" id="delete" (click)="deleteAbroadInvestment(abroadInvestments.id)" class="btn btn-danger" 
+                     >delete</button> 
                   </tr>
                 </tbody>
               </table>

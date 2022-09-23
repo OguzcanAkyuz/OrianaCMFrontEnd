@@ -1,5 +1,3 @@
-
-      <!-- Katılımcı bilgilerini genişlet  -->
 <div class="main-content">
   <div class="container-fluid">
     <div class="row">
@@ -8,125 +6,177 @@
           <div class="card-header card-header-danger">
             <h4 class="card-title">Future Meetings</h4>
           </div>
+
           <div class="content" role="main">
-            
+            <div class="card">
               <div class="form-group">
-              
-               <input type="text" class="form-control" id="search-text" aria-describedby="search-text" 
-                [(ngModel)]="searchText" placeholder="Search..." 
-                autofocus>
-            </div>
-            <ul class="list-group list-group-flush">
+                <label for="search-text">Search Text</label>
+                <input type="text" class="form-control" id="search-text" aria-describedby="search-text" 
+                  [(ngModel)]="searchText" placeholder="Enter text to search" 
+                  autofocus>
+              </div>
+              <ul class="list-group list-group-flush">
+
                 <li class="list-group-item"  *ngFor="let c of characters | scheduledmeeting: searchText ">
                   {{c}}
                 </li>
-             
-        
+              </ul>
+            </div>
+          </div>
+
           <div class="card-body">
             <div class="table-responsive">
               <table class="table">
                 <thead class="text-primary">
                   <tr>
                     <th></th>
-                  <th>Date</th>
-                  <th>Meeting Title</th>
-                  <th>Meeting Subject</th>
-                  <th>Customer Result</th>
-                  <th>Company</th>
-                  <th>Executive Name</th>
-
-                </tr>
+                    <th>Date</th>
+                    <th>Meeting Title</th>
+                    <th>Meeting Subject</th>
+                    <th>Customer Result</th>
+                    <th>Company</th>
+                    <th>Executive Name</th>
+            
+                  </tr>
                 </thead>
+
                 <tbody>
-                  <tr *ngFor= "let scheduledmeeting of scheduledMeetings | scheduledmeeting: searchText " >
-      <button type="button"   class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-lg">
-       Details
-      </button>
-      <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" modal-lg role="document">
-          <div class="modal-content">
-            <div class="modal-header bg-primary">
-              <h5 class="modal-title" id="exampleModalLabel">Scheduled Meeting</h5>
-              <button type="button"  class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <tr *ngFor= "let scheduledmeeting of scheduledMeetings" >
-            <div class="modal-body">
-              <tr>
-                <th>Date</th> 
-                <td>{{ scheduledmeeting.meetingDate}}</td>
-              </tr>
-              <tr>
-                <th>Name</th>
-                <td>{{ scheduledmeeting.meetingTitle }}</td>
-              </tr>
+                  <tr *ngFor="let scheduledmeetings of scheduledMeetings  | scheduledmeeting: searchText  ">
+                    <button
+                      type="button"
+                      class="btn btn-dark"
+                      data-toggle="modal"
+                      data-target=".bd-example-modal-lg"
+                      (click)="getByScheduledMeeting(scheduledmeetings.id)"
+                    >
+                      Details
+                    </button>
+          
 
-              <tr>
-                <th>Surname</th>
-                <td>{{ scheduledmeeting.meetingSubject }}</td>
-              </tr>
-              <tr>
-                <th>Phone Number</th>
-                <td>{{ scheduledmeeting.participants  }}</td>
-              </tr>
-              <tr>
-                <th>E Mail</th>
-                <td>{{ scheduledmeeting.customerInformation }}</td>
-                
-              </tr>
-              <tr>
-                <th >Adress</th>
-                <p >{{ scheduledmeeting.meetingResult }}</p>
-              </tr>
-              <tr>
-                <th>Company</th>
-                <td>{{ scheduledmeeting.companyName }}</td>
-              </tr>
-              <tr>
-                <th>Title</th>
-                <td>{{ scheduledmeeting.companyAdress }}</td>
-              </tr>
-              <tr>
-                <th>Note</th>  
-                <p>{{ scheduledmeeting.companyBusinessArea }}</p>
-              </tr>
-              <tr>
-                <th>Note</th>  
-                <p>{{ scheduledmeeting.companyWebAdress }}</p>
-              </tr>
-              <tr>
-                <th>Note</th>  
-                <p>{{ scheduledmeeting.executiveName }}</p>
-              </tr>
-              <tr>
-                <th>Note</th>  
-                <p>{{ scheduledmeeting.executivePhoneNumber }}</p>
-              </tr>
-                <tr>
-                <th>Note</th>  
-                <p>{{ scheduledmeeting.executiveEmail }}</p>
-              </tr>
-       
-
-            </div>
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" style="background-color:red" data-dismiss="modal">Close</button>
-              
+                    <td>{{ scheduledmeetings.meetingDate }}</td>
+                    <td>{{ scheduledmeetings.meetingTitle }}</td>
+                    <td>{{ scheduledmeetings.meetingSubject }}</td>
+                    <td>{{ scheduledmeetings.meetingResult }}</td>
+                    <td>{{ scheduledmeetings.companyName }}</td>
+                    <td>{{ scheduledmeetings.executiveName }}</td>
+                    <td> <button type="button" id="update" class="btn btn-info" routerLink="/scheduledmeeting-update/{{scheduledmeetings.id}}"
+                      >EDIT</button></td>
+                      <td><button type="button" id="delete" (click)="deleteScheduledMeeting(scheduledmeetings.id)" class="btn btn-danger" 
+                     >delete</button> 
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
       </div>
-
-     <td>{{ scheduledmeeting.meetingDate }}</td>
-     <td>{{ scheduledmeeting.meetingTitle }}</td>
-     <td>{{ scheduledmeeting.meetingSubject }}</td>
-    <td>{{ scheduledmeeting.meetingResult  }}</td>
-    <td>{{ scheduledmeeting.companyName }}</td>
-    <td>{{ scheduledmeeting.executiveName }}</td>
-  </tr>
-</tbody>
+    </div>
+  </div>
+</div>
 
 
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
+aria-labelledby="exampleModalLabel"
+aria-hidden="true"
 
+>
+<div
+  class="modal-dialog modal-lg"
+  modal-lg
+  role="document"
+>
+  <div class="modal-content">
+    <div class="modal-header bg-primary">
+      <h5 class="modal-title" id="exampleModalLabel">
+       Future Meeting
+      </h5>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="modal"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <tr>
+      <div class="modal-body"  *ngIf="isScheduledMeetingLoad">
+        <tr>
+          <th>Date</th>
+          <td>{{ scheduledMeeting.meetingDate }}</td>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <td>{{ scheduledMeeting.meetingTitle }}</td>
+        </tr>
+
+        <tr>
+          <th>Surname</th>
+          <td>{{ scheduledMeeting.meetingSubject }}</td>
+        </tr>
+     
+        <tr>
+          <th>Company Adress</th>
+          <td>{{ scheduledMeeting.participants }}</td>
+        </tr>
+        <tr>
+          <th>Company</th>
+          <p>{{ scheduledMeeting.customerInformation }}</p>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td><a href="mailto:{{ scheduledMeeting.executiveEmail }}">{{ scheduledMeeting.executiveEmail }}</a></td>
+        </tr>
+        <tr>
+          <th>Phone Number</th>
+          <td><a href="tel:{{ scheduledMeeting.executivePhoneNumber }}">{{ scheduledMeeting.executivePhoneNumber }}</a></td>
+        </tr>
+        <tr>
+          <th>Title</th>
+          <p>{{ scheduledMeeting.meetingResult }}</p>
+        </tr>
+      
+        <tr>
+          <th>Note</th>
+          <p>{{ scheduledMeeting.companyName }}</p>
+        </tr>
+        <tr>
+          <th>Title</th>
+          <p>{{ scheduledMeeting.companyAdress }}</p>
+        </tr>
+      
+        <tr>
+          <th>Note</th>
+          <p>{{ scheduledMeeting.companyBusinessArea }}</p>
+        </tr>
+        <tr>
+          <th>Title</th>
+          <p>{{ scheduledMeeting.companyWebAdress }}</p>
+        </tr>
+      
+        <tr>
+          <th>Note</th>
+          <p>{{ scheduledMeeting.executiveName }}</p>
+        </tr>
+       
+       
+      </div>
+
+
+  
+ 
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          style="background-color: red"
+          data-dismiss="modal"
+        >
+          Close
+        </button>
+      </div>
+    </tr>
+  </div>
+</div>
+</div>

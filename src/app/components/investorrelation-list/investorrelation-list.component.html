@@ -55,7 +55,10 @@
                     <td>{{ investorrelation.investorSurname }}</td>
                     <td>{{ investorrelation.company }}</td>
                     <td>{{ investorrelation.position }}</td>
-                   
+                    <td> <button type="button" id="update" class="btn btn-info" routerLink="/investmentrelation-update/{{investorrelation.id}}"
+                      >EDIT</button></td>
+                      <td><button type="button" id="delete" (click)="deleteInvestmentRelation(investorrelation.id)" class="btn btn-danger" 
+                     >delete</button> 
                   </tr>
               
                 </tbody>

@@ -67,6 +67,10 @@
                     <td>{{ finishedMeeting.companyName }}</td>
                     <td>{{ finishedMeeting.executiveName }}</td>
                     <td>{{ finishedMeeting.executivePhoneNumber }}</td>
+                    <td> <button type="button" id="update" class="btn btn-info" routerLink="/finishedmeeting-update/{{finishedMeeting.id}}"
+                      >EDIT</button></td>
+                      <td><button type="button" id="delete" (click)="deleteFinishedMeeting(finishedMeeting.id)" class="btn btn-danger" 
+                     >delete</button> 
                   </tr>
                 </tbody>
               </table>

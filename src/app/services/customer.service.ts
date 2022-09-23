@@ -41,9 +41,9 @@ export class CustomerService {
   }
 
   updateCustomer
-   (Id:string):Observable<ResponseModel>{
-    return this.httpClient.get<ResponseModel>(
-      this.apiUrl + 'Customer/update?customerId='+Id
+   (customer:Customer):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(
+      this.apiUrl + 'Customer/update',customer
       )
   }
   

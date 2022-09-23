@@ -60,6 +60,10 @@
                     <td>{{ routineServices.customerName }}</td>
                     <td>{{ routineServices.officer }}</td>
                     <td>{{ routineServices.personSurname }}</td>
+                    <td> <button type="button" id="update" class="btn btn-info" routerLink="/routineservice-update/{{routineServices.id}}"
+                      >EDIT</button></td>
+                      <td><button type="button" id="delete" (click)="deleteRoutineService(routineServices.id)" class="btn btn-danger" 
+                     >delete</button> 
                   </tr>
                 </tbody>
               </table>

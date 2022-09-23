@@ -60,6 +60,10 @@
                     <td>{{ curiouscustomer.email }}</td>
                     <td>{{ curiouscustomer.company }}</td>
                     <td>{{ curiouscustomer.position }}</td>
+                    <td> <button type="button" id="update" class="btn btn-info" routerLink="/curiouscustomer-update/{{curiouscustomer.id}}"
+                      >EDIT</button></td>
+                      <td><button type="button" id="delete" (click)="deleteCuriousCustomer(curiouscustomer.id)" class="btn btn-danger" 
+                     >delete</button> 
                   </tr>
                 </tbody>
               </table>

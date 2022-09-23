@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ScheduledMeeting } from 'app/models/scheduledMeeting';
 import { ScheduledmeetingService } from 'app/services/scheduledmeeting.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -14,9 +15,11 @@ export class ScheduledmeetingListComponent implements OnInit {
   searchText="";
   characters:ScheduledMeeting[];
   scheduledMeetings:ScheduledMeeting[]=[];
+  scheduledMeeting:ScheduledMeeting;
 dataLoaded = false;
+isScheduledMeetingLoad=false;
   constructor(private scheduledMeetingService:ScheduledmeetingService,
-    private activatedRoute:ActivatedRoute,
+    private activatedRoute:ActivatedRoute, private toastrService :ToastrService
     ) { }
 
   ngOnInit(): void {
@@ -36,8 +39,16 @@ dataLoaded = false;
   }
   getByScheduledMeeting(Id:string) {
     this.scheduledMeetingService.getByScheduledMeeting(Id).subscribe(response=>{
-      this.scheduledMeetings = response.data
-      this.dataLoaded = true;
+      this.scheduledMeeting = response.data
+      this.isScheduledMeetingLoad = true;
     })   
+  }
+  deleteScheduledMeeting(Id:string){
+    this.scheduledMeetingService.deleteScheduledMeeting(Id).subscribe(response=>{
+      if(response.success){
+        this.toastrService.success(response.message)
+        this.getScheduledMeeting()
+      }
+    }) 
   }
 }
